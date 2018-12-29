@@ -2,15 +2,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+
 
 
 
@@ -19,16 +29,11 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
 
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -47,27 +52,11 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
   
   
 
   
-    
-    
-  
 
-  
-    
-      
-    
-
-    
   
 
   
@@ -76,8 +65,6 @@
 
   
     
-      
-    
 
     
   
@@ -85,7 +72,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -93,56 +80,40 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link href="/css/main.css?v=" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="ios,Effective Objective 2.0,高质量,52个有效方法," />
+<link rel="stylesheet" href="/css/main.css?v=6.6.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=" />
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
 
 
 
 
-<meta name="description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
-<meta name="keywords" content="ios,Effective Objective 2.0,高质量,52个有效方法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Effective Objective 2.0">
-<meta property="og:url" content="http://yoursite.com/2018/12/14/Effective-Objective-2-0/index.html">
-<meta property="og:site_name" content="伊水贝">
-<meta property="og:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-14T04:46:21.905Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Effective Objective 2.0">
-<meta name="twitter:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -154,12 +125,38 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/2018/12/14/Effective-Objective-2-0/"/>
-
+  
 
 
 
+
+  <meta name="description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
+<meta name="keywords" content="ios,Effective Objective 2.0,高质量,52个有效方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Effective Objective 2.0">
+<meta property="og:url" content="http://yoursite.com/2018/12/14/Effective-Objective-2-0/index.html">
+<meta property="og:site_name" content="伊水贝">
+<meta property="og:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-29T09:14:33.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Effective Objective 2.0">
+<meta name="twitter:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/14/Effective-Objective-2-0/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Effective Objective 2.0 | 伊水贝</title>
   
@@ -171,9 +168,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -183,25 +209,24 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">伊水贝</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -209,65 +234,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -275,12 +341,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -293,20 +367,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/Effective-Objective-2-0/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy cheng">
-      <meta itemprop="description" content="">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
 
@@ -315,25 +391,51 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Effective Objective 2.0</h1>
+          <h1 class="post-title" itemprop="name headline">Effective Objective 2.0
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T12:10:51+08:00">
-                2018-12-14
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-14 12:10:51" itemprop="dateCreated datePublished" datetime="2018-12-14T12:10:51+08:00">2018-12-14</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-29 17:14:33" itemprop="dateModified" datetime="2018-12-29T17:14:33+08:00">2018-12-29</time>
+              
             
           </span>
 
@@ -344,17 +446,6 @@
           
 
           
-          
-             <span id="/2018/12/14/Effective-Objective-2-0/" class="leancloud_visitors" data-flag-title="Effective Objective 2.0">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -406,6 +497,7 @@
 <p>  };</p>
 </li>
 </ul>
+<a id="more"></a>
 <h2 id="6-理解”属性”这一概念"><a href="#6-理解”属性”这一概念" class="headerlink" title="6. 理解”属性”这一概念"></a>6. 理解”属性”这一概念</h2><ul>
 <li>属性是封装数据的方式。</li>
 <li>OC 把实例变量当做一种存储偏移量所用的“特殊变量”，交由类对象（class object）保管</li>
@@ -425,12 +517,12 @@
 </ul>
 </li>
 <li><p>MRC</p>
-  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* <span class="keyword">strong</span> 修饰:</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</div><div class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</div><div class="line">		[obj <span class="keyword">retain</span>];					<span class="comment">// 保留新值</span></div><div class="line">		[_obj release];					<span class="comment">// 释放旧值</span></div><div class="line">		_obj = obj;						<span class="comment">// 设置新值</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">*  <span class="keyword">weak</span> 修饰:</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</div><div class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</div><div class="line">		_obj = obj;						<span class="comment">// 不保留新值，不释放旧值，直接设置</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">*  <span class="keyword">copy</span> 修饰</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</div><div class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</div><div class="line">		[_obj release];					<span class="comment">// 释放旧值</span></div><div class="line">		_obj = [obj <span class="keyword">copy</span>];				<span class="comment">// 设置新值copy</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">* strong 修饰:</span><br><span class="line"></span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">	if(_obj != obj) &#123;</span><br><span class="line">		[obj retain];					// 保留新值</span><br><span class="line">		[_obj release];					// 释放旧值</span><br><span class="line">		_obj = obj;						// 设置新值</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*  weak 修饰:</span><br><span class="line"></span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">	if(_obj != obj) &#123;</span><br><span class="line">		_obj = obj;						// 不保留新值，不释放旧值，直接设置</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*  copy 修饰</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">	if(_obj != obj) &#123;</span><br><span class="line">		[_obj release];					// 释放旧值</span><br><span class="line">		_obj = [obj copy];				// 设置新值copy</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ul>
 <li><p>ARC</p>
-  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">*  <span class="keyword">strong</span> 修饰 :</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</div><div class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</div><div class="line">		_obj = obj;						<span class="comment">// 设置新值</span></div><div class="line">	&#125;					</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">*  <span class="keyword">weak</span> 修饰:</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</div><div class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</div><div class="line">		_obj = obj;						<span class="comment">// 不保留新值，不释放旧值，直接设置新值</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">*  <span class="keyword">copy</span> 修饰:</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</div><div class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</div><div class="line">		_obj = [obj <span class="keyword">copy</span>];				<span class="comment">// 设置新值copy</span></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*  strong 修饰 :</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">	if(_obj != obj) &#123;</span><br><span class="line">		_obj = obj;						// 设置新值</span><br><span class="line">	&#125;					</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">*  weak 修饰:</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">	if(_obj != obj) &#123;</span><br><span class="line">		_obj = obj;						// 不保留新值，不释放旧值，直接设置新值</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*  copy 修饰:</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">	if(_obj != obj) &#123;</span><br><span class="line">		_obj = [obj copy];				// 设置新值copy</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="7-在对象内部尽量直接访问实例变量"><a href="#7-在对象内部尽量直接访问实例变量" class="headerlink" title="7. 在对象内部尽量直接访问实例变量"></a>7. 在对象内部尽量直接访问实例变量</h2><ul>
@@ -645,7 +737,7 @@
 <li>使用同步队列及栅栏块，可以令同步行为更高效</li>
 <li><strong>atomic修饰属性，无法保证访问该对象时绝对是线程安全的，使用属性时，必定能从中获取到有效值，然而在同一个线程上多次调用获取方法(getter)</strong></li>
 <li><p><strong>每次获取到的结果未必相同，在两次访问操作之间，其他线程可能会写入新的属性值</strong></p>
-  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在同一个队列上执行setter和getter方法</span></div><div class="line">-(<span class="built_in">NSString</span> *)someString &#123;</div><div class="line">	__block <span class="built_in">NSStirng</span> *localSomeString;</div><div class="line">	<span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line">		localSomeString = _someString;</div><div class="line">	&#125;);</div><div class="line">	<span class="keyword">return</span> localSomeString;</div><div class="line">&#125;</div><div class="line"></div><div class="line">-(<span class="keyword">void</span>)setSomeString:(<span class="built_in">NSString</span> *)someString &#123;</div><div class="line">	dispatch_barrier_async(queue, ^&#123;</div><div class="line">		_someString = someString;</div><div class="line">	&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 在同一个队列上执行setter和getter方法</span><br><span class="line">-(NSString *)someString &#123;</span><br><span class="line">	__block NSStirng *localSomeString;</span><br><span class="line">	dispatch_async(queue, ^&#123;</span><br><span class="line">		localSomeString = _someString;</span><br><span class="line">	&#125;);</span><br><span class="line">	return localSomeString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)setSomeString:(NSString *)someString &#123;</span><br><span class="line">	dispatch_barrier_async(queue, ^&#123;</span><br><span class="line">		_someString = someString;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="42-多用GCD-少用performSelector系列方法"><a href="#42-多用GCD-少用performSelector系列方法" class="headerlink" title="42. 多用GCD,少用performSelector系列方法"></a>42. 多用GCD,少用performSelector系列方法</h2><ul>
@@ -722,7 +814,7 @@
 <li>一次性计时器在触发完任务之后会失效</li>
 <li>反复执行任务的计时器（repeating timer），很容易引入保留环，这种环状保留关系，可能是直接发生的，也可能是通过对象图里的其他对象间接发生的</li>
 <li><p>可以扩充NSTimer的功能，用块来打破保留环。(必须创建分类)</p>
-  <figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSTimer</span> (<span class="title">EOCBlocksSupport</span>)</span></div><div class="line"> +(<span class="built_in">NSTimer</span> *)eoc_scheduledTimerWithTimeInterval:(<span class="built_in">NSTimeInterval</span>)interval </div><div class="line"> 					blcok : (<span class="keyword">void</span> (^)()) block </div><div class="line"> 					repeats:(<span class="built_in">BOOL</span>) repeats;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@interface NSTimer (EOCBlocksSupport)</span><br><span class="line"> +(NSTimer *)eoc_scheduledTimerWithTimeInterval:(NSTimeInterval)interval </span><br><span class="line"> 					blcok : (void (^)()) block </span><br><span class="line"> 					repeats:(BOOL) repeats;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 <ul>
 <li>timer -&gt; block -&gt; self -&gt; timer</li>
 </ul>
@@ -732,12 +824,18 @@
 
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -793,21 +891,14 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
 
 
         </div>
@@ -830,87 +921,129 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Roy Cheng">
+            
+              <p class="site-author-name" itemprop="name">Roy Cheng</p>
+              <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积</p>
+          </div>
+
           
-            <img class="site-author-image" itemprop="image"
-              src="/images/avatar.jpg"
-              alt="Roy cheng" />
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
           
-            <p class="site-author-name" itemprop="name">Roy cheng</p>
-            <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积！</p>
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -918,7 +1051,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -934,21 +1067,29 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 &mdash; 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Roy cheng</span>
+  <span class="author" itemprop="copyrightHolder">Roy Cheng</span>
+
+  
 
   
 </div>
 
 
 
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
         
+
 
 
 
@@ -967,11 +1108,16 @@
       </div>
     
 
+    
+
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -985,7 +1131,6 @@
 
 
 
-  
 
 
 
@@ -998,61 +1143,43 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+
+
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
 
 
 
   
   
 
-  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
-<script type="text/javascript" src="/js/src/post-details.js?v="></script>
-
-
   
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
 
 
 
   
 
 
-  
-
-
-
-
-	
-
-
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
 
 
 
@@ -1060,9 +1187,10 @@
 
 
 
-
-
   
+
+
+
 
 
 
@@ -1080,111 +1208,18 @@
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("YRs7S6BIOd98ItwAswx4jjci-gzGzoHsz", "hFS4ICOPOcV0Qgf1Hw8t9SfO");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
+  
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
+  
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+  
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
+  
 
   
 

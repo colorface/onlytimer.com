@@ -2,15 +2,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+
 
 
 
@@ -19,16 +29,11 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
 
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -47,27 +52,11 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
   
   
 
   
-    
-    
-  
 
-  
-    
-      
-    
-
-    
   
 
   
@@ -76,8 +65,6 @@
 
   
     
-      
-    
 
     
   
@@ -85,7 +72,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -93,57 +80,40 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link href="/css/main.css?v=" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link rel="stylesheet" href="/css/main.css?v=6.6.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=" />
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
 
 
 
 
-<meta name="description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
-<meta property="og:type" content="article">
-<meta property="og:title" content="GCD to Explain In Detail ">
-<meta property="og:url" content="http://yoursite.com/2018/05/14/GCD-to-Explain-In-Detail/index.html">
-<meta property="og:site_name" content="伊水贝">
-<meta property="og:description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ownq1k9ul.bkt.clouddn.com/blog/2018-05-14-014904.jpg">
-<meta property="og:updated_time" content="2018-05-14T02:36:26.135Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GCD to Explain In Detail ">
-<meta name="twitter:description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
-<meta name="twitter:image" content="http://ownq1k9ul.bkt.clouddn.com/blog/2018-05-14-014904.jpg">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -155,12 +125,40 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/2018/05/14/GCD-to-Explain-In-Detail/"/>
-
+  
 
 
 
+
+  <meta name="description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
+<meta name="keywords" content="Coder">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GCD to Explain In Detail ">
+<meta property="og:url" content="http://yoursite.com/2018/05/14/GCD-to-Explain-In-Detail/index.html">
+<meta property="og:site_name" content="伊水贝">
+<meta property="og:description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ownq1k9ul.bkt.clouddn.com/blog/2018-05-14-014904.jpg">
+<meta property="og:updated_time" content="2018-12-29T09:15:28.658Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GCD to Explain In Detail ">
+<meta name="twitter:description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
+<meta name="twitter:image" content="http://ownq1k9ul.bkt.clouddn.com/blog/2018-05-14-014904.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/14/GCD-to-Explain-In-Detail/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>GCD to Explain In Detail  | 伊水贝</title>
   
@@ -172,9 +170,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -184,25 +211,24 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">伊水贝</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -210,65 +236,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -276,12 +343,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -294,20 +369,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/14/GCD-to-Explain-In-Detail/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy cheng">
-      <meta itemprop="description" content="">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
 
@@ -316,25 +393,51 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GCD to Explain In Detail </h1>
+          <h1 class="post-title" itemprop="name headline">GCD to Explain In Detail 
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-14T08:55:30+08:00">
-                2018-05-14
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2018-05-14 08:55:30" itemprop="dateCreated datePublished" datetime="2018-05-14T08:55:30+08:00">2018-05-14</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-29 17:15:28" itemprop="dateModified" datetime="2018-12-29T17:15:28+08:00">2018-12-29</time>
+              
             
           </span>
 
@@ -345,17 +448,6 @@
           
 
           
-          
-             <span id="/2018/05/14/GCD-to-Explain-In-Detail/" class="leancloud_visitors" data-flag-title="GCD to Explain In Detail ">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -425,29 +517,32 @@
 </tr>
 </tbody>
 </table>
-<h3 id="GCD线程间通信"><a href="#GCD线程间通信" class="headerlink" title="GCD线程间通信"></a>GCD线程间通信</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取全局并发队列</span></div><div class="line">    <span class="keyword">dispatch_queue_t</span> <span class="built_in">queue</span> = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>); </div><div class="line">        </div><div class="line">    dispatch_async(<span class="built_in">queue</span>, ^&#123;</div><div class="line">        <span class="comment">// 异步追加任务</span></div><div class="line"></div><div class="line">        </div><div class="line">        <span class="comment">// 回到主线程</span></div><div class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</div><div class="line">            <span class="comment">// 追加在主线程中执行的任务</span></div><div class="line"></div><div class="line">        &#125;);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
+<h3 id="GCD线程间通信"><a href="#GCD线程间通信" class="headerlink" title="GCD线程间通信"></a>GCD线程间通信</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 获取全局并发队列</span><br><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0); </span><br><span class="line">        </span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 异步追加任务</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        // 回到主线程</span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            // 追加在主线程中执行的任务</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="GCD其他方法"><a href="#GCD其他方法" class="headerlink" title="GCD其他方法"></a>GCD其他方法</h3><h5 id="1-GCD栅栏方法：dispatch-barrier-async"><a href="#1-GCD栅栏方法：dispatch-barrier-async" class="headerlink" title="1.GCD栅栏方法：dispatch_barrier_async"></a>1.GCD栅栏方法：dispatch_barrier_async</h5><p><img src="http://ownq1k9ul.bkt.clouddn.com/blog/2018-05-14-014904.jpg" alt=""></p>
 <blockquote>
 <p>在执行完栅栏前面的操作之后，才执行栅栏操作，最后再执行栅栏后边的操作。</p>
 </blockquote>
 <h5 id="2-GCD-延时执行方法：dispatch-after"><a href="#2-GCD-延时执行方法：dispatch-after" class="headerlink" title="2.GCD 延时执行方法：dispatch_after"></a>2.GCD 延时执行方法：dispatch_after</h5><blockquote>
 <p>我们经常会遇到这样的需求：在指定时间（例如3秒）之后执行某个任务。可以用 GCD 的<code>dispatch_after</code>函数来实现。</p>
-<p>需要注意的是：<code>dispatch_after</code>函数并不是在指定时间之后才开始执行处理，而是在指定时间之后将任务追加到主队列中。严格来说，这个时间并不是绝对准确的，但想要大致延迟执行任务，dispatch_after函数是很有效的。</p>
 </blockquote>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * 延时执行方法 dispatch_after</span></div><div class="line"><span class="comment"> */</span></div><div class="line"></div><div class="line"><span class="selector-tag">dispatch_after</span>(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(<span class="number">2.0</span> * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">        <span class="comment">// 2.0秒后异步追加任务代码到主队列，并开始执行</span></div><div class="line">        </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>需要注意的是：<code>dispatch_after</code>函数并不是在指定时间之后才开始执行处理，而是在指定时间之后将任务追加到主队列中。严格来说，这个时间并不是绝对准确的，但想要大致延迟执行任务，dispatch_after函数是很有效的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 延时执行方法 dispatch_after</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        // 2.0秒后异步追加任务代码到主队列，并开始执行</span><br><span class="line">        </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h5 id="3-GCD-一次性代码（只执行一次）：dispatch-once"><a href="#3-GCD-一次性代码（只执行一次）：dispatch-once" class="headerlink" title="3.GCD 一次性代码（只执行一次）：dispatch_once"></a>3.GCD 一次性代码（只执行一次）：dispatch_once</h5><blockquote>
 <p>我们在创建单例、或者有整个程序运行过程中只执行一次的代码时，我们就用到了 GCD 的 <code>dispatch_once</code> 函数。使用<br><code>dispatch_once</code> 函数能保证某段代码在程序运行过程中只被执行1次，并且即使在多线程的环境下，<code>dispatch_once</code>也可以保证线程安全。</p>
 </blockquote>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)once &#123;</div><div class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</div><div class="line">    <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</div><div class="line">        <span class="comment">// 只执行1次的代码(这里面默认是线程安全的)</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)once &#123;</span><br><span class="line">    static dispatch_once_t onceToken;</span><br><span class="line">    dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">        // 只执行1次的代码(这里面默认是线程安全的)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="4-GCD-快速迭代方法：dispatch-apply"><a href="#4-GCD-快速迭代方法：dispatch-apply" class="headerlink" title="4.GCD 快速迭代方法：dispatch_apply"></a>4.GCD 快速迭代方法：dispatch_apply</h5><ul>
 <li>通常我们会用 for 循环遍历，但是 GCD 给我们提供了快速迭代的函数<code>dispatch_apply</code>。</li>
 <li><code>dispatch_apply</code>按照指定的次数将指定的任务追加到指定的队列中，并等待全部队列执行结束。</li>
 </ul>
 <blockquote>
 <p>如果是在串行队列中使用 <code>dispatch_apply</code>，那么就和 for 循环一样，按顺序同步执行。可这样就体现不出快速迭代的意义了。</p>
-<p>我们可以利用并发队列进行异步执行。比如说遍历 0~5 这6个数字，for 循环的做法是每次取出一个元素，逐个遍历。<code>dispatch_apply</code> 可以 在多个线程中同时（异步）遍历多个数字。</p>
-<p>还有一点，无论是在串行队列，还是异步队列中，<code>dispatch_apply</code> 都会等待全部任务执行完毕，这点就像是同步操作，也像是队列组中的 <code>dispatch_group_wait</code>方法。</p>
 </blockquote>
+<p>我们可以利用并发队列进行异步执行。比如说遍历 0~5 这6个数字，for 循环的做法是每次取出一个元素，逐个遍历。<code>dispatch_apply</code> 可以 在多个线程中同时（异步）遍历多个数字。</p>
+<blockquote>
+</blockquote>
+<p>还有一点，无论是在串行队列，还是异步队列中，<code>dispatch_apply</code> 都会等待全部任务执行完毕，这点就像是同步操作，也像是队列组中的 <code>dispatch_group_wait</code>方法。</p>
 <h5 id="5-GCD-队列组：dispatch-group"><a href="#5-GCD-队列组：dispatch-group" class="headerlink" title="5.GCD 队列组：dispatch_group"></a>5.GCD 队列组：dispatch_group</h5><p>有时候我们会有这样的需求：分别异步执行2个耗时任务，然后当2个耗时任务都执行完毕后再回到主线程执行任务。这时候我们可以用到 GCD 的队列组。</p>
 <ul>
 <li><p>调用队列组的 <code>dispatch_group_async</code> 先把任务放到队列中，然后将队列放入队列组中。或者使用队列组的 <code>dispatch_group_enter</code>、<code>dispatch_group_leave</code> 组合 来实现<br><code>dispatch_group_async</code>。</p>
@@ -458,17 +553,17 @@
 <h6 id="5-1-dispatch-group-notify"><a href="#5-1-dispatch-group-notify" class="headerlink" title="5.1 dispatch_group_notify"></a>5.1 dispatch_group_notify</h6><ul>
 <li>监听 group 中任务的完成状态，当所有的任务都执行完成后，追加任务到 group 中，并执行任务。</li>
 </ul>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)groupNotify &#123;</div><div class="line"></div><div class="line">    dispatch_group_t <span class="keyword">group</span> =  dispatch_group_create();</div><div class="line">    </div><div class="line">    dispatch_group_async(<span class="keyword">group</span>, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line">        <span class="comment">// 追加任务1</span></div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">    dispatch_group_async(<span class="keyword">group</span>, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line">        <span class="comment">// 追加任务2</span></div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">    dispatch_group_notify(<span class="keyword">group</span>, dispatch_get_main_queue(), ^&#123;</div><div class="line">        <span class="comment">// 等前面的异步任务1、任务2都执行完毕后，回到主线程执行下边任务</span></div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)groupNotify &#123;</span><br><span class="line"></span><br><span class="line">    dispatch_group_t group =  dispatch_group_create();</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务1</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务2</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_notify(group, dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        // 等前面的异步任务1、任务2都执行完毕后，回到主线程执行下边任务</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="5-2-dispatch-group-wait"><a href="#5-2-dispatch-group-wait" class="headerlink" title="5.2 dispatch_group_wait"></a>5.2 dispatch_group_wait</h6><ul>
 <li>暂停当前线程（阻塞当前线程），等待指定的 group 中的任务执行完成后，才会往下继续执行。</li>
 </ul>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)groupWait &#123;</div><div class="line"></div><div class="line">    dispatch_group_t <span class="keyword">group</span> =  dispatch_group_create();</div><div class="line">    </div><div class="line">    dispatch_group_async(<span class="keyword">group</span>, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line">        <span class="comment">// 追加任务1</span></div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">    dispatch_group_async(<span class="keyword">group</span>, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</div><div class="line">        <span class="comment">// 追加任务2</span></div><div class="line">    &#125;);</div><div class="line">    </div><div class="line">    <span class="comment">// 等待上面的任务全部完成后，会往下继续执行（会阻塞当前线程）</span></div><div class="line">    dispatch_group_wait(<span class="keyword">group</span>, DISPATCH_TIME_FOREVER);</div><div class="line">	<span class="comment">// </span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)groupWait &#123;</span><br><span class="line"></span><br><span class="line">    dispatch_group_t group =  dispatch_group_create();</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务1</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^&#123;</span><br><span class="line">        // 追加任务2</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    // 等待上面的任务全部完成后，会往下继续执行（会阻塞当前线程）</span><br><span class="line">    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);</span><br><span class="line">	// </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="5-3-dispatch-group-enter、dispatch-group-leave"><a href="#5-3-dispatch-group-enter、dispatch-group-leave" class="headerlink" title="5.3 dispatch_group_enter、dispatch_group_leave"></a>5.3 dispatch_group_enter、dispatch_group_leave</h6><ul>
 <li><code>dispatch_group_enter</code> 标志着一个任务追加到 group，执行一次，相当于 group 中未执行完毕任务数+1</li>
 <li><code>dispatch_group_leave</code> 标志着一个任务离开了 group，执行一次，相当于 group 中未执行完毕任务数-1。</li>
 <li>当 group 中未执行完毕任务数为0的时候，才会使<code>dispatch_group_wait</code>解除阻塞，以及执行追加到<code>dispatch_group_notify</code>中的任务。</li>
 </ul>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">dispatch_group_t group = dispatch_group_create()<span class="comment">;</span></div><div class="line">    dispatch_queue_t queue = dispatch_get_global_queue(<span class="name">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>)<span class="comment">;</span></div><div class="line">    dispatch_group_enter(<span class="name">group</span>)<span class="comment">;</span></div><div class="line">    dispatch_async(<span class="name">queue</span>, ^&#123;</div><div class="line">        // 追加任务<span class="number">1</span></div><div class="line"></div><div class="line">        dispatch_group_leave(<span class="name">group</span>)<span class="comment">;</span></div><div class="line">    &#125;)<span class="comment">;</span></div><div class="line">    </div><div class="line">    dispatch_group_enter(<span class="name">group</span>)<span class="comment">;</span></div><div class="line">    dispatch_async(<span class="name">queue</span>, ^&#123;</div><div class="line">        // 追加任务<span class="number">2</span></div><div class="line"></div><div class="line">        dispatch_group_leave(<span class="name">group</span>)<span class="comment">;</span></div><div class="line">    &#125;)<span class="comment">;</span></div><div class="line">    </div><div class="line">    dispatch_group_notify(<span class="name">group</span>, dispatch_get_main_queue(), ^&#123;</div><div class="line">        // 等前面的异步操作都执行完毕后，回到主线程.</div><div class="line"></div><div class="line">    &#125;)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dispatch_group_t group = dispatch_group_create();</span><br><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务1</span><br><span class="line"></span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 追加任务2</span><br><span class="line"></span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_notify(group, dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        // 等前面的异步操作都执行完毕后，回到主线程.</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 <h5 id="6-GCD-信号量：dispatch-semaphore"><a href="#6-GCD-信号量：dispatch-semaphore" class="headerlink" title="6. GCD 信号量：dispatch_semaphore"></a>6. GCD 信号量：dispatch_semaphore</h5><p>GCD 中的信号量是指 <strong>Dispatch Semaphore</strong>，是持有计数的信号。类似于过高速路收费站的栏杆。可以通过时，打开栏杆，不可以通过时，关闭栏杆。在 <strong>Dispatch Semaphore</strong> 中，使用计数来完成这个功能，计数为0时等待，不可通过。计数为1或大于1时，计数减1且不等待，可通过。<br><strong>Dispatch Semaphore</strong> 提供了三个函数。</p>
 <ul>
 <li>dispatch_semaphore_create：创建一个Semaphore并初始化信号的总量</li>
@@ -486,12 +581,18 @@
 
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -535,21 +636,14 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
 
 
         </div>
@@ -572,95 +666,137 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Roy Cheng">
+            
+              <p class="site-author-name" itemprop="name">Roy Cheng</p>
+              <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积</p>
+          </div>
+
           
-            <img class="site-author-image" itemprop="image"
-              src="/images/avatar.jpg"
-              alt="Roy cheng" />
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
           
-            <p class="site-author-name" itemprop="name">Roy cheng</p>
-            <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积！</p>
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务和队列"><span class="nav-number">1.</span> <span class="nav-text">任务和队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GCD线程间通信"><span class="nav-number">3.</span> <span class="nav-text">GCD线程间通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GCD其他方法"><span class="nav-number">4.</span> <span class="nav-text">GCD其他方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-GCD栅栏方法：dispatch-barrier-async"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.GCD栅栏方法：dispatch_barrier_async</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-GCD-延时执行方法：dispatch-after"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.GCD 延时执行方法：dispatch_after</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-GCD-一次性代码（只执行一次）：dispatch-once"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.GCD 一次性代码（只执行一次）：dispatch_once</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-GCD-快速迭代方法：dispatch-apply"><span class="nav-number">4.0.4.</span> <span class="nav-text">4.GCD 快速迭代方法：dispatch_apply</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-GCD-队列组：dispatch-group"><span class="nav-number">4.0.5.</span> <span class="nav-text">5.GCD 队列组：dispatch_group</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#5-1-dispatch-group-notify"><span class="nav-number">4.0.5.1.</span> <span class="nav-text">5.1 dispatch_group_notify</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-2-dispatch-group-wait"><span class="nav-number">4.0.5.2.</span> <span class="nav-text">5.2 dispatch_group_wait</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-3-dispatch-group-enter、dispatch-group-leave"><span class="nav-number">4.0.5.3.</span> <span class="nav-text">5.3 dispatch_group_enter、dispatch_group_leave</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-GCD-信号量：dispatch-semaphore"><span class="nav-number">4.0.6.</span> <span class="nav-text">6. GCD 信号量：dispatch_semaphore</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#任务和队列"><span class="nav-number">1.</span> <span class="nav-text">任务和队列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GCD线程间通信"><span class="nav-number">3.</span> <span class="nav-text">GCD线程间通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GCD其他方法"><span class="nav-number">4.</span> <span class="nav-text">GCD其他方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-GCD栅栏方法：dispatch-barrier-async"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.GCD栅栏方法：dispatch_barrier_async</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-GCD-延时执行方法：dispatch-after"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.GCD 延时执行方法：dispatch_after</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-GCD-一次性代码（只执行一次）：dispatch-once"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.GCD 一次性代码（只执行一次）：dispatch_once</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-GCD-快速迭代方法：dispatch-apply"><span class="nav-number">4.0.4.</span> <span class="nav-text">4.GCD 快速迭代方法：dispatch_apply</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-GCD-队列组：dispatch-group"><span class="nav-number">4.0.5.</span> <span class="nav-text">5.GCD 队列组：dispatch_group</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#5-1-dispatch-group-notify"><span class="nav-number">4.0.5.1.</span> <span class="nav-text">5.1 dispatch_group_notify</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-2-dispatch-group-wait"><span class="nav-number">4.0.5.2.</span> <span class="nav-text">5.2 dispatch_group_wait</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-3-dispatch-group-enter、dispatch-group-leave"><span class="nav-number">4.0.5.3.</span> <span class="nav-text">5.3 dispatch_group_enter、dispatch_group_leave</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-GCD-信号量：dispatch-semaphore"><span class="nav-number">4.0.6.</span> <span class="nav-text">6. GCD 信号量：dispatch_semaphore</span></a></li></ol></li></ol></div>
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -676,21 +812,29 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 &mdash; 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Roy cheng</span>
+  <span class="author" itemprop="copyrightHolder">Roy Cheng</span>
+
+  
 
   
 </div>
 
 
 
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
         
+
 
 
 
@@ -709,11 +853,16 @@
       </div>
     
 
+    
+
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -727,7 +876,6 @@
 
 
 
-  
 
 
 
@@ -740,61 +888,43 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+
+
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
 
 
 
   
   
 
-  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
-<script type="text/javascript" src="/js/src/post-details.js?v="></script>
-
-
   
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
 
 
 
   
 
 
-  
-
-
-
-
-	
-
-
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
 
 
 
@@ -802,9 +932,10 @@
 
 
 
-
-
   
+
+
+
 
 
 
@@ -822,111 +953,18 @@
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("YRs7S6BIOd98ItwAswx4jjci-gzGzoHsz", "hFS4ICOPOcV0Qgf1Hw8t9SfO");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
+  
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
+  
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+  
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
+  
 
   
 

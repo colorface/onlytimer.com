@@ -2,15 +2,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+
 
 
 
@@ -19,16 +29,11 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
 
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -47,27 +52,11 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
   
   
 
   
-    
-    
-  
 
-  
-    
-      
-    
-
-    
   
 
   
@@ -76,8 +65,6 @@
 
   
     
-      
-    
 
     
   
@@ -85,7 +72,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -93,29 +80,58 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link href="/css/main.css?v=" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="ios,ijkplayer,视频直播,框架,静态库,IJKMediaFramework," />
+<link rel="stylesheet" href="/css/main.css?v=6.6.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=" />
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
 
 
 
 
-<meta name="description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压，解压后的文件目录如下图： 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 gith">
-<meta name="keywords" content="ios,ijkplayer,视频直播,框架,静态库,IJKMediaFramework">
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压，解压后的文件目录如下图： 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 gith">
+<meta name="keywords" content="ijkplayer,视频直播,框架,ios,静态库,IJKMediaFramework">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS中集成ijkplayer视频直播框架">
 <meta property="og:url" content="http://yoursite.com/2017/09/25/iOS中集成ijkplayer视频直播框架/index.html">
@@ -136,7 +152,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-d025e12bf804ee05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-8d228ab56eb77f43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-391a45a214aae76a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-09-26T01:23:25.000Z">
+<meta property="og:updated_time" content="2018-12-29T09:18:10.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中集成ijkplayer视频直播框架">
 <meta name="twitter:description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压，解压后的文件目录如下图： 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 gith">
@@ -144,37 +160,18 @@
 
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/25/iOS中集成ijkplayer视频直播框架/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
   };
 </script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2017/09/25/iOS中集成ijkplayer视频直播框架/"/>
-
-
-
-
 
   <title>iOS中集成ijkplayer视频直播框架 | 伊水贝</title>
   
@@ -186,9 +183,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -198,25 +224,24 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">伊水贝</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -224,65 +249,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -290,12 +356,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -308,20 +382,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/25/iOS中集成ijkplayer视频直播框架/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy cheng">
-      <meta itemprop="description" content="">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
 
@@ -330,30 +406,56 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iOS中集成ijkplayer视频直播框架</h1>
+          <h1 class="post-title" itemprop="name headline">iOS中集成ijkplayer视频直播框架
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-25T22:58:14+08:00">
-                2017-09-25
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2017-09-25 22:58:14" itemprop="dateCreated datePublished" datetime="2017-09-25T22:58:14+08:00">2017-09-25</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-29 17:18:10" itemprop="dateModified" datetime="2018-12-29T17:18:10+08:00">2018-12-29</time>
+              
             
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -361,14 +463,10 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a></span>
 
                 
                 
@@ -381,17 +479,6 @@
           
 
           
-          
-             <span id="/2017/09/25/iOS中集成ijkplayer视频直播框架/" class="leancloud_visitors" data-flag-title="iOS中集成ijkplayer视频直播框架">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -414,7 +501,7 @@
 
       
         <p><code>ijkplayer</code>是一款使用率极高的<strong>视频直播</strong>框架，基于<code>ffmpeg</code>，支持<code>Android</code>和<code>ios</code>，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把<code>ijkplayer</code>打包成<strong>静态库</strong>。</p>
-<h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="external">GitHub下载地址</a></p>
+<h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
 <p>下载完成后解压，解压后的文件目录如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1803339-728d89123de76da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录"></p>
 <h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
 <p>####编译步骤：</p>
@@ -429,6 +516,7 @@
 </li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/1803339-d8e86e2be4ed3960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编译FFmpeg"><br>编译时间较久, 耐心等待一下.</p>
+<a id="more"></a>
 <h3 id="3、打包IJKMediaFramework-framework框架"><a href="#3、打包IJKMediaFramework-framework框架" class="headerlink" title="3、打包IJKMediaFramework.framework框架"></a>3、打包IJKMediaFramework.framework框架</h3><ul>
 <li>首先打开工程<code>IJKMediaPlayer.xcodeproj</code>, 位置如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-607cc84c212faf90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打开工程"></li>
 </ul>
@@ -446,7 +534,7 @@
 <p>进入 <code>Finder</code> 后, 可以看到有真机和模拟器两个版本的编译结果, 如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-3dc9e54521817ae5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编译结果"></p>
 <ul>
 <li><p>打开<strong>终端</strong>, 进行合并命令，具体格式为:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
 <p>合并后如下图:</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/1803339-d025e12bf804ee05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="合并后生成的文件"></p>
 <p>下面很重要, 需要用合并后的<code>IJKMediaFramework</code>把原来的<code>IJKMediaFramework</code>替换掉, 如下图, 希望你能看懂:</p>
@@ -461,12 +549,18 @@
 
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -475,13 +569,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ios/" rel="tag"># ios</a>
-          
             <a href="/tags/ijkplayer/" rel="tag"># ijkplayer</a>
           
             <a href="/tags/视频直播/" rel="tag"># 视频直播</a>
           
             <a href="/tags/框架/" rel="tag"># 框架</a>
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
           
             <a href="/tags/静态库/" rel="tag"># 静态库</a>
           
@@ -498,8 +592,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/20/Mac上搭建基于GitHub的Hexo博客/" rel="next" title="Mac上搭建基于GitHub的Hexo博客">
-                <i class="fa fa-chevron-left"></i> Mac上搭建基于GitHub的Hexo博客
+              <a href="/2017/09/22/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -526,21 +620,14 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
 
 
         </div>
@@ -563,87 +650,129 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Roy Cheng">
+            
+              <p class="site-author-name" itemprop="name">Roy Cheng</p>
+              <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积</p>
+          </div>
+
           
-            <img class="site-author-image" itemprop="image"
-              src="/images/avatar.jpg"
-              alt="Roy cheng" />
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
           
-            <p class="site-author-name" itemprop="name">Roy cheng</p>
-            <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积！</p>
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -651,7 +780,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -667,21 +796,29 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 &mdash; 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Roy cheng</span>
+  <span class="author" itemprop="copyrightHolder">Roy Cheng</span>
+
+  
 
   
 </div>
 
 
 
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
         
+
 
 
 
@@ -700,11 +837,16 @@
       </div>
     
 
+    
+
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -718,7 +860,6 @@
 
 
 
-  
 
 
 
@@ -731,61 +872,43 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+
+
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
 
 
 
   
   
 
-  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
-<script type="text/javascript" src="/js/src/post-details.js?v="></script>
-
-
   
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
 
 
 
   
 
 
-  
-
-
-
-
-	
-
-
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
 
 
 
@@ -793,9 +916,10 @@
 
 
 
-
-
   
+
+
+
 
 
 
@@ -813,111 +937,18 @@
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("YRs7S6BIOd98ItwAswx4jjci-gzGzoHsz", "hFS4ICOPOcV0Qgf1Hw8t9SfO");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
+  
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
+  
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+  
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
+  
 
   
 

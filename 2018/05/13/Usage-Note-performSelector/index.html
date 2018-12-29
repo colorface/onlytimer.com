@@ -2,15 +2,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+
 
 
 
@@ -19,16 +29,11 @@
     
     
   <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
 
 
 
 
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -47,27 +52,11 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
   
   
 
   
-    
-    
-  
 
-  
-    
-      
-    
-
-    
   
 
   
@@ -76,8 +65,6 @@
 
   
     
-      
-    
 
     
   
@@ -85,7 +72,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -93,55 +80,40 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link href="/css/main.css?v=" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link rel="stylesheet" href="/css/main.css?v=6.6.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
 
 
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=" />
-
-
+  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
 
 
 
 
-<meta name="description" content="performSelector调用和直接调用的区别：12[self method];//直接调用[self performSelector:@selector(method) withObject:nil];  performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Usage|Note:performSelector">
-<meta property="og:url" content="http://yoursite.com/2018/05/13/Usage-Note-performSelector/index.html">
-<meta property="og:site_name" content="伊水贝">
-<meta property="og:description" content="performSelector调用和直接调用的区别：12[self method];//直接调用[self performSelector:@selector(method) withObject:nil];  performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-13T14:58:01.671Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Usage|Note:performSelector">
-<meta name="twitter:description" content="performSelector调用和直接调用的区别：12[self method];//直接调用[self performSelector:@selector(method) withObject:nil];  performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现">
 
 
 
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '6.6.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -153,12 +125,38 @@
 </script>
 
 
-
-  <link rel="canonical" href="http://yoursite.com/2018/05/13/Usage-Note-performSelector/"/>
-
+  
 
 
 
+
+  <meta name="description" content="performSelector调用和直接调用的区别：[self method];//直接调用[self performSelector:@selector(method) withObject:nil];  performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（X">
+<meta name="keywords" content="Coder">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Usage|Note:performSelector">
+<meta property="og:url" content="http://yoursite.com/2018/05/13/Usage-Note-performSelector/index.html">
+<meta property="og:site_name" content="伊水贝">
+<meta property="og:description" content="performSelector调用和直接调用的区别：[self method];//直接调用[self performSelector:@selector(method) withObject:nil];  performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（X">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-13T14:58:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Usage|Note:performSelector">
+<meta name="twitter:description" content="performSelector调用和直接调用的区别：[self method];//直接调用[self performSelector:@selector(method) withObject:nil];  performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（X">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/13/Usage-Note-performSelector/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Usage|Note:performSelector | 伊水贝</title>
   
@@ -170,9 +168,38 @@
 
 
 
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -182,25 +209,24 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">伊水贝</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -208,65 +234,106 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
         
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
-          </a>
-        </li>
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -274,12 +341,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
 
@@ -292,20 +367,22 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/13/Usage-Note-performSelector/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy cheng">
-      <meta itemprop="description" content="">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
       <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
 
@@ -314,25 +391,39 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Usage|Note:performSelector</h1>
+          <h1 class="post-title" itemprop="name headline">Usage|Note:performSelector
+
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-13T21:55:01+08:00">
-                2018-05-13
-              </time>
+
+              
+                
+              
+
+              <time title="Created: 2018-05-13 21:55:01 / Modified: 22:58:01" itemprop="dateCreated datePublished" datetime="2018-05-13T21:55:01+08:00">2018-05-13</time>
             
 
             
+              
 
+              
             
           </span>
 
@@ -343,17 +434,6 @@
           
 
           
-          
-             <span id="/2018/05/13/Usage-Note-performSelector/" class="leancloud_visitors" data-flag-title="Usage|Note:performSelector">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -375,7 +455,7 @@
       
 
       
-        <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="keyword">self</span> <span class="function"><span class="keyword">method</span>];</span><span class="comment">//直接调用</span></div><div class="line">[<span class="keyword">self</span> performSelector:@<span class="keyword">selector</span>(<span class="function"><span class="keyword">method</span>) <span class="title">withObject</span>:</span><span class="keyword">nil</span>];</div></pre></td></tr></table></figure>
+        <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[self method];//直接调用</span><br><span class="line">[self performSelector:@selector(method) withObject:nil];</span><br></pre></td></tr></table></figure>
 <ul>
 <li>performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（Xcode有提示）。</li>
 </ul>
@@ -388,50 +468,60 @@
 <h3 id="方法分析："><a href="#方法分析：" class="headerlink" title="方法分析："></a>方法分析：</h3><ul>
 <li>同步执行方法</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector;  </div><div class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>object;  </div><div class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>object1 withObject:<span class="params">(id)</span>object2;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (id)performSelector:(SEL)aSelector;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这三个方法，均为同步执行，与线程无关，主线程和子线程中均可调用成功。等同于直接调用该方法。在需要动态的去调用方法的时候去使用。</p>
 </blockquote>
 <ul>
 <li>异步执行方法</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay inModes:<span class="params">(NSArray *)</span>modes;  </div><div class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay inModes:(NSArray *)modes;  </span><br><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法为异步执行，即使delay传参为0，仍为异步执行。只能在主线程中执行，在子线程中不会调到aSelector方法。<br>在方法未到执行时间之前，取消方法为：</p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)<span class="string">cancelPreviousPerformRequestsWithTarget:</span>(id)aTarget <span class="string">selector:</span>(SEL)aSelector <span class="string">object:</span>(id)anArgument;  </div><div class="line">+ (<span class="keyword">void</span>)<span class="string">cancelPreviousPerformRequestsWithTarget:</span>(id)aTarget;</div></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(id)anArgument;  </span><br><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>NOTE:<br><strong>在调用方法之前或在该方法所在的viewController生命周期结束的时候去调用取消函数，以确保不会引起内存泄露。</strong></p>
 </blockquote>
 <p><strong>拓展：</strong></p>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这个方法是单线程的，也就是说只有当前调用次方法的函数执行完毕后，selector方法才会被调用。</p>
 </blockquote>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)<span class="string">changeText:</span>(NSString *)string  </div><div class="line">&#123;  </div><div class="line">    NSLog(@<span class="string">"changeText:(NSString *)string"</span>);  </div><div class="line">&#125;   </div><div class="line">- (<span class="keyword">void</span>)changePopoverSize  </div><div class="line">&#123;     </div><div class="line">    [self <span class="string">performSelector:</span><span class="meta">@selector</span>(<span class="string">changeText:</span>) <span class="string">withObject:</span>@<span class="string">"Happy aha"</span> <span class="string">afterDelay:</span><span class="number">1</span>];  </div><div class="line">    NSLog(@<span class="string">"changePopoverSize#####end"</span>);  </div><div class="line">    sleep(<span class="number">5</span>);  </div><div class="line">    NSLog(@<span class="string">"changePopoverSize-----end"</span>);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)changeText:(NSString *)string  </span><br><span class="line">&#123;  </span><br><span class="line">    NSLog(@&quot;changeText:(NSString *)string&quot;);  </span><br><span class="line">&#125;   </span><br><span class="line">- (void)changePopoverSize  </span><br><span class="line">&#123;     </span><br><span class="line">    [self performSelector:@selector(changeText:) withObject:@&quot;Happy aha&quot; afterDelay:1];  </span><br><span class="line">    NSLog(@&quot;changePopoverSize#####end&quot;);  </span><br><span class="line">    sleep(5);  </span><br><span class="line">    NSLog(@&quot;changePopoverSize-----end&quot;);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>打印结果：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">changePopoverSize#####end</div><div class="line">changePopoverSize-----end</div><div class="line">changeText:(NSString *)string</div></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">changePopoverSize#####end</span><br><span class="line">changePopoverSize-----end</span><br><span class="line">changeText:(NSString *)string</span><br></pre></td></tr></table></figure>
 <ul>
 <li>wait 函数</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- <span class="params">(void)</span>performSelectorInBackground:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg  </div><div class="line">或者  </div><div class="line">- <span class="params">(void)</span>performSelectorOnMainThread:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg waitUntilDone:<span class="params">(BOOL)</span>wait;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法，在主线程和子线程中均可执行，均会调用主线程的aSelector方法；<br>如果设置wait为YES:等待当前线程执行完以后，主线程才会执行aSelector方法；</p>
-<p>设置为NO：不等待当前线程执行完，就在主线程上执行aSelector方法。<br>如果，当前线程就是主线程，那么aSelector方法会马上执行。</p>
-<p>注意：apple不允许程序员在主线程以外的线程中对UI进行操作，此时我们必须调用performSelectorOnMainThread函数在主线程中完成UI的更新。</p>
 </blockquote>
+<p>设置为NO：不等待当前线程执行完，就在主线程上执行aSelector方法。<br>如果，当前线程就是主线程，那么aSelector方法会马上执行。</p>
+<blockquote>
+</blockquote>
+<p>注意：apple不允许程序员在主线程以外的线程中对UI进行操作，此时我们必须调用performSelectorOnMainThread函数在主线程中完成UI的更新。</p>
 <ul>
 <li>多线程执行</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- <span class="params">(void)</span>performSelectorInBackground:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg  </div><div class="line">或者  </div><div class="line">- <span class="params">(void)</span>performSelectorOnMainThread:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg waitUntilDone:<span class="params">(BOOL)</span>wait;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -475,21 +565,14 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
           </div>
           
 
+  
 
-          
-  <div class="comments" id="comments">
-    
-  </div>
 
 
         </div>
@@ -512,87 +595,129 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Roy Cheng">
+            
+              <p class="site-author-name" itemprop="name">Roy Cheng</p>
+              <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积</p>
+          </div>
+
           
-            <img class="site-author-image" itemprop="image"
-              src="/images/avatar.jpg"
-              alt="Roy cheng" />
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
           
-            <p class="site-author-name" itemprop="name">Roy cheng</p>
-            <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积！</p>
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
         </div>
-
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-            
-              <a href="/archives/">
-            
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">日志</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        
-        
-
-        
-
-
-      </section>
+      </div>
 
       
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             
-              
+            
+            
             
 
             
@@ -600,7 +725,7 @@
             
 
           </div>
-        </section>
+        </div>
       <!--/noindex-->
       
 
@@ -616,21 +741,29 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 &mdash; 
-  <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Roy cheng</span>
+  <span class="author" itemprop="copyrightHolder">Roy Cheng</span>
+
+  
 
   
 </div>
 
 
 
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
+
+
+
+
         
+
 
 
 
@@ -649,11 +782,16 @@
       </div>
     
 
+    
+
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -667,7 +805,6 @@
 
 
 
-  
 
 
 
@@ -680,61 +817,43 @@
 
 
 
-  
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
-  
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+
+
 
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+  <script src="/js/src/utils.js?v=6.6.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+  <script src="/js/src/motion.js?v=6.6.0"></script>
 
 
 
   
   
 
-  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
-<script type="text/javascript" src="/js/src/post-details.js?v="></script>
-
-
   
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script src="/js/src/post-details.js?v=6.6.0"></script>
 
 
 
   
 
 
-  
-
-
-
-
-	
-
-
+  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
 
 
 
@@ -742,9 +861,10 @@
 
 
 
-
-
   
+
+
+
 
 
 
@@ -762,111 +882,18 @@
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("YRs7S6BIOd98ItwAswx4jjci-gzGzoHsz", "hFS4ICOPOcV0Qgf1Hw8t9SfO");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
+  
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
+  
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+  
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+  
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
+  
 
   
 
