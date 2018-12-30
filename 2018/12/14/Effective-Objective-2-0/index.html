@@ -1,135 +1,12 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
+  <meta charset="utf-8">
   
 
   
-
-  
-
-  
-
-  
-
-  
-    
-
-    
-  
-
-  
-    
-    
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
-  
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
-
-<link rel="stylesheet" href="/css/main.css?v=6.6.0">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.6.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.6.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.6.0" color="#222">
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '6.6.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
+  <title>Effective Objective 2.0 | 伊水贝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
 <meta name="keywords" content="ios,Effective Objective 2.0,高质量,52个有效方法">
 <meta property="og:type" content="article">
@@ -142,330 +19,73 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective Objective 2.0">
 <meta name="twitter:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
-
-
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/12/14/Effective-Objective-2-0/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>Effective Objective 2.0 | 伊水贝</title>
   
-
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="alternate" href="/atom.xml" title="伊水贝" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">伊水贝</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">伊水贝</a>
+      </h1>
+      
     </div>
-    
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Effective-Objective-2-0" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/14/Effective-Objective-2-0/" class="article-date">
+  <time datetime="2018-12-14T04:10:51.000Z" itemprop="datePublished">2018-12-14</time>
+</a>
     
   </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
-
-  </li>
-
-      
-      
-    </ul>
+    <h1 class="article-title" itemprop="name">
+      Effective Objective 2.0
+    </h1>
   
 
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/Effective-Objective-2-0/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy Cheng">
-      <meta itemprop="description" content="点点滴滴，记录累积">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伊水贝">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Effective Objective 2.0
-
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-12-14 12:10:51" itemprop="dateCreated datePublished" datetime="2018-12-14T12:10:51+08:00">2018-12-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-29 17:14:33" itemprop="dateModified" datetime="2018-12-29T17:14:33+08:00">2018-12-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
       </header>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
+    <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Effective-Objective-2-0"><a href="#Effective-Objective-2-0" class="headerlink" title="Effective Objective 2.0"></a>Effective Objective 2.0</h1><p>(编写高质量iOS与OS X代码的52个有效方法)</p>
 <h2 id="1-runtime-："><a href="#1-runtime-：" class="headerlink" title="1. runtime ："></a>1. runtime ：</h2><ul>
@@ -824,412 +444,145 @@
 
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/ios/" rel="tag"># ios</a>
-          
-            <a href="/tags/Effective-Objective-2-0/" rel="tag"># Effective Objective 2.0</a>
-          
-            <a href="/tags/高质量/" rel="tag"># 高质量</a>
-          
-            <a href="/tags/52个有效方法/" rel="tag"># 52个有效方法</a>
-          
-        </div>
-      
-
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/14/Effective-Objective-2-0/" data-id="cjq99rulc001cplfycppexit7" class="article-share-link">Share</a>
       
       
-      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/52个有效方法/">52个有效方法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Effective-Objective-2-0/">Effective Objective 2.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高质量/">高质量</a></li></ul>
 
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/05/14/GCD-to-Explain-In-Detail/" rel="next" title="GCD to Explain In Detail ">
-                <i class="fa fa-chevron-left"></i> GCD to Explain In Detail 
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/29/Private-Pods/" rel="prev" title="Private Pods">
-                Private Pods <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
     </footer>
   </div>
   
+    
+<nav id="article-nav">
   
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
+    <a href="/2018/12/29/Private-Pods/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-          
+          Private Pods
+        
+      </div>
+    </a>
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  
+    <a href="/2018/05/14/GCD-to-Explain-In-Detail/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GCD to Explain In Detail </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/hello-world/">hello world</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ios/">ios</a></li></ul>
     </div>
   </div>
 
-  <aside id="sidebar" class="sidebar">
+
+  
     
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Roy Cheng">
-            
-              <p class="site-author-name" itemprop="name">Roy Cheng</p>
-              <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">11</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">16</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </div>
-
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Effective-Objective-2-0"><span class="nav-number">1.</span> <span class="nav-text">Effective Objective 2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-runtime-："><span class="nav-number">1.1.</span> <span class="nav-text">1. runtime ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-在类的头文件中尽量少引入其他头文件"><span class="nav-number">1.2.</span> <span class="nav-text">2. 在类的头文件中尽量少引入其他头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-多用字面量语法，少用与之等价的方法"><span class="nav-number">1.3.</span> <span class="nav-text">3. 多用字面量语法，少用与之等价的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-多用类型常量，少用-define预处理指令"><span class="nav-number">1.4.</span> <span class="nav-text">4. 多用类型常量，少用#define预处理指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-用枚举表示状态、选项、状态码"><span class="nav-number">1.5.</span> <span class="nav-text">5. 用枚举表示状态、选项、状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-理解”属性”这一概念"><span class="nav-number">1.6.</span> <span class="nav-text">6. 理解”属性”这一概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-在对象内部尽量直接访问实例变量"><span class="nav-number">1.7.</span> <span class="nav-text">7. 在对象内部尽量直接访问实例变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-理解“对象等同性”这一概念"><span class="nav-number">1.8.</span> <span class="nav-text">8. 理解“对象等同性”这一概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-以“类簇模式”隐藏实现细节"><span class="nav-number">1.9.</span> <span class="nav-text">9. 以“类簇模式”隐藏实现细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-在既有类中使用关联对象存放自定义数据"><span class="nav-number">1.10.</span> <span class="nav-text">10. 在既有类中使用关联对象存放自定义数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-理解objc-msgSend的作用"><span class="nav-number">1.11.</span> <span class="nav-text">11. 理解objc_msgSend的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-理解消息转发机制"><span class="nav-number">1.12.</span> <span class="nav-text">12. 理解消息转发机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-用“方法调配技术”调试“黑盒方法”"><span class="nav-number">1.13.</span> <span class="nav-text">13. 用“方法调配技术”调试“黑盒方法”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-理解“类对象”的用意"><span class="nav-number">1.14.</span> <span class="nav-text">14. 理解“类对象”的用意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-用前缀避免命名空间冲突"><span class="nav-number">1.15.</span> <span class="nav-text">15. 用前缀避免命名空间冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-提供全能初始化方法"><span class="nav-number">1.16.</span> <span class="nav-text">16. 提供全能初始化方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-实现description方法"><span class="nav-number">1.17.</span> <span class="nav-text">17. 实现description方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-尽量使用不可变字符串"><span class="nav-number">1.18.</span> <span class="nav-text">18. 尽量使用不可变字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-使用清晰而协调的命名方式"><span class="nav-number">1.19.</span> <span class="nav-text">19. 使用清晰而协调的命名方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-为私有方法名前加前缀"><span class="nav-number">1.20.</span> <span class="nav-text">20. 为私有方法名前加前缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-理解Objective-C-错误模型"><span class="nav-number">1.21.</span> <span class="nav-text">21. 理解Objective-C 错误模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-理解NSCopying协议"><span class="nav-number">1.22.</span> <span class="nav-text">22. 理解NSCopying协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-通过委托与数据源协议进行对象间通信"><span class="nav-number">1.23.</span> <span class="nav-text">23. 通过委托与数据源协议进行对象间通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-将类的实现代码分散在便于管理的数个分类之中"><span class="nav-number">1.24.</span> <span class="nav-text">24. 将类的实现代码分散在便于管理的数个分类之中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-总是为第三方类的分类名称加前缀"><span class="nav-number">1.25.</span> <span class="nav-text">25. 总是为第三方类的分类名称加前缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-勿在分类中声明属性"><span class="nav-number">1.26.</span> <span class="nav-text">26. 勿在分类中声明属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27-使用“class-continuation分类”隐藏实现细节"><span class="nav-number">1.27.</span> <span class="nav-text">27. 使用“class-continuation分类”隐藏实现细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#28-通过协议提供匿名对象"><span class="nav-number">1.28.</span> <span class="nav-text">28. 通过协议提供匿名对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#29-理解引用计数"><span class="nav-number">1.29.</span> <span class="nav-text">29. 理解引用计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30-以ARC简化引用计数"><span class="nav-number">1.30.</span> <span class="nav-text">30. 以ARC简化引用计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-在dealloc方法中只释放引用并解除监听"><span class="nav-number">1.31.</span> <span class="nav-text">31. 在dealloc方法中只释放引用并解除监听</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#32-编写“异常安全代码”时留意内存管理问题"><span class="nav-number">1.32.</span> <span class="nav-text">32. 编写“异常安全代码”时留意内存管理问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#33-以弱引用避免保留环"><span class="nav-number">1.33.</span> <span class="nav-text">33. 以弱引用避免保留环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#34-以“自动释放池块”降低内存峰值"><span class="nav-number">1.34.</span> <span class="nav-text">34. 以“自动释放池块”降低内存峰值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35-用“僵尸对象”调试内存管理问题"><span class="nav-number">1.35.</span> <span class="nav-text">35. 用“僵尸对象”调试内存管理问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#36-不要使用retainCount"><span class="nav-number">1.36.</span> <span class="nav-text">36. 不要使用retainCount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#37-理解“块”这一概念"><span class="nav-number">1.37.</span> <span class="nav-text">37. 理解“块”这一概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38-为常用的块类型创建typedef"><span class="nav-number">1.38.</span> <span class="nav-text">38. 为常用的块类型创建typedef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#39-用handler块降低代码分散程度"><span class="nav-number">1.39.</span> <span class="nav-text">39. 用handler块降低代码分散程度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#40-用块引用其所属对象时不要出现保留环"><span class="nav-number">1.40.</span> <span class="nav-text">40. 用块引用其所属对象时不要出现保留环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#41-多用派发队列，少用同步锁"><span class="nav-number">1.41.</span> <span class="nav-text">41. 多用派发队列，少用同步锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42-多用GCD-少用performSelector系列方法"><span class="nav-number">1.42.</span> <span class="nav-text">42. 多用GCD,少用performSelector系列方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#43-掌握GCD及操作队列的使用时机"><span class="nav-number">1.43.</span> <span class="nav-text">43. 掌握GCD及操作队列的使用时机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#44-通过Dispatch-Group机制，根据系统资源状况来执行任务"><span class="nav-number">1.44.</span> <span class="nav-text">44. 通过Dispatch Group机制，根据系统资源状况来执行任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#45-使用dispatch-once来执行只需运行一次的线程安全代码"><span class="nav-number">1.45.</span> <span class="nav-text">45. 使用dispatch_once来执行只需运行一次的线程安全代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#46-不用使用dispatch-get-current-queue"><span class="nav-number">1.46.</span> <span class="nav-text">46. 不用使用dispatch_get_current_queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#47-熟悉系统框架"><span class="nav-number">1.47.</span> <span class="nav-text">47. 熟悉系统框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#48-多用块枚举，少用for循环"><span class="nav-number">1.48.</span> <span class="nav-text">48. 多用块枚举，少用for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#49-对自定义其内存管理语义的collection使用无缝桥接"><span class="nav-number">1.49.</span> <span class="nav-text">49. 对自定义其内存管理语义的collection使用无缝桥接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#50-构建缓存时选用NSCache而非NSDictionary"><span class="nav-number">1.50.</span> <span class="nav-text">50. 构建缓存时选用NSCache而非NSDictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#51-精简initialize-与-load-的实现代码"><span class="nav-number">1.51.</span> <span class="nav-text">51. 精简initialize 与 load 的实现代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#52-别忘了NSTimer会保留其目标对象"><span class="nav-number">1.52.</span> <span class="nav-text">52. 别忘了NSTimer会保留其目标对象</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
-
-      
-
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/52个有效方法/">52个有效方法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Effective-Objective-2-0/">Effective Objective 2.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IJKMediaFramework/">IJKMediaFramework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/create/">create</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ijkplayer/">ijkplayer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命令/">命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/框架/">框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/终端/">终端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频直播/">视频直播</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/静态库/">静态库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高质量/">高质量</a></li></ul>
     </div>
-  </aside>
+  </div>
 
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Roy Cheng</span>
 
   
-
-  
-</div>
-
-
-
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v6.6.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-    
-
-    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/52个有效方法/" style="font-size: 10px;">52个有效方法</a> <a href="/tags/Effective-Objective-2-0/" style="font-size: 10px;">Effective Objective 2.0</a> <a href="/tags/IJKMediaFramework/" style="font-size: 10px;">IJKMediaFramework</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/create/" style="font-size: 10px;">create</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/ijkplayer/" style="font-size: 10px;">ijkplayer</a> <a href="/tags/ios/" style="font-size: 20px;">ios</a> <a href="/tags/mac/" style="font-size: 20px;">mac</a> <a href="/tags/命令/" style="font-size: 10px;">命令</a> <a href="/tags/框架/" style="font-size: 10px;">框架</a> <a href="/tags/终端/" style="font-size: 10px;">终端</a> <a href="/tags/视频直播/" style="font-size: 10px;">视频直播</a> <a href="/tags/静态库/" style="font-size: 10px;">静态库</a> <a href="/tags/高质量/" style="font-size: 10px;">高质量</a>
+    </div>
   </div>
 
   
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
+    </div>
+  </div>
 
 
   
-  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/29/Private-Pods/">Private Pods</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/14/Effective-Objective-2-0/">Effective Objective 2.0</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/14/GCD-to-Explain-In-Detail/">GCD to Explain In Detail </a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/Usage-Note-performSelector/">Usage|Note:performSelector</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/09/GCD-execution-sequence/">GCD - execution sequence</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
   
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
+</aside>
+        
+      </div>
+      <footer id="footer">
   
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Roy Cheng<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
   
-
-
-  <script src="/js/src/utils.js?v=6.6.0"></script>
-
-  <script src="/js/src/motion.js?v=6.6.0"></script>
-
-
-
+    <a href="/" class="mobile-nav-link">Home</a>
   
+    <a href="/archives" class="mobile-nav-link">Archives</a>
   
+</nav>
+    
 
-  
-  <script src="/js/src/scrollspy.js?v=6.6.0"></script>
-<script src="/js/src/post-details.js?v=6.6.0"></script>
-
-
-
-  
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <script src="/js/src/bootstrap.js?v=6.6.0"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-
-  
+<script src="/js/script.js"></script>
 
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+  </div>
 </body>
 </html>
