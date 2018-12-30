@@ -134,33 +134,29 @@
 
 
 
-  <meta name="description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压，解压后的文件目录如下图： 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 gith">
+  <meta name="description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压。 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 github 上README.m">
 <meta name="keywords" content="ios,ijkplayer,视频直播,框架,静态库,IJKMediaFramework">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS中集成ijkplayer视频直播框架">
 <meta property="og:url" content="http://onlytimer.com/2017/09/25/iOS中集成ijkplayer视频直播框架/index.html">
 <meta property="og:site_name" content="伊水贝">
-<meta property="og:description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压，解压后的文件目录如下图： 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 gith">
+<meta property="og:description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压。 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 github 上README.m">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-728d89123de76da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-c3b8f8bcae855612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-96d2217e323aab4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-20b7360630592cb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-d8e86e2be4ed3960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-607cc84c212faf90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-a37b61a3714319b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-bbc0adc479cebb69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-daa4498f7e0746d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-344cda905745ff39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-3dc9e54521817ae5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-d025e12bf804ee05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-8d228ab56eb77f43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1803339-391a45a214aae76a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-12-29T09:18:10.997Z">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d8e86e2be4ed3960.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-607cc84c212faf90.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-a37b61a3714319b7.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-bbc0adc479cebb69.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-daa4498f7e0746d0.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-344cda905745ff39.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-3dc9e54521817ae5.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d025e12bf804ee05.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-8d228ab56eb77f43.png">
+<meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-391a45a214aae76a.png">
+<meta property="og:updated_time" content="2018-12-30T17:35:38.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中集成ijkplayer视频直播框架">
-<meta name="twitter:description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压，解压后的文件目录如下图： 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 gith">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1803339-728d89123de76da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压。 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 github 上README.m">
+<meta name="twitter:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d8e86e2be4ed3960.png">
 
 
 
@@ -453,7 +449,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:18:10" itemprop="dateModified" datetime="2018-12-29T17:18:10+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 01:35:38" itemprop="dateModified" datetime="2018-12-31T01:35:38+08:00">2018-12-31</time>
               
             
           </span>
@@ -506,48 +502,70 @@
       
         <p><code>ijkplayer</code>是一款使用率极高的<strong>视频直播</strong>框架，基于<code>ffmpeg</code>，支持<code>Android</code>和<code>ios</code>，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把<code>ijkplayer</code>打包成<strong>静态库</strong>。</p>
 <h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
-<p>下载完成后解压，解压后的文件目录如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1803339-728d89123de76da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录"></p>
+<p>下载完成后解压。</p>
 <h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
 <p>####编译步骤：</p>
 <ul>
-<li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下，也就是下载完解压后的文件夹, 如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-c3b8f8bcae855612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cd到这个文件夹"></p>
+<li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下</p>
 </li>
-<li><p>执行命令行<code>./init-ios.sh</code>, 这一步是去下载 <code>ffmpeg</code> 的, 时间会久一点, 耐心等一下.如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-96d2217e323aab4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载FFmpeg"></p>
+<li><p>执行命令行 <code>./init-ios.sh</code></p>
+<blockquote>
+<p>这一步是去下载 <code>ffmpeg</code> 的 </p>
+</blockquote>
+<blockquote>
+<p><strong>时间会久一点, 耐心等一下.</strong></p>
+</blockquote>
 </li>
-<li><p>下载完成后, 执行<code>cd ios</code>, 也就是进入到 ios目录中, 如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-20b7360630592cb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入目录"></p>
+<li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
 </li>
-<li><p>进入 <code>ios</code> 文件夹后, 在终端依次执行<br><code>./compile-ffmpeg.sh clean</code>和<br><code>./compile-ffmpeg.sh all</code>命令,<br>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
+<li><p>在终端依次执行：</p>
+  <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> clean</span><br><span class="line"></span><br><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> all`</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-d8e86e2be4ed3960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编译FFmpeg"><br>编译时间较久, 耐心等待一下.</p>
-<a id="more"></a>
-<h3 id="3、打包IJKMediaFramework-framework框架"><a href="#3、打包IJKMediaFramework-framework框架" class="headerlink" title="3、打包IJKMediaFramework.framework框架"></a>3、打包IJKMediaFramework.framework框架</h3><ul>
-<li>首先打开工程<code>IJKMediaPlayer.xcodeproj</code>, 位置如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-607cc84c212faf90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="打开工程"></li>
-</ul>
+<pre><code>&gt;编译 `ffmpeg`, 也就是`README.md`中这两步, 如下图:
+</code></pre><a id="more"></a>    
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d8e86e2be4ed3960.png" alt="编译FFmpeg"></p>
+<blockquote>
+<p><strong>编译时间较久, 耐心等待一下.</strong></p>
+</blockquote>
+<h3 id="3、打包IJKMediaFramework-framework框架"><a href="#3、打包IJKMediaFramework-framework框架" class="headerlink" title="3、打包IJKMediaFramework.framework框架"></a>3、打包IJKMediaFramework.framework框架</h3><blockquote>
+<p>首先打开工程 <code>IJKMediaPlayer.xcodeproj</code>, 位置如下图:</p>
+</blockquote>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-607cc84c212faf90.png" alt="打开工程"></p>
+<blockquote>
 <p>打开后是这样的, 如下图:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-a37b61a3714319b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="要打包的工程"></p>
-<ul>
-<li>工程打开后设置工程的 <code>scheme</code>, 具体步骤如下图:</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-bbc0adc479cebb69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="scheme"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-daa4498f7e0746d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择Release"></p>
-<ul>
-<li>设置好 <code>scheme</code> 后, 分别选择真机和模拟器进行编译, 编译完成后, 进入 <code>Finder</code>, 如下图:</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-344cda905745ff39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行后生成的文件"></p>
-<p>进入 <code>Finder</code> 后, 可以看到有真机和模拟器两个版本的编译结果, 如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-3dc9e54521817ae5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编译结果"></p>
-<ul>
-<li><p>打开<strong>终端</strong>, 进行合并命令，具体格式为:</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-a37b61a3714319b7.png" alt="要打包的工程"></p>
+<blockquote>
+<p>工程打开后设置工程的 <code>scheme</code>, 具体步骤如下图:</p>
+</blockquote>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-bbc0adc479cebb69.png" alt="scheme"></p>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-daa4498f7e0746d0.png" alt="选择release"></p>
+<blockquote>
+<p>设置好 <code>scheme</code> 后, 分别选择真机和模拟器进行编译, 编译完成后, 进入 <code>Finder</code>, 如下图:</p>
+</blockquote>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-344cda905745ff39.png" alt="运行后生产的文件"></p>
+<blockquote>
+<p>进入 <code>Finder</code> 后, 可以看到有真机和模拟器两个版本的编译结果, 如下图:</p>
+</blockquote>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-3dc9e54521817ae5.png" alt="编译结果"></p>
+<blockquote>
+<p>打开<strong>终端</strong>, 进行合并命令，具体格式为:</p>
+</blockquote>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>合并后如下图:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-d025e12bf804ee05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="合并后生成的文件"></p>
+</blockquote>
+<p> <img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d025e12bf804ee05.png" alt="合并后生产的文件"></p>
+<blockquote>
 <p>下面很重要, 需要用合并后的<code>IJKMediaFramework</code>把原来的<code>IJKMediaFramework</code>替换掉, 如下图, 希望你能看懂:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-8d228ab56eb77f43.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="用合并生成的文件替换原来的文件"></p>
+</blockquote>
+<p> <img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-8d228ab56eb77f43.png" alt="用合并后生产的文件替换原来的"></p>
+<blockquote>
 <p>上图中的 1、2 两步完成后, <strong>绿色</strong>框住的那个<code>IJKMediaFramework.framework</code>文件就是我们需要的框架了, 可以复制出来, 稍后我们需要导入工程使用`.</p>
-</li>
-</ul>
+</blockquote>
 <h3 id="4、iOS工程中集成ijkplayer"><a href="#4、iOS工程中集成ijkplayer" class="headerlink" title="4、iOS工程中集成ijkplayer"></a>4、iOS工程中集成ijkplayer</h3><p>新建工程, 导入合并后的<code>IJKMediaFramework.framework</code>以及相关依赖框架以及相关依赖框架,如下图:</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-391a45a214aae76a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="导入framework及依赖框架"></p>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-391a45a214aae76a.png" alt="导入framework及依赖框架"></p>
 <p>导入框架后, <code>ViewController.m</code>进行测试, 首先导入<code>IJKMediaFramework.h</code>头文件, <strong>编译</strong>，如果没有错说明集成成功。</p>
 <p>至此, <code>ijkplayer</code> 集成完毕!</p>
 

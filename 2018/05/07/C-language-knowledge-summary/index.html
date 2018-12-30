@@ -471,7 +471,7 @@
       
 
       
-        <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">strcpy(字符数组,字符串);     //拷贝</span><br><span class="line">strcat(字符数组,字符串);     //拼接</span><br><span class="line">strcmp(字符串1,字符串2);     //比较</span><br><span class="line">strlwr(字符串);             //转小写</span><br><span class="line">strupr(字符串);             //转大写</span><br><span class="line">strlen(字符串);             //算长度</span><br><span class="line">strncpy(字符数组,字符串1,n); //字符串1中前n个字符拷贝到字符数组</span><br></pre></td></tr></table></figure>
+        <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">strcpy</span>(字符数组,字符串);     <span class="comment">//拷贝</span></span><br><span class="line"><span class="selector-tag">strcat</span>(字符数组,字符串);     <span class="comment">//拼接</span></span><br><span class="line"><span class="selector-tag">strcmp</span>(字符串<span class="number">1</span>,字符串<span class="number">2</span>);     <span class="comment">//比较</span></span><br><span class="line"><span class="selector-tag">strlwr</span>(字符串);             <span class="comment">//转小写</span></span><br><span class="line"><span class="selector-tag">strupr</span>(字符串);             <span class="comment">//转大写</span></span><br><span class="line"><span class="selector-tag">strlen</span>(字符串);             <span class="comment">//算长度</span></span><br><span class="line"><span class="selector-tag">strncpy</span>(字符数组,字符串<span class="number">1</span>,n); <span class="comment">//字符串1中前n个字符拷贝到字符数组</span></span><br></pre></td></tr></table></figure>
 <h3 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h3><ul>
 <li>静态局部变量:</li>
 </ul>
@@ -507,7 +507,7 @@
 <p>数组 <code>a[10] = {1,2,3,4,5,6,7,8,9,10};</code>则<code>a++</code>无法实现</p>
 </blockquote>
 <blockquote>
-<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (p = a; p&lt; a + 10; p++) </span><br><span class="line">printf(&quot;%d&quot;,*p)</span><br></pre></td></tr></table></figure></p>
+<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：<br><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (p = <span class="keyword">a</span>; p&lt; <span class="keyword">a</span> + <span class="number">10</span>; p++) </span><br><span class="line">printf(<span class="string">"%d"</span>,*p)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p><strong>实参数组名代表一个固定的地址，或者说是指针常量，但形参数组名并不是一个固定的地址，而是按指针变量处理</strong></p>
 <blockquote>
@@ -529,7 +529,7 @@
 <blockquote>
 <p>a[i] 始终等价于(恒定于) * (a + i);</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">a[1] &lt;===&gt; *a+1;</span><br><span class="line">a[0]+1 &lt;===&gt; *(a+0)+1 &lt;===&gt; &amp;a[0][1];</span><br><span class="line">a[1]+2 &lt;===&gt; *(a+1)+2 &lt;===&gt; &amp;a[1][2];</span><br><span class="line">*a[i]+j  或者 *(*(a+i)+j) &lt;===&gt; a[i][j]的值</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">a[1] &lt;===&gt; *a+1;</span><br><span class="line">a[0]+1 &lt;===&gt; *(a+0)+1 &lt;===&gt; &amp;a[0][1];</span><br><span class="line">a[1]+2 &lt;===&gt; *(a+1)+2 &lt;===&gt; &amp;a[1][2];</span><br><span class="line">*a[i]+j  或者 *(*(a+i)+j) &lt;===&gt; a[i][j]的值</span><br></pre></td></tr></table></figure>
 <h3 id="通过指针引用字符串"><a href="#通过指针引用字符串" class="headerlink" title="通过指针引用字符串"></a>通过指针引用字符串</h3><ul>
 <li>字符指针变量指向一个字符串常量； <code>char *string = &quot;I Love China!&quot;</code></li>
 <li>C语言中只有字符变量，没有字符串变量</li>
@@ -553,7 +553,7 @@
 <h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>typedef struct {<br>    char *name;<br>    char name[20];<br>} 使用数组及指针的区别：</p>
 <p>char *name 未分配存储空间；而数组名name是一个常量指针，已分配存储空间，赋值操作strcpy;</p>
 <h3 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h3><p>free () 标记删除，不清楚内容<br>memset ,memcpy, memcmp，均是按 <strong>字节</strong> 操作内存，既可以用于堆内存也可以用于栈内存。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">char *name = (char *)malloc(sizeof(char)*20);</span><br><span class="line">strcpy(name, &quot;iPhone&quot;); //已有存储空间</span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> *name = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">20</span>);</span><br><span class="line"><span class="built_in">strcpy</span>(name, <span class="string">"iPhone"</span>); <span class="comment">//已有存储空间</span></span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
 <p><code>`</code></p>
 
       

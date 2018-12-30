@@ -423,12 +423,24 @@
                 
               
 
-              <time title="Created: 2018-12-29 12:01:42 / Modified: 12:03:18" itemprop="dateCreated datePublished" datetime="2018-12-29T12:01:42+08:00">2018-12-29</time>
+              <time title="Created: 2018-12-29 12:01:42" itemprop="dateCreated datePublished" datetime="2018-12-29T12:01:42+08:00">2018-12-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-31 00:39:40" itemprop="dateModified" datetime="2018-12-31T00:39:40+08:00">2018-12-31</time>
               
             
           </span>
@@ -467,10 +479,10 @@
 <h2 id="2-Add-your-Private-Repo-to-your-CocoaPods-installation"><a href="#2-Add-your-Private-Repo-to-your-CocoaPods-installation" class="headerlink" title="2.Add your Private Repo to your CocoaPods installation"></a>2.Add your Private Repo to your CocoaPods installation</h2><ul>
 <li>拉取 Pod 仓库到本地:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo add REPO_NAME SOURCE_URL</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">$ pod repo <span class="keyword">add</span><span class="bash"> REPO_NAME SOURCE_URL</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>To check if your installation is successful and ready to go:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd ~/.cocoapods/repos/REPO_NAME</span><br><span class="line">$ pod repo lint .</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/.cocoapods/repos/REPO_NAME</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pod repo lint .</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="3-创建私有-Pod-工程文件"><a href="#3-创建私有-Pod-工程文件" class="headerlink" title="3.创建私有 Pod 工程文件"></a>3.创建私有 Pod 工程文件</h2><ul>
@@ -478,30 +490,30 @@
 <ul>
 <li>在工程根目录下执行命令，建立本地工程和远程仓库的关联</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote add origin SOURCE_URL</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">$ git remote <span class="keyword">add</span><span class="bash"> origin SOURCE_URL</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>本地工程push到远程仓库</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;修改信息&quot;</span><br><span class="line">$ git push -u origin master</span><br><span class="line"></span><br><span class="line"># 组件化开发时，我们希望某些基础模块的内容是稳定的，不会经常变更。</span><br><span class="line"># 基础模块开发稳定后需要打 tag，保证主工程的开发过程中不会因为子工程的变更而变化。</span><br><span class="line"># 这里我们在工程上打 tag 并 push 到远程仓库。</span><br><span class="line"></span><br><span class="line">$ git tag 0.0.1</span><br><span class="line">$ git push --tags</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git add .</span><br><span class="line"><span class="variable">$ </span>git commit -m <span class="string">"修改信息"</span></span><br><span class="line"><span class="variable">$ </span>git push -u origin master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 组件化开发时，我们希望某些基础模块的内容是稳定的，不会经常变更。</span></span><br><span class="line"><span class="comment"># 基础模块开发稳定后需要打 tag，保证主工程的开发过程中不会因为子工程的变更而变化。</span></span><br><span class="line"><span class="comment"># 这里我们在工程上打 tag 并 push 到远程仓库。</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$ </span>git tag <span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span></span><br><span class="line"><span class="variable">$ </span>git push --tags</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="4-创建私有-Pod-的-podspec"><a href="#4-创建私有-Pod-的-podspec" class="headerlink" title="4. 创建私有 Pod 的 podspec"></a>4. 创建私有 Pod 的 podspec</h2><ul>
 <li>在工程的根目录下执行：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod spec create xxx</span><br><span class="line"># xxx为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ pod <span class="keyword">spec</span> create xxx</span><br><span class="line"><span class="comment"># xxx为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>根据实际情况配置<code>podspec</code>文件</li>
 </ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/721001-d95ed7ac380f3ffe.png?imageMogr2/auto-orient/" alt="根据实际情况配置"></p>
+<p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-27-721001-d95ed7ac380f3ffe.png" alt="根据实际情况配置"></p>
 <ul>
 <li><p>验证 podspec 文件有效性:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod lib lint</span><br><span class="line"></span><br><span class="line">$ pod spec lint</span><br><span class="line"></span><br><span class="line"># 都验证通过后，podspec 文件配置成功。</span><br><span class="line"># 可选参数 --verbose   --allow-warnings</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">$ pod <span class="class"><span class="keyword">lib</span> <span class="title">lint</span></span></span><br><span class="line"></span><br><span class="line">$ pod spec lint</span><br><span class="line"></span><br><span class="line"><span class="comment"># 都验证通过后，podspec 文件配置成功。</span></span><br><span class="line"><span class="comment"># 可选参数 --verbose   --allow-warnings</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>提交 podspec 至私有 Spec 仓库</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo push REPO_NAME SPEC_NAME.podspec</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line">$ pod repo <span class="keyword">push </span>REPO_NAME SPEC_NAME.podspec</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example"><a href="#Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example" class="headerlink" title="Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:"></a>Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source &apos;URL_TO_REPOSITORY&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example"><a href="#Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example" class="headerlink" title="Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:"></a>Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> <span class="string">'URL_TO_REPOSITORY'</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -809,7 +821,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:15:28" itemprop="dateModified" datetime="2018-12-29T17:15:28+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 00:48:25" itemprop="dateModified" datetime="2018-12-31T00:48:25+08:00">2018-12-31</time>
               
             
           </span>
@@ -867,31 +879,6 @@
 <blockquote>
 <p>dispatch_get_global_queue(优先级,0);<br>优先级：high、default、low、background;</p>
 </blockquote>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">区别</th>
-<th style="text-align:center">并发队列</th>
-<th style="text-align:center">串行队列</th>
-<th style="text-align:center">主队列</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">同步(sync)</td>
-<td style="text-align:center">没有开启新线程串行执行任务</td>
-<td style="text-align:center">没有开启新线程串行执行任务</td>
-<td style="text-align:center">主线程调用：死锁卡住不执行;其他线程调用：没有开启新线程，串行执行任务</td>
-</tr>
-<tr>
-<td style="text-align:center">异步(async)</td>
-<td style="text-align:center">有开启新线程并发执行任务</td>
-<td style="text-align:center">有开启新线程（1条）串行执行任务</td>
-<td style="text-align:center">没有开启新线程，串行执行任务</td>
-</tr>
-</tbody>
-</table>
-<h3 id="GCD线程间通信"><a href="#GCD线程间通信" class="headerlink" title="GCD线程间通信"></a>GCD线程间通信</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 获取全局并发队列</span><br><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0); </span><br><span class="line">        </span><br><span class="line">    dispatch_async(queue, ^&#123;</span><br><span class="line">        // 异步追加任务</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        // 回到主线程</span><br><span class="line">        dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            // 追加在主线程中执行的任务</span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1040,7 +1027,7 @@
       
         
           
-            <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[self method];//直接调用</span><br><span class="line">[self performSelector:@selector(method) withObject:nil];</span><br></pre></td></tr></table></figure>
+            <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> <span class="function"><span class="keyword">method</span>];</span><span class="comment">//直接调用</span></span><br><span class="line">[<span class="keyword">self</span> performSelector:@<span class="keyword">selector</span>(<span class="function"><span class="keyword">method</span>) <span class="title">withObject</span>:</span><span class="keyword">nil</span>];</span><br></pre></td></tr></table></figure>
 <ul>
 <li>performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（Xcode有提示）。</li>
 </ul>
@@ -1053,35 +1040,35 @@
 <h3 id="方法分析："><a href="#方法分析：" class="headerlink" title="方法分析："></a>方法分析：</h3><ul>
 <li>同步执行方法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (id)performSelector:(SEL)aSelector;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector;  </span><br><span class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>object;  </span><br><span class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>object1 withObject:<span class="params">(id)</span>object2;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这三个方法，均为同步执行，与线程无关，主线程和子线程中均可调用成功。等同于直接调用该方法。在需要动态的去调用方法的时候去使用。</p>
 </blockquote>
 <ul>
 <li>异步执行方法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay inModes:(NSArray *)modes;  </span><br><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay inModes:<span class="params">(NSArray *)</span>modes;  </span><br><span class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法为异步执行，即使delay传参为0，仍为异步执行。只能在主线程中执行，在子线程中不会调到aSelector方法。<br>在方法未到执行时间之前，取消方法为：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(id)anArgument;  </span><br><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget;</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">cancelPreviousPerformRequestsWithTarget:</span>(id)aTarget <span class="string">selector:</span>(SEL)aSelector <span class="string">object:</span>(id)anArgument;  </span><br><span class="line">+ (<span class="keyword">void</span>)<span class="string">cancelPreviousPerformRequestsWithTarget:</span>(id)aTarget;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>NOTE:<br><strong>在调用方法之前或在该方法所在的viewController生命周期结束的时候去调用取消函数，以确保不会引起内存泄露。</strong></p>
 </blockquote>
 <p><strong>拓展：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这个方法是单线程的，也就是说只有当前调用次方法的函数执行完毕后，selector方法才会被调用。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)changeText:(NSString *)string  </span><br><span class="line">&#123;  </span><br><span class="line">    NSLog(@&quot;changeText:(NSString *)string&quot;);  </span><br><span class="line">&#125;   </span><br><span class="line">- (void)changePopoverSize  </span><br><span class="line">&#123;     </span><br><span class="line">    [self performSelector:@selector(changeText:) withObject:@&quot;Happy aha&quot; afterDelay:1];  </span><br><span class="line">    NSLog(@&quot;changePopoverSize#####end&quot;);  </span><br><span class="line">    sleep(5);  </span><br><span class="line">    NSLog(@&quot;changePopoverSize-----end&quot;);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)<span class="string">changeText:</span>(NSString *)string  </span><br><span class="line">&#123;  </span><br><span class="line">    NSLog(@<span class="string">"changeText:(NSString *)string"</span>);  </span><br><span class="line">&#125;   </span><br><span class="line">- (<span class="keyword">void</span>)changePopoverSize  </span><br><span class="line">&#123;     </span><br><span class="line">    [self <span class="string">performSelector:</span><span class="meta">@selector</span>(<span class="string">changeText:</span>) <span class="string">withObject:</span>@<span class="string">"Happy aha"</span> <span class="string">afterDelay:</span><span class="number">1</span>];  </span><br><span class="line">    NSLog(@<span class="string">"changePopoverSize#####end"</span>);  </span><br><span class="line">    sleep(<span class="number">5</span>);  </span><br><span class="line">    NSLog(@<span class="string">"changePopoverSize-----end"</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>打印结果：</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">changePopoverSize#####end</span><br><span class="line">changePopoverSize-----end</span><br><span class="line">changeText:(NSString *)string</span><br></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">changePopoverSize#####end</span><br><span class="line">changePopoverSize-----end</span><br><span class="line">changeText:(NSString *)string</span><br></pre></td></tr></table></figure>
 <ul>
 <li>wait 函数</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelectorInBackground:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg  </span><br><span class="line">或者  </span><br><span class="line">- <span class="params">(void)</span>performSelectorOnMainThread:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg waitUntilDone:<span class="params">(BOOL)</span>wait;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法，在主线程和子线程中均可执行，均会调用主线程的aSelector方法；<br>如果设置wait为YES:等待当前线程执行完以后，主线程才会执行aSelector方法；</p>
 </blockquote>
@@ -1092,7 +1079,7 @@
 <ul>
 <li>多线程执行</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
+<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelectorInBackground:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg  </span><br><span class="line">或者  </span><br><span class="line">- <span class="params">(void)</span>performSelectorOnMainThread:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg waitUntilDone:<span class="params">(BOOL)</span>wait;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1234,16 +1221,16 @@
         
           
             <p><strong>GCD经典面试题</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">	        NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);</span><br><span class="line">	        NSLog(@&quot;A&quot;);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    NSLog(@&quot;B&quot;);</span><br><span class="line">	    dispatch_queue_t temp = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0);</span><br><span class="line">	    </span><br><span class="line">	    dispatch_sync(temp, ^&#123;</span><br><span class="line">	        NSLog(@&quot;3--%@&quot;,[NSThread currentThread]);</span><br><span class="line">	        NSLog(@&quot;C&quot;);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    </span><br><span class="line">	    dispatch_async(temp, ^&#123;</span><br><span class="line">	        NSLog(@&quot;4--%@&quot;,[NSThread currentThread]);</span><br><span class="line">	        NSLog(@&quot;D&quot;);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">	        NSLog(@&quot;5--%@&quot;,[NSThread currentThread]);</span><br><span class="line">	        NSLog(@&quot;E&quot;);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    </span><br><span class="line">	    [self performSelector:@selector(method) withObject:nil afterDelay:0.0];</span><br><span class="line">	    NSLog(@&quot;F&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)method &#123;</span><br><span class="line">	NSLog(@&quot;G&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"2--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"A"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    <span class="built_in">NSLog</span>(<span class="string">@"B"</span>);</span><br><span class="line">	    <span class="built_in">dispatch_queue_t</span> temp = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</span><br><span class="line">	    </span><br><span class="line">	    <span class="built_in">dispatch_sync</span>(temp, ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"3--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"C"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    </span><br><span class="line">	    <span class="built_in">dispatch_async</span>(temp, ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"4--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"D"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"5--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"E"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    </span><br><span class="line">	    [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span> afterDelay:<span class="number">0.0</span>];</span><br><span class="line">	    <span class="built_in">NSLog</span>(<span class="string">@"F"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)method &#123;</span><br><span class="line">	<span class="built_in">NSLog</span>(<span class="string">@"G"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>/<em>==================================================================================</em>/</p>
 <h3 id="答案有4个，编译结果现有2个-！"><a href="#答案有4个，编译结果现有2个-！" class="headerlink" title="答案有4个，编译结果现有2个 ！"></a>答案有4个，编译结果现有2个 ！</h3><blockquote>
 <p>答案①</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">B</span><br><span class="line">3--&lt;NSThread: 0x604000061f00&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line">2--&lt;NSThread: 0x604000061f00&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">A</span><br><span class="line">5--&lt;NSThread: 0x604000061f00&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">E</span><br><span class="line">6--&lt;NSThread: 0x604000061f00&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">G</span><br><span class="line">4--&lt;NSThread: 0x600000267100&gt;&#123;number = 3, name = (null)&#125;</span><br><span class="line">D</span><br></pre></td></tr></table></figure>
+<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">B</span><br><span class="line"><span class="number">3</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">2</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">A</span><br><span class="line"><span class="number">5</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">6</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">G</span><br><span class="line"><span class="number">4</span>--&lt;NSThread: <span class="number">0</span>x600000267100&gt;&#123;<span class="attr">number</span> = <span class="number">3</span>, <span class="attr">name</span> = (<span class="literal">null</span>)&#125;</span><br><span class="line">D</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>答案②</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">B</span><br><span class="line">3--&lt;NSThread: 0x60400007d3c0&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line">4--&lt;NSThread: 0x60000026c500&gt;&#123;number = 3, name = (null)&#125;</span><br><span class="line">D</span><br><span class="line">2--&lt;NSThread: 0x60400007d3c0&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">A</span><br><span class="line">5--&lt;NSThread: 0x60400007d3c0&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">E</span><br><span class="line">6--&lt;NSThread: 0x60400007d3c0&gt;&#123;number = 1, name = main&#125;</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
+<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">B</span><br><span class="line"><span class="number">3</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">4</span>--&lt;NSThread: <span class="number">0</span>x60000026c500&gt;&#123;<span class="attr">number</span> = <span class="number">3</span>, <span class="attr">name</span> = (<span class="literal">null</span>)&#125;</span><br><span class="line">D</span><br><span class="line"><span class="number">2</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">A</span><br><span class="line"><span class="number">5</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">6</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1396,7 +1383,7 @@
       
         
           
-            <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">strcpy(字符数组,字符串);     //拷贝</span><br><span class="line">strcat(字符数组,字符串);     //拼接</span><br><span class="line">strcmp(字符串1,字符串2);     //比较</span><br><span class="line">strlwr(字符串);             //转小写</span><br><span class="line">strupr(字符串);             //转大写</span><br><span class="line">strlen(字符串);             //算长度</span><br><span class="line">strncpy(字符数组,字符串1,n); //字符串1中前n个字符拷贝到字符数组</span><br></pre></td></tr></table></figure>
+            <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">strcpy</span>(字符数组,字符串);     <span class="comment">//拷贝</span></span><br><span class="line"><span class="selector-tag">strcat</span>(字符数组,字符串);     <span class="comment">//拼接</span></span><br><span class="line"><span class="selector-tag">strcmp</span>(字符串<span class="number">1</span>,字符串<span class="number">2</span>);     <span class="comment">//比较</span></span><br><span class="line"><span class="selector-tag">strlwr</span>(字符串);             <span class="comment">//转小写</span></span><br><span class="line"><span class="selector-tag">strupr</span>(字符串);             <span class="comment">//转大写</span></span><br><span class="line"><span class="selector-tag">strlen</span>(字符串);             <span class="comment">//算长度</span></span><br><span class="line"><span class="selector-tag">strncpy</span>(字符数组,字符串<span class="number">1</span>,n); <span class="comment">//字符串1中前n个字符拷贝到字符数组</span></span><br></pre></td></tr></table></figure>
 <h3 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h3><ul>
 <li>静态局部变量:</li>
 </ul>
@@ -1432,7 +1419,7 @@
 <p>数组 <code>a[10] = {1,2,3,4,5,6,7,8,9,10};</code>则<code>a++</code>无法实现</p>
 </blockquote>
 <blockquote>
-<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (p = a; p&lt; a + 10; p++) </span><br><span class="line">printf(&quot;%d&quot;,*p)</span><br></pre></td></tr></table></figure></p>
+<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：<br><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (p = <span class="keyword">a</span>; p&lt; <span class="keyword">a</span> + <span class="number">10</span>; p++) </span><br><span class="line">printf(<span class="string">"%d"</span>,*p)</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p><strong>实参数组名代表一个固定的地址，或者说是指针常量，但形参数组名并不是一个固定的地址，而是按指针变量处理</strong></p>
 <blockquote>
@@ -1454,7 +1441,7 @@
 <blockquote>
 <p>a[i] 始终等价于(恒定于) * (a + i);</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">a[1] &lt;===&gt; *a+1;</span><br><span class="line">a[0]+1 &lt;===&gt; *(a+0)+1 &lt;===&gt; &amp;a[0][1];</span><br><span class="line">a[1]+2 &lt;===&gt; *(a+1)+2 &lt;===&gt; &amp;a[1][2];</span><br><span class="line">*a[i]+j  或者 *(*(a+i)+j) &lt;===&gt; a[i][j]的值</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">a[1] &lt;===&gt; *a+1;</span><br><span class="line">a[0]+1 &lt;===&gt; *(a+0)+1 &lt;===&gt; &amp;a[0][1];</span><br><span class="line">a[1]+2 &lt;===&gt; *(a+1)+2 &lt;===&gt; &amp;a[1][2];</span><br><span class="line">*a[i]+j  或者 *(*(a+i)+j) &lt;===&gt; a[i][j]的值</span><br></pre></td></tr></table></figure>
 <h3 id="通过指针引用字符串"><a href="#通过指针引用字符串" class="headerlink" title="通过指针引用字符串"></a>通过指针引用字符串</h3><ul>
 <li>字符指针变量指向一个字符串常量； <code>char *string = &quot;I Love China!&quot;</code></li>
 <li>C语言中只有字符变量，没有字符串变量</li>
@@ -1478,7 +1465,7 @@
 <h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>typedef struct {<br>    char *name;<br>    char name[20];<br>} 使用数组及指针的区别：</p>
 <p>char *name 未分配存储空间；而数组名name是一个常量指针，已分配存储空间，赋值操作strcpy;</p>
 <h3 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h3><p>free () 标记删除，不清楚内容<br>memset ,memcpy, memcmp，均是按 <strong>字节</strong> 操作内存，既可以用于堆内存也可以用于栈内存。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">char *name = (char *)malloc(sizeof(char)*20);</span><br><span class="line">strcpy(name, &quot;iPhone&quot;); //已有存储空间</span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> *name = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">20</span>);</span><br><span class="line"><span class="built_in">strcpy</span>(name, <span class="string">"iPhone"</span>); <span class="comment">//已有存储空间</span></span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
 <p><code>`</code></p>
 
           
@@ -1826,52 +1813,52 @@
         
           <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
 <li><p>1、列出文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls 参数 目录名</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ls</span> 参数 目录名</span><br></pre></td></tr></table></figure>
 <p>例: 看看驱动目录下有什么:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls /System/Library/Extensions</span><br></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">ls /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参数 <strong>-w</strong> 显示中文，<strong>-l</strong> 详细信息， <strong>-a</strong> 包括隐藏文件</p>
 </blockquote>
 </li>
 <li><p>2、转换目录     </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 目录名</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 目录名</span><br></pre></td></tr></table></figure>
 <p>例：想到驱动目录下溜达一圈  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /System/Library/Extensions</span><br></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">cd /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3、建立新目录</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir 目录名</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> 目录名</span><br></pre></td></tr></table></figure>
 <p>例：在驱动目录下建一个备份目录 <code>backup</code>  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /System/Library/Extensions/backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>backup</span><br></pre></td></tr></table></figure>
 <p>在桌面上建一个备份目录 <code>backup</code>   </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop/</span>backup</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>4、拷贝文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp 参数 源文件 目标文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cp</span> 参数 源文件 目标文件</span><br></pre></td></tr></table></figure>
 <p>例：想把桌面的<code>Natit.kext</code> 拷贝到驱动目录中  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cp -R <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop/</span>Natit.kext <span class="regexp">/System/</span>Library<span class="regexp">/Extensions</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参数<strong>R</strong>表示对目录进行递归操作，<code>kext</code>在图形界面下看起来是个文件，实际上是个文件夹</p>
 </blockquote>
 <p>把驱动目录下的所有文件备份到桌面<code>backup</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cp -R <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>* <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop/</span>backup</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>5、删除文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm 参数 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">rm</span> 参数 文件</span><br></pre></td></tr></table></figure>
 <p>例：想删除驱动的缓存  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm -rf /System/Library/Extensions.kextcache</span><br><span class="line">rm -rf /System/Library/Extensions.mkext</span><br></pre></td></tr></table></figure>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">rm -rf /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions.kextcache</span><br><span class="line">rm -rf /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions.mkext</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参数<strong>－rf</strong> 表示递归和强制，千万要小心使用，如果执行了 <code>rm -rf /</code> 你的系统就全没了</p>
 </blockquote>
 </li>
 <li><p>6、移动文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight cos"><table><tr><td class="code"><pre><span class="line"><span class="keyword">mv</span> 文件</span><br></pre></td></tr></table></figure>
 <p>例：想把<code>AppleHDA.Kext</code> 移到桌面    </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mv <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>AppleHDA.kext <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>7、文本编辑</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano 文件名</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">nano</span> 文件名</span><br></pre></td></tr></table></figure>
 <p>例：编辑<code>natit Info.plist</code>     </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano /System/Library/Extensions/Natit.kext/Info.plist</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">nano <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>Natit.kext<span class="regexp">/Info.plist</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>nano 和 vim 都是文本编译</p>
 </blockquote>
@@ -2002,7 +1989,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:18:10" itemprop="dateModified" datetime="2018-12-29T17:18:10+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 01:35:38" itemprop="dateModified" datetime="2018-12-31T01:35:38+08:00">2018-12-31</time>
               
             
           </span>
@@ -2056,20 +2043,28 @@
         
           <p><code>ijkplayer</code>是一款使用率极高的<strong>视频直播</strong>框架，基于<code>ffmpeg</code>，支持<code>Android</code>和<code>ios</code>，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把<code>ijkplayer</code>打包成<strong>静态库</strong>。</p>
 <h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
-<p>下载完成后解压，解压后的文件目录如下图：<br><img src="http://upload-images.jianshu.io/upload_images/1803339-728d89123de76da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录"></p>
+<p>下载完成后解压。</p>
 <h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
 <p>####编译步骤：</p>
 <ul>
-<li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下，也就是下载完解压后的文件夹, 如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-c3b8f8bcae855612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cd到这个文件夹"></p>
+<li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下</p>
 </li>
-<li><p>执行命令行<code>./init-ios.sh</code>, 这一步是去下载 <code>ffmpeg</code> 的, 时间会久一点, 耐心等一下.如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-96d2217e323aab4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="下载FFmpeg"></p>
+<li><p>执行命令行 <code>./init-ios.sh</code></p>
+<blockquote>
+<p>这一步是去下载 <code>ffmpeg</code> 的 </p>
+</blockquote>
+<blockquote>
+<p><strong>时间会久一点, 耐心等一下.</strong></p>
+</blockquote>
 </li>
-<li><p>下载完成后, 执行<code>cd ios</code>, 也就是进入到 ios目录中, 如下图:<br><img src="http://upload-images.jianshu.io/upload_images/1803339-20b7360630592cb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="进入目录"></p>
+<li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
 </li>
-<li><p>进入 <code>ios</code> 文件夹后, 在终端依次执行<br><code>./compile-ffmpeg.sh clean</code>和<br><code>./compile-ffmpeg.sh all</code>命令,<br>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
+<li><p>在终端依次执行：</p>
+  <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> clean</span><br><span class="line"></span><br><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> all`</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/1803339-d8e86e2be4ed3960.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编译FFmpeg"><br>编译时间较久, 耐心等待一下.</p>
+<pre><code>&gt;编译 `ffmpeg`, 也就是`README.md`中这两步, 如下图:
+</code></pre>
           <!--noindex-->
           
             <div class="post-button text-center">
