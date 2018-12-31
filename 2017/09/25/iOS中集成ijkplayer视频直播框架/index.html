@@ -152,7 +152,7 @@
 <meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d025e12bf804ee05.png">
 <meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-8d228ab56eb77f43.png">
 <meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-391a45a214aae76a.png">
-<meta property="og:updated_time" content="2018-12-30T17:35:38.933Z">
+<meta property="og:updated_time" content="2018-12-31T07:54:59.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS中集成ijkplayer视频直播框架">
 <meta name="twitter:description" content="ijkplayer是一款使用率极高的视频直播框架，基于ffmpeg，支持Android和ios，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把ijkplayer打包成静态库。 1、下载GitHub下载地址 下载完成后解压。 2、编译说是编译ijkplayer，其实是编译ffmpeg，在这里我们已经下载好了ijkplayer, 所以 github 上README.m">
@@ -449,7 +449,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 01:35:38" itemprop="dateModified" datetime="2018-12-31T01:35:38+08:00">2018-12-31</time>
+                <time title="Modified: 2018-12-31 15:54:59" itemprop="dateModified" datetime="2018-12-31T15:54:59+08:00">2018-12-31</time>
               
             
           </span>
@@ -504,26 +504,25 @@
 <h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
 <p>下载完成后解压。</p>
 <h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
-<p>####编译步骤：</p>
-<ul>
+<h4 id="编译步骤："><a href="#编译步骤：" class="headerlink" title="编译步骤："></a>编译步骤：</h4><ul>
 <li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下</p>
 </li>
 <li><p>执行命令行 <code>./init-ios.sh</code></p>
 <blockquote>
 <p>这一步是去下载 <code>ffmpeg</code> 的 </p>
-</blockquote>
-<blockquote>
 <p><strong>时间会久一点, 耐心等一下.</strong></p>
 </blockquote>
 </li>
 <li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
 </li>
 <li><p>在终端依次执行：</p>
-  <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> clean</span><br><span class="line"></span><br><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> all`</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> all`</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
+</blockquote>
 </li>
 </ul>
-<pre><code>&gt;编译 `ffmpeg`, 也就是`README.md`中这两步, 如下图:
-</code></pre><a id="more"></a>    
+<a id="more"></a>
 <p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d8e86e2be4ed3960.png" alt="编译FFmpeg"></p>
 <blockquote>
 <p><strong>编译时间较久, 耐心等待一下.</strong></p>
@@ -552,7 +551,7 @@
 <blockquote>
 <p>打开<strong>终端</strong>, 进行合并命令，具体格式为:</p>
 </blockquote>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>合并后如下图:</p>
 </blockquote>
@@ -798,7 +797,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、下载"><span class="nav-number">1.</span> <span class="nav-text">1、下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、编译"><span class="nav-number">2.</span> <span class="nav-text">2、编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、打包IJKMediaFramework-framework框架"><span class="nav-number">3.</span> <span class="nav-text">3、打包IJKMediaFramework.framework框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、iOS工程中集成ijkplayer"><span class="nav-number">4.</span> <span class="nav-text">4、iOS工程中集成ijkplayer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、下载"><span class="nav-number">1.</span> <span class="nav-text">1、下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、编译"><span class="nav-number">2.</span> <span class="nav-text">2、编译</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编译步骤："><span class="nav-number">2.1.</span> <span class="nav-text">编译步骤：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、打包IJKMediaFramework-framework框架"><span class="nav-number">3.</span> <span class="nav-text">3、打包IJKMediaFramework.framework框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、iOS工程中集成ijkplayer"><span class="nav-number">4.</span> <span class="nav-text">4、iOS工程中集成ijkplayer</span></a></li></ol></div>
             
 
           </div>

@@ -142,7 +142,7 @@
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T09:14:33.426Z">
+<meta property="og:updated_time" content="2018-12-31T08:10:36.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective Objective 2.0">
 <meta name="twitter:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:14:33" itemprop="dateModified" datetime="2018-12-29T17:14:33+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 16:10:36" itemprop="dateModified" datetime="2018-12-31T16:10:36+08:00">2018-12-31</time>
               
             
           </span>
@@ -487,28 +487,40 @@
 <li>字面量语法创建数组或者字典时，若值中有nil，则会抛出异常</li>
 </ul>
 <h2 id="4-多用类型常量，少用-define预处理指令"><a href="#4-多用类型常量，少用-define预处理指令" class="headerlink" title="4. 多用类型常量，少用#define预处理指令"></a>4. 多用类型常量，少用#define预处理指令</h2><ul>
-<li>不要用预处理指令代替常量，不含类型信息，并且不安全<br>用 <code>static const NSTimeinterval kAnimationDuration = 0.3;</code> 代替<br>  <code>_#define ANIMATION_DURATION 0.3</code></li>
+<li><p>不要用预处理指令代替常量，不含类型信息，并且不安全</p>
+<p>用 <code>static const NSTimeinterval kAnimationDuration = 0.3;</code> 代替</p>
+<p>  <code>_#define ANIMATION_DURATION 0.3</code></p>
+</li>
 <li>OC 没有“名称空间”（namespace）这一概念</li>
 <li>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</li>
 <li>定义常量的位置很重要。</li>
-<li>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀<br>也可以单独定义.h.m文件用来声明所有的全局常量。</li>
+<li><p>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀</p>
+<p>也可以单独定义.h.m文件用来声明所有的全局常量。</p>
+</li>
 </ul>
 <h2 id="5-用枚举表示状态、选项、状态码"><a href="#5-用枚举表示状态、选项、状态码" class="headerlink" title="5. 用枚举表示状态、选项、状态码"></a>5. 用枚举表示状态、选项、状态码</h2><ul>
 <li>&lt;&lt; 左移运算符</li>
 <li><p>宏为完全替代操作 </p>
 <p>   _#define NS_ENUM(_type, _name) enum _name : _type _name;     enum _name : _type</p>
-<p>  typedef enum EOCConnectionState : NSUInteger EOCConnectionState;<br>  enum EOCConnectionState :  NSUInterger {</p>
+<p>  typedef enum EOCConnectionState : NSUInteger EOCConnectionState;</p>
+<p>  enum EOCConnectionState :  NSUInterger {</p>
 <p>  };</p>
 </li>
 </ul>
 <a id="more"></a>
 <h2 id="6-理解”属性”这一概念"><a href="#6-理解”属性”这一概念" class="headerlink" title="6. 理解”属性”这一概念"></a>6. 理解”属性”这一概念</h2><ul>
-<li>属性是封装数据的方式。</li>
-<li>OC 把实例变量当做一种存储偏移量所用的“特殊变量”，交由类对象（class object）保管</li>
-<li>autosynthesis 自动合成这个过程有编译器在编译器执行</li>
-<li>@porperty 关键字告诉编译器需要自动合成setter和getter方法，并生成相应的实例变量</li>
-<li>@synthesize 关键字一般不用写，如果重写了setter和getter方法，需要指明需要合成的实例变量，单个重写setter 或 getter方法不需要写</li>
-<li>@dynamic 关键字，它会告诉编译器： 不要自动创建实例变量，也不要创建setter和getter方法</li>
+<li><p>属性是封装数据的方式。</p>
+</li>
+<li><p>OC 把实例变量当做一种存储偏移量所用的“特殊变量”，交由类对象（class object）保管</p>
+</li>
+<li><p>autosynthesis 自动合成这个过程有编译器在编译器执行</p>
+</li>
+<li><p>@porperty 关键字告诉编译器需要自动合成setter和getter方法，并生成相应的实例变量</p>
+</li>
+<li><p>@synthesize 关键字一般不用写，如果重写了setter和getter方法，需要指明需要合成的实例变量，单个重写setter 或 getter方法不需要写</p>
+</li>
+<li><p>@dynamic 关键字，它会告诉编译器： 不要自动创建实例变量，也不要创建setter和getter方法</p>
+</li>
 <li><p>@dynamic 需要和预先准备的实例变量进行绑定（赋值），需要手动合成setter和getter方法，运行时如果没有存取方法，直接报错</p>
 </li>
 <li><p>内存管理语义</p>
@@ -521,12 +533,10 @@
 </ul>
 </li>
 <li><p>MRC</p>
-  <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">* <span class="keyword">strong</span> 修饰:</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">		[obj <span class="keyword">retain</span>];					<span class="comment">// 保留新值</span></span><br><span class="line">		[_obj release];					<span class="comment">// 释放旧值</span></span><br><span class="line">		_obj = obj;						<span class="comment">// 设置新值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*  <span class="keyword">weak</span> 修饰:</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">		_obj = obj;						<span class="comment">// 不保留新值，不释放旧值，直接设置</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*  <span class="keyword">copy</span> 修饰</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">		[_obj release];					<span class="comment">// 释放旧值</span></span><br><span class="line">		_obj = [obj <span class="keyword">copy</span>];				<span class="comment">// 设置新值copy</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">** <span class="keyword">strong</span> 修饰: **</span><br><span class="line">  </span><br><span class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">        [obj <span class="keyword">retain</span>];                  <span class="comment">// 保留新值</span></span><br><span class="line">        [_obj release];                <span class="comment">// 释放旧值</span></span><br><span class="line">        _obj = obj;                    <span class="comment">// 设置新值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  <span class="keyword">weak</span> 修饰: **</span><br><span class="line">  </span><br><span class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">        _obj = obj;                   <span class="comment">// 不保留新值，不释放旧值，直接设置</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  <span class="keyword">copy</span> 修饰： **</span><br><span class="line">  </span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">        [_obj release];               <span class="comment">// 释放旧值</span></span><br><span class="line">        _obj = [obj <span class="keyword">copy</span>];            <span class="comment">// 设置新值copy</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<ul>
 <li><p>ARC</p>
-  <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">*  <span class="keyword">strong</span> 修饰 :</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">		_obj = obj;						<span class="comment">// 设置新值</span></span><br><span class="line">	&#125;					</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">*  <span class="keyword">weak</span> 修饰:</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">		_obj = obj;						<span class="comment">// 不保留新值，不释放旧值，直接设置新值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*  <span class="keyword">copy</span> 修饰:</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">	<span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">		_obj = [obj <span class="keyword">copy</span>];				<span class="comment">// 设置新值copy</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">** <span class="keyword">strong</span> 修饰: **</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">      _obj = obj;                       <span class="comment">// 设置新值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** <span class="keyword">weak</span> 修饰: **</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">     <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">     _obj = obj;                        <span class="comment">// 不保留新值，不释放旧值，直接设置新值</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** <span class="keyword">copy</span> 修饰: **</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">     <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">     _obj = [obj <span class="keyword">copy</span>];                 <span class="comment">// 设置新值copy</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="7-在对象内部尽量直接访问实例变量"><a href="#7-在对象内部尽量直接访问实例变量" class="headerlink" title="7. 在对象内部尽量直接访问实例变量"></a>7. 在对象内部尽量直接访问实例变量</h2><ul>
@@ -559,7 +569,10 @@
 <li>向对象发消息，由<strong>动态消息派发系统</strong>来处理,该系统会查出相应的方法，并执行</li>
 </ul>
 <h2 id="12-理解消息转发机制"><a href="#12-理解消息转发机制" class="headerlink" title="12. 理解消息转发机制"></a>12. 理解消息转发机制</h2><ul>
-<li>动态方法解析（dynamic method resolution） 先征询接收者所属的类，是否能动态添加方法，以处理当前<br>未知的选择子 <code>+(BOOL) resolveInstanceMethod:(SEL)selector</code> or<br><code>+(BOOL) resolveClassMethod:(SEL)selector</code></li>
+<li><p>动态方法解析（dynamic method resolution） 先征询接收者所属的类，是否能动态添加方法，以处理当前</p>
+<p>未知的选择子 <code>+(BOOL) resolveInstanceMethod:(SEL)selector</code> or</p>
+<p><code>+(BOOL) resolveClassMethod:(SEL)selector</code></p>
+</li>
 <li>备援接收者 <code>- （id）forwardingTargetForSelector:(SEL)selector</code></li>
 <li>完整的消息转发<code>- (void)forwardInvocation:(NSInvocation *)invocation</code></li>
 <li>如若还不能处理，抛出异常 <code>doesNotRecognizeSelector</code></li>
@@ -614,25 +627,38 @@
 <li>Foundation框架中的所有collection类在默认情况下都执行的浅拷贝，也就是说，只拷贝容器对象本身，而不复制其中数据</li>
 </ul>
 <h2 id="23-通过委托与数据源协议进行对象间通信"><a href="#23-通过委托与数据源协议进行对象间通信" class="headerlink" title="23. 通过委托与数据源协议进行对象间通信"></a>23. 通过委托与数据源协议进行对象间通信</h2><ul>
-<li>委托模式 可以将数据与业务逻辑解耦</li>
-<li>注意使用weak属性，声明非拥有关系，因为代理对象一般会强引用委托者，否则容易形成保留环</li>
-<li>协议中使用可选方法时，需要判断是否响应此方法</li>
-<li>委托模式：数据源模式 （Data Source pattern） 和 常规委托模式 （delegate pattern）</li>
-<li>数据源模式：信息从数据源流向类  Data Source —&gt; Class   栗子：UITableViewDataSource</li>
-<li>常规委托模式: 信息从类流向受委托者(delegate) class —&gt; Delegate 栗子： UITableViewDelegate</li>
-<li>非正式协议，给NSObject 类增加分类的方法</li>
+<li><p>委托模式 可以将数据与业务逻辑解耦</p>
+</li>
+<li><p>注意使用weak属性，声明非拥有关系，因为代理对象一般会强引用委托者，否则容易形成保留环</p>
+</li>
+<li><p>协议中使用可选方法时，需要判断是否响应此方法</p>
+</li>
+<li><p>委托模式：数据源模式 （Data Source pattern） 和 常规委托模式 （delegate pattern）</p>
+</li>
+<li><p>数据源模式：信息从数据源流向类  Data Source —&gt; Class   栗子：UITableViewDataSource</p>
+</li>
+<li><p>常规委托模式: 信息从类流向受委托者(delegate) class —&gt; Delegate 栗子： UITableViewDelegate</p>
+</li>
+<li><p>非正式协议，给NSObject 类增加分类的方法</p>
+</li>
 <li><p>delegate 只是一个保存某个代理对象的地址，如果设置多个代理相当于重新赋值，只有最后一个设置的代理才会被真正赋值</p>
-<ul>
-<li>单例最好不要使用delegate,单例对象始终都只有同一个对象</li>
-</ul>
+<blockquote>
+<p>单例最好不要使用delegate,单例对象始终都只有同一个对象</p>
+</blockquote>
 </li>
 <li><p>delegate 和 block 如何选择：</p>
-<ul>
-<li>多条消息需要传递，选用delegate，</li>
-<li>一个委托对象的代理属性只能有一个代理对象时</li>
-<li>delegare 更加面向过程， block更加面向结果</li>
-<li>性能上来说，block的性能消耗要略大于delegate，block会涉及栈区向堆区拷贝等操作，时间和空间上的消耗都大于代理</li>
-</ul>
+<blockquote>
+<p>多条消息需要传递，选用delegate，</p>
+</blockquote>
+<blockquote>
+<p>一个委托对象的代理属性只能有一个代理对象时</p>
+</blockquote>
+<blockquote>
+<p>delegare 更加面向过程， block更加面向结果</p>
+</blockquote>
+<blockquote>
+<p>性能上来说，block的性能消耗要略大于delegate，block会涉及栈区向堆区拷贝等操作，时间和空间上的消耗都大于代理</p>
+</blockquote>
 </li>
 </ul>
 <h2 id="24-将类的实现代码分散在便于管理的数个分类之中"><a href="#24-将类的实现代码分散在便于管理的数个分类之中" class="headerlink" title="24. 将类的实现代码分散在便于管理的数个分类之中"></a>24. 将类的实现代码分散在便于管理的数个分类之中</h2><ul>
@@ -664,12 +690,18 @@
 </ul>
 <h2 id="29-理解引用计数"><a href="#29-理解引用计数" class="headerlink" title="29. 理解引用计数"></a>29. 理解引用计数</h2><ul>
 <li><p>属性存取方法中的内存管理</p>
-<ul>
-<li>三个方法用于操作计数器：<strong>Retain</strong> 递增  <strong>release</strong> 递减 <strong>autorelease</strong> 带稍后清理“自动释放池”时，再递减保留计数</li>
-<li>野指针，悬垂指针（oc中）： 指针指向的对象已经被释放了</li>
-<li>僵尸对象：一个已经被释放的对象，但是这个对象所占用的空间还没有分配给别人，这样的对象叫做僵尸对象</li>
-<li>autorelease释放时机：当前线程的下一次事件循环。因为自动释放池中的释放操作要等到下一次事件循环时才会执行</li>
-</ul>
+<blockquote>
+<p>三个方法用于操作计数器：<strong>Retain</strong> 递增  <strong>release</strong> 递减 <strong>autorelease</strong> 带稍后清理“自动释放池”时，再递减保留计数</p>
+</blockquote>
+<blockquote>
+<p>野指针，悬垂指针（oc中）： 指针指向的对象已经被释放了</p>
+</blockquote>
+<blockquote>
+<p>僵尸对象：一个已经被释放的对象，但是这个对象所占用的空间还没有分配给别人，这样的对象叫做僵尸对象</p>
+</blockquote>
+<blockquote>
+<p>autorelease释放时机：当前线程的下一次事件循环。因为自动释放池中的释放操作要等到下一次事件循环时才会执行</p>
+</blockquote>
 </li>
 </ul>
 <h2 id="30-以ARC简化引用计数"><a href="#30-以ARC简化引用计数" class="headerlink" title="30. 以ARC简化引用计数"></a>30. <em>以ARC简化引用计数</em></h2><ul>
@@ -727,21 +759,32 @@
 <h2 id="40-用块引用其所属对象时不要出现保留环"><a href="#40-用块引用其所属对象时不要出现保留环" class="headerlink" title="40. 用块引用其所属对象时不要出现保留环"></a>40. 用块引用其所属对象时不要出现保留环</h2><ul>
 <li>如果块所捕获的对象直接或间接的保留了块本身，那么就得当心保留环的问题</li>
 <li>一定要找个适当的时机解除保留环，而不能把责任推给API的调用者</li>
-<li>常见错误用法：<ul>
-<li>A类把块作为属性，但在B类使用时，在某个方法中直接临时生成A对象并调用块，</li>
-<li>虽然编译器会复制块到堆中，但在块内代码执行完成后会释放，</li>
-<li>建议B类保留A对象，用weakself避免保留环，或者B类中创建个数组，把A对象保留中，在dealloc方法中，清理数组内容</li>
-<li>B对象 –&gt; block –&gt; A对象 –&gt;B对象</li>
-</ul>
+<li><p>常见错误用法：</p>
+<blockquote>
+<p>A类把块作为属性，但在B类使用时，在某个方法中直接临时生成A对象并调用块，</p>
+</blockquote>
+<blockquote>
+<p>虽然编译器会复制块到堆中，但在块内代码执行完成后会释放，</p>
+</blockquote>
+<blockquote>
+<p>建议B类保留A对象，用weakself避免保留环，或者B类中创建个数组，把A对象保留中，在dealloc方法中，清理数组内容</p>
+</blockquote>
+<blockquote>
+<p>B对象 –&gt; block –&gt; A对象 –&gt;B对象</p>
+</blockquote>
 </li>
 </ul>
 <h2 id="41-多用派发队列，少用同步锁"><a href="#41-多用派发队列，少用同步锁" class="headerlink" title="41. 多用派发队列，少用同步锁"></a>41. <strong>多用派发队列，少用同步锁</strong></h2><ul>
-<li>派发队列可用来表述同步语义（synchronization semantic)(为代码加锁),这种做法要比使用@synchronized块或NSLock对象更简单</li>
-<li>将同步与异步结合起来，可以实现与普通加锁机制一样的同步行为，而这么做却不会阻塞执行异步派发的线程</li>
-<li>使用同步队列及栅栏块，可以令同步行为更高效</li>
-<li><strong>atomic修饰属性，无法保证访问该对象时绝对是线程安全的，使用属性时，必定能从中获取到有效值，然而在同一个线程上多次调用获取方法(getter)</strong></li>
+<li><p>派发队列可用来表述同步语义（synchronization semantic)(为代码加锁),这种做法要比使用@synchronized块或NSLock对象更简单</p>
+</li>
+<li><p>将同步与异步结合起来，可以实现与普通加锁机制一样的同步行为，而这么做却不会阻塞执行异步派发的线程</p>
+</li>
+<li><p>使用同步队列及栅栏块，可以令同步行为更高效</p>
+</li>
+<li><p><strong>atomic修饰属性，无法保证访问该对象时绝对是线程安全的，使用属性时，必定能从中获取到有效值，然而在同一个线程上多次调用获取方法(getter)</strong></p>
+</li>
 <li><p><strong>每次获取到的结果未必相同，在两次访问操作之间，其他线程可能会写入新的属性值</strong></p>
-  <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 在同一个队列上执行setter和getter方法</span></span><br><span class="line">-(<span class="built_in">NSString</span> *)someString &#123;</span><br><span class="line">	__block <span class="built_in">NSStirng</span> *localSomeString;</span><br><span class="line">	<span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">		localSomeString = _someString;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> localSomeString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)setSomeString:(<span class="built_in">NSString</span> *)someString &#123;</span><br><span class="line">	dispatch_barrier_async(queue, ^&#123;</span><br><span class="line">		_someString = someString;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 在同一个队列上执行setter和getter方法</span></span><br><span class="line">-(<span class="built_in">NSString</span> *)someString &#123;</span><br><span class="line">  __block <span class="built_in">NSStirng</span> *localSomeString;</span><br><span class="line">  <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">      localSomeString = _someString;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> localSomeString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)setSomeString:(<span class="built_in">NSString</span> *)someString &#123;</span><br><span class="line">  dispatch_barrier_async(queue, ^&#123;</span><br><span class="line">      _someString = someString;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="42-多用GCD-少用performSelector系列方法"><a href="#42-多用GCD-少用performSelector系列方法" class="headerlink" title="42. 多用GCD,少用performSelector系列方法"></a>42. 多用GCD,少用performSelector系列方法</h2><ul>
@@ -751,14 +794,25 @@
 <h2 id="43-掌握GCD及操作队列的使用时机"><a href="#43-掌握GCD及操作队列的使用时机" class="headerlink" title="43. 掌握GCD及操作队列的使用时机"></a>43. <strong>掌握GCD及操作队列的使用时机</strong></h2><ul>
 <li>操作队列在底层是用GCD来实现的</li>
 <li>GCD是纯C的API,而操作队列则是OC对象</li>
-<li>使用NSOperation 及 NSOperationQueue的好处如下：<ul>
-<li>取消某个操作</li>
-<li>指定操作间的依赖关系</li>
-<li>通过键值观察机制监控NSOperation对象的属性</li>
-<li>指定操作的优先级</li>
-<li>重用NSOperation对象</li>
-<li>有一个API选用了操作队列而非派发队列，这就是NSNotifacationCenter，开发者可通过其中的方法来注册监听器，以便在发生相关事件时得到通知</li>
-</ul>
+<li><p>使用NSOperation 及 NSOperationQueue的好处如下：</p>
+<blockquote>
+<p>取消某个操作</p>
+</blockquote>
+<blockquote>
+<p>指定操作间的依赖关系</p>
+</blockquote>
+<blockquote>
+<p>通过键值观察机制监控NSOperation对象的属性</p>
+</blockquote>
+<blockquote>
+<p>指定操作的优先级</p>
+</blockquote>
+<blockquote>
+<p>重用NSOperation对象</p>
+</blockquote>
+<blockquote>
+<p>有一个API选用了操作队列而非派发队列，这就是NSNotifacationCenter，开发者可通过其中的方法来注册监听器，以便在发生相关事件时得到通知</p>
+</blockquote>
 </li>
 </ul>
 <h2 id="44-通过Dispatch-Group机制，根据系统资源状况来执行任务"><a href="#44-通过Dispatch-Group机制，根据系统资源状况来执行任务" class="headerlink" title="44. 通过Dispatch Group机制，根据系统资源状况来执行任务"></a>44. 通过Dispatch Group机制，根据系统资源状况来执行任务</h2><ul>
@@ -785,45 +839,76 @@
 <li>在CoreFoundation层面创建collection时，可以指定许多回调函数，这些函数表示此collection应如何处理其元素，然后可运用无缝桥接技术，将其转换成具备特殊内存管理语义的collection</li>
 </ul>
 <h2 id="50-构建缓存时选用NSCache而非NSDictionary"><a href="#50-构建缓存时选用NSCache而非NSDictionary" class="headerlink" title="50. 构建缓存时选用NSCache而非NSDictionary"></a>50. 构建缓存时选用NSCache而非NSDictionary</h2><ul>
-<li>NSCache胜过NSDictionary之处<ul>
-<li>自动删减缓存</li>
-<li>NSCache并不会拷贝键，而是会保留它</li>
-<li>NSCache是线程安全的</li>
-</ul>
+<li><p>NSCache胜过NSDictionary之处</p>
+<blockquote>
+<p>自动删减缓存</p>
+</blockquote>
+<blockquote>
+<p>NSCache并不会拷贝键，而是会保留它</p>
+</blockquote>
+<blockquote>
+<p>NSCache是线程安全的</p>
+</blockquote>
 </li>
 <li>NSPurgeableData对象搭配NSCache使用效果很好</li>
 </ul>
 <h2 id="51-精简initialize-与-load-的实现代码"><a href="#51-精简initialize-与-load-的实现代码" class="headerlink" title="51. 精简initialize 与 load 的实现代码"></a>51. 精简initialize 与 load 的实现代码</h2><ul>
-<li>load方法：<ul>
-<li>先调用类里的，在调用分类里的</li>
-<li>在执行子类的load方法之前，必定会先执行所有超类的load方法</li>
-<li>load方法中使用其他类是不安全的</li>
-<li>load方法并不会像普通的方法那样，它并不会遵从那套继承规则</li>
-<li>整个应用程序在执行load方法时都会阻塞</li>
-<li>真正用途仅在于调试程序，比如分类里编写此方法，用来判断该分类是否已正确载入系统中</li>
-<li>load方法不参与覆写机制</li>
-</ul>
+<li><p>load方法：</p>
+<blockquote>
+<p>先调用类里的，在调用分类里的</p>
+</blockquote>
+<blockquote>
+<p>在执行子类的load方法之前，必定会先执行所有超类的load方法</p>
+</blockquote>
+<blockquote>
+<p>load方法中使用其他类是不安全的</p>
+</blockquote>
+<blockquote>
+<p>load方法并不会像普通的方法那样，它并不会遵从那套继承规则</p>
+</blockquote>
+<blockquote>
+<p>整个应用程序在执行load方法时都会阻塞</p>
+</blockquote>
+<blockquote>
+<p>真正用途仅在于调试程序，比如分类里编写此方法，用来判断该分类是否已正确载入系统中</p>
+</blockquote>
+<blockquote>
+<p>load方法不参与覆写机制</p>
+</blockquote>
 </li>
-<li>initialize：<ul>
-<li>惰性调用的</li>
-<li>可以安全使用</li>
-<li>initialize方法同其他消息一样，如果某个类未实现它，而其超类实现了，就会运行超类的实现代码</li>
-<li>无法再编译期设定的全局变量，可以在initialize方法里初始化</li>
-<li>由于此方法遵从普通的覆写规律，所以通常应该在里边判断当前需要初始化的是哪个类</li>
-</ul>
+<li><p>initialize：</p>
+<blockquote>
+<p>惰性调用的</p>
+</blockquote>
+<blockquote>
+<p>可以安全使用</p>
+</blockquote>
+<blockquote>
+<p>initialize方法同其他消息一样，如果某个类未实现它，而其超类实现了，就会运行超类的实现代码</p>
+</blockquote>
+<blockquote>
+<p>无法再编译期设定的全局变量，可以在initialize方法里初始化</p>
+</blockquote>
+<blockquote>
+<p>由于此方法遵从普通的覆写规律，所以通常应该在里边判断当前需要初始化的是哪个类</p>
+</blockquote>
 </li>
 </ul>
 <h2 id="52-别忘了NSTimer会保留其目标对象"><a href="#52-别忘了NSTimer会保留其目标对象" class="headerlink" title="52. 别忘了NSTimer会保留其目标对象"></a>52. 别忘了NSTimer会保留其目标对象</h2><ul>
-<li>NSTimer对象会保留其目标，直到计时器本身失效为止，如果计时器是用实例变量存放的，则实例也保留了计时器，形成了保留环</li>
-<li>一次性计时器在触发完任务之后会失效</li>
-<li>反复执行任务的计时器（repeating timer），很容易引入保留环，这种环状保留关系，可能是直接发生的，也可能是通过对象图里的其他对象间接发生的</li>
-<li><p>可以扩充NSTimer的功能，用块来打破保留环。(必须创建分类)</p>
-  <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSTimer</span> (<span class="title">EOCBlocksSupport</span>)</span></span><br><span class="line"> +(<span class="built_in">NSTimer</span> *)eoc_scheduledTimerWithTimeInterval:(<span class="built_in">NSTimeInterval</span>)interval </span><br><span class="line"> 					blcok : (<span class="keyword">void</span> (^)()) block </span><br><span class="line"> 					repeats:(<span class="built_in">BOOL</span>) repeats;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>timer -&gt; block -&gt; self -&gt; timer</li>
-</ul>
+<li><p>NSTimer对象会保留其目标，直到计时器本身失效为止，如果计时器是用实例变量存放的，则实例也保留了计时器，形成了保留环</p>
 </li>
-<li>类对象(class object)无须回收，因为类对象是单例</li>
+<li><p>一次性计时器在触发完任务之后会失效</p>
+</li>
+<li><p>反复执行任务的计时器（repeating timer），很容易引入保留环，这种环状保留关系，可能是直接发生的，也可能是通过对象图里的其他对象间接发生的</p>
+</li>
+<li><p>可以扩充NSTimer的功能，用块来打破保留环。(必须创建分类)</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSTimer</span> (<span class="title">EOCBlocksSupport</span>)</span></span><br><span class="line"> +(<span class="built_in">NSTimer</span> *)eoc_scheduledTimerWithTimeInterval:(<span class="built_in">NSTimeInterval</span>)interval </span><br><span class="line">                     blcok : (<span class="keyword">void</span> (^)()) block </span><br><span class="line">                     repeats:(<span class="built_in">BOOL</span>) repeats;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>timer -&gt; block -&gt; self -&gt; timer</p>
+</blockquote>
+</li>
+<li><p>类对象(class object)无须回收，因为类对象是单例</p>
+</li>
 </ul>
 
       

@@ -440,7 +440,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 01:03:56" itemprop="dateModified" datetime="2018-12-31T01:03:56+08:00">2018-12-31</time>
+                <time title="Modified: 2018-12-31 15:53:12" itemprop="dateModified" datetime="2018-12-31T15:53:12+08:00">2018-12-31</time>
               
             
           </span>
@@ -496,9 +496,20 @@
 <p>直到多看了一眼hexo，这个逼格极高的程序猿写作方式，我喜欢。就连hexo的发音都像是 <strong>黑客哦</strong> ！如果你跟我一样纠结哪里写博，那就来到GitHub吧，让我们一起hexo！</p>
 <blockquote>
 <ul>
-<li>如果你对默认配置满意，只需几个命令便可秒搭一个hexo。</li>
-<li>如果你跟我一样喜欢折腾下，30分钟也足够个性化。</li>
+<li><p>如果你对默认配置满意，只需几个命令便可秒搭一个hexo。</p>
+<blockquote>
+<ul>
+<li>如果你跟我一样喜欢折腾下，30分钟也足够个性化。<blockquote>
+<blockquote>
+<ul>
 <li>如果你过于喜欢折腾，可以折腾个把星期，尽情的玩。</li>
+</ul>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
 </ul>
 </blockquote>
 <p>搭建过程你或许觉得有那么点小繁琐，但一旦搭建完成，写文章是极简单，极舒服的。</p>
@@ -511,41 +522,52 @@
 <p>GitHub账号和GitHub Pages 一般都应该有吧，已有的请自动无视这一部分</p>
 </blockquote>
 <ul>
-<li>注册<a href="https://github.com/join?source=header-home" target="_blank" rel="noopener">GitHub</a></li>
+<li><p>注册<a href="https://github.com/join?source=header-home" target="_blank" rel="noopener">GitHub</a></p>
+</li>
 <li><p>建立与你用户ID对应的仓库</p>
 <blockquote>
 <ul>
-<li>Repository Name: <code>xxx.github.io #xxx为你的ID</code></li>
-<li>项目描述可空</li>
+<li><p>Repository Name: <code>xxx.github.io #xxx为你的ID</code></p>
+<blockquote>
+<ul>
+<li>项目描述可空<blockquote>
+<blockquote>
+<ul>
 <li>免费服务只能选择公开库, 选 <code>Public</code></li>
 <li>点击 Create repository 创建完成</li>
+</ul>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
 </ul>
 </blockquote>
 </li>
 <li><p>添加SSH公钥到『Account settings -&gt; SSH Keys -&gt; Add SSH Key』</p>
 <ul>
 <li><p>首先终端设置你的用户名密码：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">"你的邮箱"</span></span><br><span class="line">git config --global user.name <span class="string">"你的用户id"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.email <span class="string">"你的邮箱"</span></span><br><span class="line">git config --global user.name <span class="string">"你的用户id"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>生成密钥，输入完一路回车，生成publicKey</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"你的邮箱"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用以下命令打开密钥,拷贝其内容</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh	     <span class="comment">#找到文件夹.ssh	</span></span><br><span class="line">cat id_rsa.pub   <span class="comment">#查看密钥</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh         <span class="comment">#找到文件夹.ssh    </span></span><br><span class="line">cat id_rsa.pub   <span class="comment">#查看密钥</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在github上添加ssh密钥，登录之后，点击右上角的头像里面的<code>setting</code>，然后左边栏中点击<code>SSH and GPG keys</code>，然后是<code>New SSH key</code>，添加进去即可</p>
+<blockquote>
+<p>Title 随便填写，最好是具有标识符性名称;</p>
+<p>Key 填写 刚才复制的公钥</p>
+</blockquote>
 </li>
 </ul>
 </li>
+<li><p>验证是否连接成功</p>
+</li>
 </ul>
-<pre><code>     &gt; Title 随便填写，最好是具有标识符性名称;
-     &gt; Key 填写 刚才复制的公钥
-
-
-* 验证是否连接成功
-
-    <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></span><br></pre></td></tr></table></figure>
-</code></pre><hr>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span>---</span><br></pre></td></tr></table></figure>
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>当Node.js和Git都安装好后就可以正式安装Hexo了，终端执行如下命令：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">$ sudo npm <span class="keyword">install</span> -g hexo</span><br></pre></td></tr></table></figure>
 <p>输入管理员密码（Mac登录密码）即开始安装 (<code>sudo</code>:linux系统管理指令 <code>-g</code>:全局安装)</p>
@@ -570,21 +592,17 @@
 <p>注意坑二：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记</p>
 </blockquote>
 <p>在<code>blog</code>文件夹目录下执行生成静态页面命令：</p>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span>		或者：hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span>        或者：hexo g</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>此时若出现如下报错：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ERROR </span>Local hexo not found in ~/blog</span><br><span class="line"><span class="keyword">ERROR </span>Try runing: 'npm install hexo --save'</span><br></pre></td></tr></table></figure>
+<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">&gt;  <span class="keyword">ERROR</span> Local hexo <span class="keyword">not</span> found <span class="keyword">in</span> ~/blog</span><br><span class="line">&gt;  <span class="keyword">ERROR</span> <span class="keyword">Try</span> runing: <span class="comment">'npm install hexo --save'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <p>则执行命令：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">  npm install hexo --save</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>再执行配置命令：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy			或者：hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy            或者：hexo d</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意坑三：若执行命令<code>hexo deploy</code>仍然报错：无法连接git或找不到git，则执行如下命令：</p>
 </blockquote>

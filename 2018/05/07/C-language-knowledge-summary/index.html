@@ -142,7 +142,7 @@
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="String functionstrcpy(字符数组,字符串);     //拷贝strcat(字符数组,字符串);     //拼接strcmp(字符串1,字符串2);     //比较strlwr(字符串);             //转小写strupr(字符串);             //转大写strlen(字符串);             //算长度strncpy(字符数组,字符串">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-29T09:13:55.212Z">
+<meta property="og:updated_time" content="2018-12-31T08:26:36.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C language knowledge summary">
 <meta name="twitter:description" content="String functionstrcpy(字符数组,字符串);     //拷贝strcat(字符数组,字符串);     //拼接strcmp(字符串1,字符串2);     //比较strlwr(字符串);             //转小写strupr(字符串);             //转大写strlen(字符串);             //算长度strncpy(字符数组,字符串">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:13:55" itemprop="dateModified" datetime="2018-12-29T17:13:55+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 16:26:36" itemprop="dateModified" datetime="2018-12-31T16:26:36+08:00">2018-12-31</time>
               
             
           </span>
@@ -471,14 +471,12 @@
       
 
       
-        <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">strcpy</span>(字符数组,字符串);     <span class="comment">//拷贝</span></span><br><span class="line"><span class="selector-tag">strcat</span>(字符数组,字符串);     <span class="comment">//拼接</span></span><br><span class="line"><span class="selector-tag">strcmp</span>(字符串<span class="number">1</span>,字符串<span class="number">2</span>);     <span class="comment">//比较</span></span><br><span class="line"><span class="selector-tag">strlwr</span>(字符串);             <span class="comment">//转小写</span></span><br><span class="line"><span class="selector-tag">strupr</span>(字符串);             <span class="comment">//转大写</span></span><br><span class="line"><span class="selector-tag">strlen</span>(字符串);             <span class="comment">//算长度</span></span><br><span class="line"><span class="selector-tag">strncpy</span>(字符数组,字符串<span class="number">1</span>,n); <span class="comment">//字符串1中前n个字符拷贝到字符数组</span></span><br></pre></td></tr></table></figure>
+        <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strcpy</span>(字符数组,字符串);     <span class="comment">//拷贝</span></span><br><span class="line"><span class="built_in">strcat</span>(字符数组,字符串);     <span class="comment">//拼接</span></span><br><span class="line"><span class="built_in">strcmp</span>(字符串<span class="number">1</span>,字符串<span class="number">2</span>);     <span class="comment">//比较</span></span><br><span class="line">strlwr(字符串);             <span class="comment">//转小写</span></span><br><span class="line">strupr(字符串);             <span class="comment">//转大写</span></span><br><span class="line"><span class="built_in">strlen</span>(字符串);             <span class="comment">//算长度</span></span><br><span class="line"><span class="built_in">strncpy</span>(字符数组,字符串<span class="number">1</span>,n); <span class="comment">//字符串1中前n个字符拷贝到字符数组</span></span><br></pre></td></tr></table></figure>
 <h3 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h3><ul>
 <li>静态局部变量:</li>
 </ul>
 <blockquote>
 <p>①定义时不赋初值，则编译时赋初值，自动赋初值为0，只赋值一次;</p>
-</blockquote>
-<blockquote>
 <p>②函数调用结束后任然存在，其他函数不能引用，只能本函数引用。</p>
 </blockquote>
 <ul>
@@ -502,34 +500,24 @@
 <h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p><strong>用数组元素作 实参时，向形参变量传递的是数组元素的值，而用数组名做函数实参时，向形参（数组名或者指针变量）传递的是数组元素的首地址</strong> </p>
 <blockquote>
 <p><strong>数组名</strong> 代表数组首元素的地址，它是一个指针型常量，它的值在程序运行期间固定不变，例如：</p>
-</blockquote>
-<blockquote>
 <p>数组 <code>a[10] = {1,2,3,4,5,6,7,8,9,10};</code>则<code>a++</code>无法实现</p>
-</blockquote>
-<blockquote>
-<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：<br><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (p = <span class="keyword">a</span>; p&lt; <span class="keyword">a</span> + <span class="number">10</span>; p++) </span><br><span class="line">printf(<span class="string">"%d"</span>,*p)</span><br></pre></td></tr></table></figure></p>
+<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> (p = a; p&lt; a + <span class="number">10</span>; p++) </span><br><span class="line">&gt; <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p><strong>实参数组名代表一个固定的地址，或者说是指针常量，但形参数组名并不是一个固定的地址，而是按指针变量处理</strong></p>
 <blockquote>
 <p>main函数中，数组a[5] = {1,2,3,4,5}; a为数组首地址，不能自加自减<br>（a++, a–）因为a为常量地址（指针常量),但可以<code>a+i</code>这样写， <code>a[i] = *(a+i)始终成立</code></p>
-</blockquote>
-<blockquote>
 <p>子函数（自定义函数中）,数组形参传的是数组首地址，不检查数组长度，系统默认当指针处理，所以数组a可自加自减，（对指针操作）;</p>
-</blockquote>
-<blockquote>
 <p>指针变量必须先赋值，后使用，这样使用极其危险：<br><code>int *p;</code>然后直接使用*p</p>
 </blockquote>
 <h3 id="通过指针引用多维数组"><a href="#通过指针引用多维数组" class="headerlink" title="通过指针引用多维数组"></a>通过指针引用多维数组</h3><p>a[3][4]</p>
 <blockquote>
 <p>a: 首行首地址</p>
-</blockquote>
-<blockquote>
 <p>a+1: 序号为1的行的首地址| a+1指向a[1],或者a+1的值是a[1]的首地址</p>
-</blockquote>
-<blockquote>
 <p>a[i] 始终等价于(恒定于) * (a + i);</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">a[1] &lt;===&gt; *a+1;</span><br><span class="line">a[0]+1 &lt;===&gt; *(a+0)+1 &lt;===&gt; &amp;a[0][1];</span><br><span class="line">a[1]+2 &lt;===&gt; *(a+1)+2 &lt;===&gt; &amp;a[1][2];</span><br><span class="line">*a[i]+j  或者 *(*(a+i)+j) &lt;===&gt; a[i][j]的值</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">a[<span class="number">1</span>] &lt;===&gt; *a+<span class="number">1</span>;</span><br><span class="line">a[<span class="number">0</span>]+<span class="number">1</span> &lt;===&gt; *(a+<span class="number">0</span>)+<span class="number">1</span> &lt;===&gt; &amp;a[<span class="number">0</span>][<span class="number">1</span>];</span><br><span class="line">a[<span class="number">1</span>]+<span class="number">2</span> &lt;===&gt; *(a+<span class="number">1</span>)+<span class="number">2</span> &lt;===&gt; &amp;a[<span class="number">1</span>][<span class="number">2</span>];</span><br><span class="line">*a[i]+j  或者 *(*(a+i)+j) &lt;===&gt; a[i][j]的值</span><br></pre></td></tr></table></figure>
 <h3 id="通过指针引用字符串"><a href="#通过指针引用字符串" class="headerlink" title="通过指针引用字符串"></a>通过指针引用字符串</h3><ul>
 <li>字符指针变量指向一个字符串常量； <code>char *string = &quot;I Love China!&quot;</code></li>
 <li>C语言中只有字符变量，没有字符串变量</li>
@@ -537,11 +525,7 @@
 <li><p>字符数组 vs 字符指针</p>
 <blockquote>
 <p>字符数组有若干元素组成，每一个元素中放一个字符，字符指针变量中存放的是地址。</p>
-</blockquote>
-<blockquote>
 <p>字符数组 =&gt; 数组名代表一个固定值（首元素地址）不能改变，各元素值可以再赋值。但只能定义时全部赋值，不能一次性赋值。</p>
-</blockquote>
-<blockquote>
 <p>字符指针 =&gt; 值可变，但指向的字符串为常量，不能修改。指针变量指向字串时，引用字符可使用： char *a = “I Love China!”; 则可使用 a[5]引用</p>
 </blockquote>
 </li>
@@ -553,8 +537,7 @@
 <h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>typedef struct {<br>    char *name;<br>    char name[20];<br>} 使用数组及指针的区别：</p>
 <p>char *name 未分配存储空间；而数组名name是一个常量指针，已分配存储空间，赋值操作strcpy;</p>
 <h3 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h3><p>free () 标记删除，不清楚内容<br>memset ,memcpy, memcmp，均是按 <strong>字节</strong> 操作内存，既可以用于堆内存也可以用于栈内存。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> *name = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">20</span>);</span><br><span class="line"><span class="built_in">strcpy</span>(name, <span class="string">"iPhone"</span>); <span class="comment">//已有存储空间</span></span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
-<p><code>`</code></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> *name = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">20</span>);</span><br><span class="line"><span class="built_in">strcpy</span>(name, <span class="string">"iPhone"</span>); <span class="comment">//已有存储空间</span></span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
 
       
     </div>

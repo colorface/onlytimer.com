@@ -440,7 +440,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 00:39:40" itemprop="dateModified" datetime="2018-12-31T00:39:40+08:00">2018-12-31</time>
+                <time title="Modified: 2018-12-31 15:50:28" itemprop="dateModified" datetime="2018-12-31T15:50:28+08:00">2018-12-31</time>
               
             
           </span>
@@ -500,7 +500,7 @@
 <h2 id="4-创建私有-Pod-的-podspec"><a href="#4-创建私有-Pod-的-podspec" class="headerlink" title="4. 创建私有 Pod 的 podspec"></a>4. 创建私有 Pod 的 podspec</h2><ul>
 <li>在工程的根目录下执行：</li>
 </ul>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ pod <span class="keyword">spec</span> create xxx</span><br><span class="line"><span class="comment"># xxx为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>pod spec create xxx</span><br><span class="line">注<span class="symbol">:xxx</span>为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span><br></pre></td></tr></table></figure>
 <ul>
 <li>根据实际情况配置<code>podspec</code>文件</li>
 </ul>
@@ -632,7 +632,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:14:33" itemprop="dateModified" datetime="2018-12-29T17:14:33+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 16:10:36" itemprop="dateModified" datetime="2018-12-31T16:10:36+08:00">2018-12-31</time>
               
             
           </span>
@@ -682,17 +682,23 @@
 <li>字面量语法创建数组或者字典时，若值中有nil，则会抛出异常</li>
 </ul>
 <h2 id="4-多用类型常量，少用-define预处理指令"><a href="#4-多用类型常量，少用-define预处理指令" class="headerlink" title="4. 多用类型常量，少用#define预处理指令"></a>4. 多用类型常量，少用#define预处理指令</h2><ul>
-<li>不要用预处理指令代替常量，不含类型信息，并且不安全<br>用 <code>static const NSTimeinterval kAnimationDuration = 0.3;</code> 代替<br>  <code>_#define ANIMATION_DURATION 0.3</code></li>
+<li><p>不要用预处理指令代替常量，不含类型信息，并且不安全</p>
+<p>用 <code>static const NSTimeinterval kAnimationDuration = 0.3;</code> 代替</p>
+<p>  <code>_#define ANIMATION_DURATION 0.3</code></p>
+</li>
 <li>OC 没有“名称空间”（namespace）这一概念</li>
 <li>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</li>
 <li>定义常量的位置很重要。</li>
-<li>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀<br>也可以单独定义.h.m文件用来声明所有的全局常量。</li>
+<li><p>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀</p>
+<p>也可以单独定义.h.m文件用来声明所有的全局常量。</p>
+</li>
 </ul>
 <h2 id="5-用枚举表示状态、选项、状态码"><a href="#5-用枚举表示状态、选项、状态码" class="headerlink" title="5. 用枚举表示状态、选项、状态码"></a>5. 用枚举表示状态、选项、状态码</h2><ul>
 <li>&lt;&lt; 左移运算符</li>
 <li><p>宏为完全替代操作 </p>
 <p>   _#define NS_ENUM(_type, _name) enum _name : _type _name;     enum _name : _type</p>
-<p>  typedef enum EOCConnectionState : NSUInteger EOCConnectionState;<br>  enum EOCConnectionState :  NSUInterger {</p>
+<p>  typedef enum EOCConnectionState : NSUInteger EOCConnectionState;</p>
+<p>  enum EOCConnectionState :  NSUInterger {</p>
 <p>  };</p>
 </li>
 </ul>
@@ -821,7 +827,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 00:48:25" itemprop="dateModified" datetime="2018-12-31T00:48:25+08:00">2018-12-31</time>
+                <time title="Modified: 2018-12-31 15:57:13" itemprop="dateModified" datetime="2018-12-31T15:57:13+08:00">2018-12-31</time>
               
             
           </span>
@@ -987,12 +993,24 @@
                 
               
 
-              <time title="Created: 2018-05-13 21:55:01 / Modified: 22:58:01" itemprop="dateCreated datePublished" datetime="2018-05-13T21:55:01+08:00">2018-05-13</time>
+              <time title="Created: 2018-05-13 21:55:01" itemprop="dateCreated datePublished" datetime="2018-05-13T21:55:01+08:00">2018-05-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-12-31 15:52:18" itemprop="dateModified" datetime="2018-12-31T15:52:18+08:00">2018-12-31</time>
               
             
           </span>
@@ -1348,7 +1366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:13:55" itemprop="dateModified" datetime="2018-12-29T17:13:55+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 16:26:36" itemprop="dateModified" datetime="2018-12-31T16:26:36+08:00">2018-12-31</time>
               
             
           </span>
@@ -1382,15 +1400,12 @@
 
       
         
-          
-            <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">strcpy</span>(字符数组,字符串);     <span class="comment">//拷贝</span></span><br><span class="line"><span class="selector-tag">strcat</span>(字符数组,字符串);     <span class="comment">//拼接</span></span><br><span class="line"><span class="selector-tag">strcmp</span>(字符串<span class="number">1</span>,字符串<span class="number">2</span>);     <span class="comment">//比较</span></span><br><span class="line"><span class="selector-tag">strlwr</span>(字符串);             <span class="comment">//转小写</span></span><br><span class="line"><span class="selector-tag">strupr</span>(字符串);             <span class="comment">//转大写</span></span><br><span class="line"><span class="selector-tag">strlen</span>(字符串);             <span class="comment">//算长度</span></span><br><span class="line"><span class="selector-tag">strncpy</span>(字符数组,字符串<span class="number">1</span>,n); <span class="comment">//字符串1中前n个字符拷贝到字符数组</span></span><br></pre></td></tr></table></figure>
+          <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strcpy</span>(字符数组,字符串);     <span class="comment">//拷贝</span></span><br><span class="line"><span class="built_in">strcat</span>(字符数组,字符串);     <span class="comment">//拼接</span></span><br><span class="line"><span class="built_in">strcmp</span>(字符串<span class="number">1</span>,字符串<span class="number">2</span>);     <span class="comment">//比较</span></span><br><span class="line">strlwr(字符串);             <span class="comment">//转小写</span></span><br><span class="line">strupr(字符串);             <span class="comment">//转大写</span></span><br><span class="line"><span class="built_in">strlen</span>(字符串);             <span class="comment">//算长度</span></span><br><span class="line"><span class="built_in">strncpy</span>(字符数组,字符串<span class="number">1</span>,n); <span class="comment">//字符串1中前n个字符拷贝到字符数组</span></span><br></pre></td></tr></table></figure>
 <h3 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h3><ul>
 <li>静态局部变量:</li>
 </ul>
 <blockquote>
 <p>①定义时不赋初值，则编译时赋初值，自动赋初值为0，只赋值一次;</p>
-</blockquote>
-<blockquote>
 <p>②函数调用结束后任然存在，其他函数不能引用，只能本函数引用。</p>
 </blockquote>
 <ul>
@@ -1414,61 +1429,31 @@
 <h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p><strong>用数组元素作 实参时，向形参变量传递的是数组元素的值，而用数组名做函数实参时，向形参（数组名或者指针变量）传递的是数组元素的首地址</strong> </p>
 <blockquote>
 <p><strong>数组名</strong> 代表数组首元素的地址，它是一个指针型常量，它的值在程序运行期间固定不变，例如：</p>
-</blockquote>
-<blockquote>
 <p>数组 <code>a[10] = {1,2,3,4,5,6,7,8,9,10};</code>则<code>a++</code>无法实现</p>
-</blockquote>
-<blockquote>
-<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：<br><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (p = <span class="keyword">a</span>; p&lt; <span class="keyword">a</span> + <span class="number">10</span>; p++) </span><br><span class="line">printf(<span class="string">"%d"</span>,*p)</span><br></pre></td></tr></table></figure></p>
+<p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> (p = a; p&lt; a + <span class="number">10</span>; p++) </span><br><span class="line">&gt; <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p><strong>实参数组名代表一个固定的地址，或者说是指针常量，但形参数组名并不是一个固定的地址，而是按指针变量处理</strong></p>
 <blockquote>
 <p>main函数中，数组a[5] = {1,2,3,4,5}; a为数组首地址，不能自加自减<br>（a++, a–）因为a为常量地址（指针常量),但可以<code>a+i</code>这样写， <code>a[i] = *(a+i)始终成立</code></p>
-</blockquote>
-<blockquote>
 <p>子函数（自定义函数中）,数组形参传的是数组首地址，不检查数组长度，系统默认当指针处理，所以数组a可自加自减，（对指针操作）;</p>
-</blockquote>
-<blockquote>
 <p>指针变量必须先赋值，后使用，这样使用极其危险：<br><code>int *p;</code>然后直接使用*p</p>
 </blockquote>
 <h3 id="通过指针引用多维数组"><a href="#通过指针引用多维数组" class="headerlink" title="通过指针引用多维数组"></a>通过指针引用多维数组</h3><p>a[3][4]</p>
 <blockquote>
 <p>a: 首行首地址</p>
-</blockquote>
-<blockquote>
 <p>a+1: 序号为1的行的首地址| a+1指向a[1],或者a+1的值是a[1]的首地址</p>
-</blockquote>
-<blockquote>
 <p>a[i] 始终等价于(恒定于) * (a + i);</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">a[1] &lt;===&gt; *a+1;</span><br><span class="line">a[0]+1 &lt;===&gt; *(a+0)+1 &lt;===&gt; &amp;a[0][1];</span><br><span class="line">a[1]+2 &lt;===&gt; *(a+1)+2 &lt;===&gt; &amp;a[1][2];</span><br><span class="line">*a[i]+j  或者 *(*(a+i)+j) &lt;===&gt; a[i][j]的值</span><br></pre></td></tr></table></figure>
-<h3 id="通过指针引用字符串"><a href="#通过指针引用字符串" class="headerlink" title="通过指针引用字符串"></a>通过指针引用字符串</h3><ul>
-<li>字符指针变量指向一个字符串常量； <code>char *string = &quot;I Love China!&quot;</code></li>
-<li>C语言中只有字符变量，没有字符串变量</li>
-<li>通过字符数组名或字符指针可以输出一个字符串，而对一个数字型数组，是不能用数组名输出它的全部元素，只能逐个输出。</li>
-<li><p>字符数组 vs 字符指针</p>
-<blockquote>
-<p>字符数组有若干元素组成，每一个元素中放一个字符，字符指针变量中存放的是地址。</p>
-</blockquote>
-<blockquote>
-<p>字符数组 =&gt; 数组名代表一个固定值（首元素地址）不能改变，各元素值可以再赋值。但只能定义时全部赋值，不能一次性赋值。</p>
-</blockquote>
-<blockquote>
-<p>字符指针 =&gt; 值可变，但指向的字符串为常量，不能修改。指针变量指向字串时，引用字符可使用： char *a = “I Love China!”; 则可使用 a[5]引用</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h3><p>定义：编译系统为函数代码分配一段存储空间，这段存储空间的起始地址（入口地址）称为函数指针。</p>
-<p><code>int (*p) (int, int)</code></p>
-<p>函数指针作为函数参数，返回值等常见使用</p>
-<p>typedef int (*PFUN)(int, int)  则 PFUN p = NULL;</p>
-<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>typedef struct {<br>    char *name;<br>    char name[20];<br>} 使用数组及指针的区别：</p>
-<p>char *name 未分配存储空间；而数组名name是一个常量指针，已分配存储空间，赋值操作strcpy;</p>
-<h3 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h3><p>free () 标记删除，不清楚内容<br>memset ,memcpy, memcmp，均是按 <strong>字节</strong> 操作内存，既可以用于堆内存也可以用于栈内存。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> *name = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">20</span>);</span><br><span class="line"><span class="built_in">strcpy</span>(name, <span class="string">"iPhone"</span>); <span class="comment">//已有存储空间</span></span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
-<p><code>`</code></p>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/05/07/C-language-knowledge-summary/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1585,7 +1570,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 16:37:18" itemprop="dateModified" datetime="2018-12-29T16:37:18+08:00">2018-12-29</time>
+                <time title="Modified: 2018-12-31 16:14:33" itemprop="dateModified" datetime="2018-12-31T16:14:33+08:00">2018-12-31</time>
               
             
           </span>
@@ -1624,14 +1609,8 @@
 </ul>
 <blockquote>
 <p>苦。可是今天不吃苦，等到将来一无所长，混迹于社会最底层时，那时的人生之路只会走的更辛苦。</p>
-</blockquote>
-<blockquote>
 <p>千万不要把学习当做最苦的事情，因为世界上任何一种苦拎出来，都不读书学习苦。</p>
-</blockquote>
-<blockquote>
 <p>真正决定一个人成就的，不是天分，也不是运气，而是严格的自律和高强度的付出。读书时一种自律和付出，更是一种最低成本改变自己命运的方式。</p>
-</blockquote>
-<blockquote>
 <p>唯累过，方知闲。唯苦过，方知甜。</p>
 </blockquote>
           <!--noindex-->
@@ -1989,7 +1968,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 01:35:38" itemprop="dateModified" datetime="2018-12-31T01:35:38+08:00">2018-12-31</time>
+                <time title="Modified: 2018-12-31 15:54:59" itemprop="dateModified" datetime="2018-12-31T15:54:59+08:00">2018-12-31</time>
               
             
           </span>
@@ -2045,26 +2024,24 @@
 <h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
 <p>下载完成后解压。</p>
 <h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
-<p>####编译步骤：</p>
-<ul>
+<h4 id="编译步骤："><a href="#编译步骤：" class="headerlink" title="编译步骤："></a>编译步骤：</h4><ul>
 <li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下</p>
 </li>
 <li><p>执行命令行 <code>./init-ios.sh</code></p>
 <blockquote>
 <p>这一步是去下载 <code>ffmpeg</code> 的 </p>
-</blockquote>
-<blockquote>
 <p><strong>时间会久一点, 耐心等一下.</strong></p>
 </blockquote>
 </li>
 <li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
 </li>
 <li><p>在终端依次执行：</p>
-  <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> clean</span><br><span class="line"></span><br><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> all`</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg<span class="selector-class">.sh</span> all`</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
+</blockquote>
 </li>
 </ul>
-<pre><code>&gt;编译 `ffmpeg`, 也就是`README.md`中这两步, 如下图:
-</code></pre>
           <!--noindex-->
           
             <div class="post-button text-center">
