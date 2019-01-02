@@ -138,7 +138,7 @@
 <meta name="keywords" content="mac,终端,命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="终端基本命令">
-<meta property="og:url" content="http://onlytimer.com/2017/09/26/终端基本命令/index.html">
+<meta property="og:url" content="https://onlytimer.com/2017/09/26/终端基本命令/index.html">
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="基本命令 1、列出文件 ls 参数 目录名 例: 看看驱动目录下有什么: ls /System/Library/Extensions  参数 -w 显示中文，-l 详细信息， -a 包括隐藏文件   2、转换目录      cd 目录名 例：想到驱动目录下溜达一圈   cd /System/Library/Extensions  3、建立新目录 mkdir 目录名 例：在驱动目录下建一个备份目录">
 <meta property="og:locale" content="zh-Hans">
@@ -152,7 +152,7 @@
 
 
 
-  <link rel="canonical" href="http://onlytimer.com/2017/09/26/终端基本命令/">
+  <link rel="canonical" href="https://onlytimer.com/2017/09/26/终端基本命令/">
 
 
 
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://onlytimer.com/2017/09/26/终端基本命令/">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2017/09/26/终端基本命令/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roy Cheng">
@@ -491,52 +491,52 @@
       
         <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
 <li><p>1、列出文件</p>
-<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ls</span> 参数 目录名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls 参数 目录名</span><br></pre></td></tr></table></figure>
 <p>例: 看看驱动目录下有什么:</p>
-<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">ls /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls /System/Library/Extensions</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参数 <strong>-w</strong> 显示中文，<strong>-l</strong> 详细信息， <strong>-a</strong> 包括隐藏文件</p>
 </blockquote>
 </li>
 <li><p>2、转换目录     </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> 目录名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 目录名</span><br></pre></td></tr></table></figure>
 <p>例：想到驱动目录下溜达一圈  </p>
-<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">cd /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /System/Library/Extensions</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>3、建立新目录</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> 目录名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir 目录名</span><br></pre></td></tr></table></figure>
 <p>例：在驱动目录下建一个备份目录 <code>backup</code>  </p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /System/Library/Extensions/backup</span><br></pre></td></tr></table></figure>
 <p>在桌面上建一个备份目录 <code>backup</code>   </p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop/</span>backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>4、拷贝文件</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cp</span> 参数 源文件 目标文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp 参数 源文件 目标文件</span><br></pre></td></tr></table></figure>
 <p>例：想把桌面的<code>Natit.kext</code> 拷贝到驱动目录中  </p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cp -R <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop/</span>Natit.kext <span class="regexp">/System/</span>Library<span class="regexp">/Extensions</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参数<strong>R</strong>表示对目录进行递归操作，<code>kext</code>在图形界面下看起来是个文件，实际上是个文件夹</p>
 </blockquote>
 <p>把驱动目录下的所有文件备份到桌面<code>backup</code></p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cp -R <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>* <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop/</span>backup</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>5、删除文件</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">rm</span> 参数 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm 参数 文件</span><br></pre></td></tr></table></figure>
 <p>例：想删除驱动的缓存  </p>
-<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">rm -rf /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions.kextcache</span><br><span class="line">rm -rf /<span class="keyword">System</span>/<span class="keyword">Library</span>/Extensions.mkext</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm -rf /System/Library/Extensions.kextcache</span><br><span class="line">rm -rf /System/Library/Extensions.mkext</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参数<strong>－rf</strong> 表示递归和强制，千万要小心使用，如果执行了 <code>rm -rf /</code> 你的系统就全没了</p>
 </blockquote>
 </li>
 <li><p>6、移动文件</p>
-<figure class="highlight cos"><table><tr><td class="code"><pre><span class="line"><span class="keyword">mv</span> 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv 文件</span><br></pre></td></tr></table></figure>
 <p>例：想把<code>AppleHDA.Kext</code> 移到桌面    </p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mv <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>AppleHDA.kext <span class="regexp">/User/</span>用户名<span class="regexp">/Desktop</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>7、文本编辑</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">nano</span> 文件名</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano 文件名</span><br></pre></td></tr></table></figure>
 <p>例：编辑<code>natit Info.plist</code>     </p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">nano <span class="regexp">/System/</span>Library<span class="regexp">/Extensions/</span>Natit.kext<span class="regexp">/Info.plist</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano /System/Library/Extensions/Natit.kext/Info.plist</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>nano 和 vim 都是文本编译</p>
 </blockquote>
@@ -887,17 +887,17 @@
 <h4 id="开启功能"><a href="#开启功能" class="headerlink" title="开启功能"></a>开启功能</h4><h5 id="1-Finder显示隐藏文件"><a href="#1-Finder显示隐藏文件" class="headerlink" title="1.Finder显示隐藏文件"></a>1.Finder显示隐藏文件</h5><ul>
 <li><p>显示隐藏文件</p>
 <p>在<code>终端</code>中输入下面的命令：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles -bool true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool true</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>恢复隐藏文件</p>
 <p>在<code>终端</code>中输入下面的命令：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles -bool false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder AppleShowAllFiles -bool false</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="2-在Finder标题栏显示完整路径"><a href="#2-在Finder标题栏显示完整路径" class="headerlink" title="2.在Finder标题栏显示完整路径"></a>2.在Finder标题栏显示完整路径</h5><p>在<code>终端</code>中输入下面的命令：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> _FXShowPosixPathInTitle -bool YES</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES</span><br></pre></td></tr></table></figure>
 <h4 id="open命令"><a href="#open命令" class="headerlink" title="open命令"></a>open命令</h4><p><code>open</code>命令用于打开文件、目录或执行程序。就等同于在命令行模式下，重复图形界面<strong>“双击”</strong>的动作。例如这个命令与在<code>Finder</code>中双击<code>Safari</code>是一样的： </p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">open</span> /Applications/Safari.<span class="keyword">app</span>/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ open /Applications/Safari.app/</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>可以使用  <strong>-a</strong> 选项要求自行选择打开的程序，或使用  <strong>-e</strong> 强制在TextEdit中编辑此文件。<br>open 一个目录会在Finder窗口中打开此目录。一个很有用的技巧是  <code>open .</code> 打开当前目录。 </p>
 </blockquote>
@@ -1145,7 +1145,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

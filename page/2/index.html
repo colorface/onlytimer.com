@@ -138,7 +138,7 @@
 <meta name="keywords" content="Coder">
 <meta property="og:type" content="website">
 <meta property="og:title" content="伊水贝">
-<meta property="og:url" content="http://onlytimer.com/page/2/index.html">
+<meta property="og:url" content="https://onlytimer.com/page/2/index.html">
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="点点滴滴，记录累积">
 <meta property="og:locale" content="zh-Hans">
@@ -151,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="http://onlytimer.com/page/2/">
+  <link rel="canonical" href="https://onlytimer.com/page/2/">
 
 
 
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://onlytimer.com/2017/09/20/Mac上搭建基于GitHub的Hexo博客/">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2017/09/20/Mac上搭建基于GitHub的Hexo博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roy Cheng">
@@ -514,7 +514,7 @@
 </blockquote>
 <p>搭建过程你或许觉得有那么点小繁琐，但一旦搭建完成，写文章是极简单，极舒服的。</p>
 <p>只需要几个简单命令，你就可以完成一切。</p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">hexo n #写文章</span><br><span class="line">hexo g #生成</span><br><span class="line">hexo d #部署 # 可与hexo g合并为 hexo d -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n #写文章</span><br><span class="line">hexo g #生成</span><br><span class="line">hexo d #部署 # 可与hexo g合并为 hexo d -g</span><br></pre></td></tr></table></figure>
 <p>下面逐步介绍，进入正题。</p>
 <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>用来生成静态页面。<br>移步<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>官网，下载安装即可。</p>
 <h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>用来将本地Hexo内容提交到Github上。Xcode自带Git，这里不再赘述。<br>如果没有Xcode可以参考<a href="https://hexo.io/docs/#Installation" target="_blank" rel="noopener">Hexo官网</a>上的安装方法。</p>
@@ -567,46 +567,46 @@
 <li><p>验证是否连接成功</p>
 </li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span>---</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh git@github.com---</span><br></pre></td></tr></table></figure>
 <h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>当Node.js和Git都安装好后就可以正式安装Hexo了，终端执行如下命令：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">$ sudo npm <span class="keyword">install</span> -g hexo</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
 <p>输入管理员密码（Mac登录密码）即开始安装 (<code>sudo</code>:linux系统管理指令 <code>-g</code>:全局安装)</p>
 <blockquote>
 <p>注意坑一：<a href="https://hexo.io/docs" target="_blank" rel="noopener">Hexo官网</a>上的安装命令是<code>$ npm install -g hexo-cli</code>，安装时不要忘记前面加上<code>sudo</code>，否则会因为权限问题报错。</p>
 </blockquote>
 <h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>终端cd到一个你选定的目录，执行<code>hexo init</code>命令：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init blog</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo init blog</span><br></pre></td></tr></table></figure>
 <p><code>blog</code>是你建立的文件夹名称。cd到<code>blog</code>文件夹下，执行如下命令，安装npm：</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
 <p>执行如下命令，开启hexo服务器：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 <p>此时，浏览器中打开网址<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>预览本地页面。</p>
 <blockquote>
 <p>本地设置好后，开始关联GitHub</p>
 </blockquote>
 <h3 id="关联GibHub"><a href="#关联GibHub" class="headerlink" title="关联GibHub"></a>关联GibHub</h3><p>终端cd到<code>blog</code>文件夹下，<code>vim</code>打开<code>_config.yml</code>，命令如下：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>vim _config.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ vim _config.yml</span><br></pre></td></tr></table></figure>
 <p>打开后往下滑到最后，修改成下边的样子：</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//github.com/你的用户名/你的用户名.github.io.git</span></span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/你的用户名/你的用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意坑二：在配置所有的_config.yml文件时（包括theme中的），在所有的冒号:后边都要加一个空格，否则执行hexo命令会报错，切记 切记</p>
 </blockquote>
 <p>在<code>blog</code>文件夹目录下执行生成静态页面命令：</p>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span>        或者：hexo g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo generate        或者：hexo g</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>此时若出现如下报错：</p>
-<figure class="highlight vbnet"><table><tr><td class="code"><pre><span class="line">&gt;  <span class="keyword">ERROR</span> Local hexo <span class="keyword">not</span> found <span class="keyword">in</span> ~/blog</span><br><span class="line">&gt;  <span class="keyword">ERROR</span> <span class="keyword">Try</span> runing: <span class="comment">'npm install hexo --save'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;  ERROR Local hexo not found in ~/blog</span><br><span class="line">&gt;  ERROR Try runing: &apos;npm install hexo --save&apos;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <p>则执行命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">  npm install hexo --save</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;  npm install hexo --save</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>再执行配置命令：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo deploy            或者：hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo deploy            或者：hexo d</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意坑三：若执行命令<code>hexo deploy</code>仍然报错：无法连接git或找不到git，则执行如下命令：</p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>再次执行<code>hexo generate</code>和<code>hexo deploy</code>命令。</p>
           <!--noindex-->
           
@@ -808,7 +808,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

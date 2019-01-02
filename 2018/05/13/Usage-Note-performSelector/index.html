@@ -138,7 +138,7 @@
 <meta name="keywords" content="Coder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Usage|Note:performSelector">
-<meta property="og:url" content="http://onlytimer.com/2018/05/13/Usage-Note-performSelector/index.html">
+<meta property="og:url" content="https://onlytimer.com/2018/05/13/Usage-Note-performSelector/index.html">
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="performSelector调用和直接调用的区别：[self method];//直接调用[self performSelector:@selector(method) withObject:nil];  performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（X">
 <meta property="og:locale" content="zh-Hans">
@@ -152,7 +152,7 @@
 
 
 
-  <link rel="canonical" href="http://onlytimer.com/2018/05/13/Usage-Note-performSelector/">
+  <link rel="canonical" href="https://onlytimer.com/2018/05/13/Usage-Note-performSelector/">
 
 
 
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://onlytimer.com/2018/05/13/Usage-Note-performSelector/">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2018/05/13/Usage-Note-performSelector/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roy Cheng">
@@ -471,7 +471,7 @@
       
 
       
-        <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> <span class="function"><span class="keyword">method</span>];</span><span class="comment">//直接调用</span></span><br><span class="line">[<span class="keyword">self</span> performSelector:@<span class="keyword">selector</span>(<span class="function"><span class="keyword">method</span>) <span class="title">withObject</span>:</span><span class="keyword">nil</span>];</span><br></pre></td></tr></table></figure>
+        <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[self method];//直接调用</span><br><span class="line">[self performSelector:@selector(method) withObject:nil];</span><br></pre></td></tr></table></figure>
 <ul>
 <li>performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（Xcode有提示）。</li>
 </ul>
@@ -484,35 +484,35 @@
 <h3 id="方法分析："><a href="#方法分析：" class="headerlink" title="方法分析："></a>方法分析：</h3><ul>
 <li>同步执行方法</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector;  </span><br><span class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>object;  </span><br><span class="line">- <span class="params">(id)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>object1 withObject:<span class="params">(id)</span>object2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (id)performSelector:(SEL)aSelector;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这三个方法，均为同步执行，与线程无关，主线程和子线程中均可调用成功。等同于直接调用该方法。在需要动态的去调用方法的时候去使用。</p>
 </blockquote>
 <ul>
 <li>异步执行方法</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay inModes:<span class="params">(NSArray *)</span>modes;  </span><br><span class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay inModes:(NSArray *)modes;  </span><br><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法为异步执行，即使delay传参为0，仍为异步执行。只能在主线程中执行，在子线程中不会调到aSelector方法。<br>在方法未到执行时间之前，取消方法为：</p>
 </blockquote>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)<span class="string">cancelPreviousPerformRequestsWithTarget:</span>(id)aTarget <span class="string">selector:</span>(SEL)aSelector <span class="string">object:</span>(id)anArgument;  </span><br><span class="line">+ (<span class="keyword">void</span>)<span class="string">cancelPreviousPerformRequestsWithTarget:</span>(id)aTarget;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(id)anArgument;  </span><br><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>NOTE:<br><strong>在调用方法之前或在该方法所在的viewController生命周期结束的时候去调用取消函数，以确保不会引起内存泄露。</strong></p>
 </blockquote>
 <p><strong>拓展：</strong></p>
-<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelector:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>anArgument afterDelay:<span class="params">(NSTimeInterval)</span>delay;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这个方法是单线程的，也就是说只有当前调用次方法的函数执行完毕后，selector方法才会被调用。</p>
 </blockquote>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)<span class="string">changeText:</span>(NSString *)string  </span><br><span class="line">&#123;  </span><br><span class="line">    NSLog(@<span class="string">"changeText:(NSString *)string"</span>);  </span><br><span class="line">&#125;   </span><br><span class="line">- (<span class="keyword">void</span>)changePopoverSize  </span><br><span class="line">&#123;     </span><br><span class="line">    [self <span class="string">performSelector:</span><span class="meta">@selector</span>(<span class="string">changeText:</span>) <span class="string">withObject:</span>@<span class="string">"Happy aha"</span> <span class="string">afterDelay:</span><span class="number">1</span>];  </span><br><span class="line">    NSLog(@<span class="string">"changePopoverSize#####end"</span>);  </span><br><span class="line">    sleep(<span class="number">5</span>);  </span><br><span class="line">    NSLog(@<span class="string">"changePopoverSize-----end"</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)changeText:(NSString *)string  </span><br><span class="line">&#123;  </span><br><span class="line">    NSLog(@&quot;changeText:(NSString *)string&quot;);  </span><br><span class="line">&#125;   </span><br><span class="line">- (void)changePopoverSize  </span><br><span class="line">&#123;     </span><br><span class="line">    [self performSelector:@selector(changeText:) withObject:@&quot;Happy aha&quot; afterDelay:1];  </span><br><span class="line">    NSLog(@&quot;changePopoverSize#####end&quot;);  </span><br><span class="line">    sleep(5);  </span><br><span class="line">    NSLog(@&quot;changePopoverSize-----end&quot;);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>打印结果：</p>
 </blockquote>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">changePopoverSize#####end</span><br><span class="line">changePopoverSize-----end</span><br><span class="line">changeText:(NSString *)string</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">changePopoverSize#####end</span><br><span class="line">changePopoverSize-----end</span><br><span class="line">changeText:(NSString *)string</span><br></pre></td></tr></table></figure>
 <ul>
 <li>wait 函数</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelectorInBackground:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg  </span><br><span class="line">或者  </span><br><span class="line">- <span class="params">(void)</span>performSelectorOnMainThread:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg waitUntilDone:<span class="params">(BOOL)</span>wait;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法，在主线程和子线程中均可执行，均会调用主线程的aSelector方法；<br>如果设置wait为YES:等待当前线程执行完以后，主线程才会执行aSelector方法；</p>
 </blockquote>
@@ -523,7 +523,7 @@
 <ul>
 <li>多线程执行</li>
 </ul>
-<figure class="highlight erlang"><table><tr><td class="code"><pre><span class="line">- <span class="params">(void)</span>performSelectorInBackground:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg  </span><br><span class="line">或者  </span><br><span class="line">- <span class="params">(void)</span>performSelectorOnMainThread:<span class="params">(SEL)</span>aSelector withObject:<span class="params">(id)</span>arg waitUntilDone:<span class="params">(BOOL)</span>wait;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -757,7 +757,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

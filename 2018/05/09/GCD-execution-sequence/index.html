@@ -134,25 +134,25 @@
 
 
 
-  <meta name="description" content="GCD经典面试题 &amp;#123;	dispatch_async(dispatch_get_main_queue(), ^&amp;#123;	        NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);	        NSLog(@&quot;A&quot;);	    &amp;#125;);	    NSLog(@&quot;B&quot;);	    dispatch_queue_t temp = dispa">
+  <meta name="description" content="GCD经典面试题 &amp;#123;        dispatch_async(dispatch_get_main_queue(), ^&amp;#123;            NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);            NSLog(@&quot;A&quot;);        &amp;#125;);        NSLog(@&quot;B&quot;);        dispatc">
 <meta name="keywords" content="Coder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCD - execution sequence">
-<meta property="og:url" content="http://onlytimer.com/2018/05/09/GCD-execution-sequence/index.html">
+<meta property="og:url" content="https://onlytimer.com/2018/05/09/GCD-execution-sequence/index.html">
 <meta property="og:site_name" content="伊水贝">
-<meta property="og:description" content="GCD经典面试题 &amp;#123;	dispatch_async(dispatch_get_main_queue(), ^&amp;#123;	        NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);	        NSLog(@&quot;A&quot;);	    &amp;#125;);	    NSLog(@&quot;B&quot;);	    dispatch_queue_t temp = dispa">
+<meta property="og:description" content="GCD经典面试题 &amp;#123;        dispatch_async(dispatch_get_main_queue(), ^&amp;#123;            NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);            NSLog(@&quot;A&quot;);        &amp;#125;);        NSLog(@&quot;B&quot;);        dispatc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-09T15:00:18.000Z">
+<meta property="og:updated_time" content="2019-01-02T05:54:35.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD - execution sequence">
-<meta name="twitter:description" content="GCD经典面试题 &amp;#123;	dispatch_async(dispatch_get_main_queue(), ^&amp;#123;	        NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);	        NSLog(@&quot;A&quot;);	    &amp;#125;);	    NSLog(@&quot;B&quot;);	    dispatch_queue_t temp = dispa">
+<meta name="twitter:description" content="GCD经典面试题 &amp;#123;        dispatch_async(dispatch_get_main_queue(), ^&amp;#123;            NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);            NSLog(@&quot;A&quot;);        &amp;#125;);        NSLog(@&quot;B&quot;);        dispatc">
 
 
 
 
 
 
-  <link rel="canonical" href="http://onlytimer.com/2018/05/09/GCD-execution-sequence/">
+  <link rel="canonical" href="https://onlytimer.com/2018/05/09/GCD-execution-sequence/">
 
 
 
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://onlytimer.com/2018/05/09/GCD-execution-sequence/">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2018/05/09/GCD-execution-sequence/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Roy Cheng">
@@ -421,12 +421,24 @@
                 
               
 
-              <time title="Created: 2018-05-09 22:41:12 / Modified: 23:00:18" itemprop="dateCreated datePublished" datetime="2018-05-09T22:41:12+08:00">2018-05-09</time>
+              <time title="Created: 2018-05-09 22:41:12" itemprop="dateCreated datePublished" datetime="2018-05-09T22:41:12+08:00">2018-05-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-02 13:54:35" itemprop="dateModified" datetime="2019-01-02T13:54:35+08:00">2019-01-02</time>
               
             
           </span>
@@ -460,16 +472,25 @@
 
       
         <p><strong>GCD经典面试题</strong></p>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"2--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"A"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    <span class="built_in">NSLog</span>(<span class="string">@"B"</span>);</span><br><span class="line">	    <span class="built_in">dispatch_queue_t</span> temp = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</span><br><span class="line">	    </span><br><span class="line">	    <span class="built_in">dispatch_sync</span>(temp, ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"3--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"C"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    </span><br><span class="line">	    <span class="built_in">dispatch_async</span>(temp, ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"4--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"D"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"5--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">	        <span class="built_in">NSLog</span>(<span class="string">@"E"</span>);</span><br><span class="line">	    &#125;);</span><br><span class="line">	    </span><br><span class="line">	    [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span> afterDelay:<span class="number">0.0</span>];</span><br><span class="line">	    <span class="built_in">NSLog</span>(<span class="string">@"F"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)method &#123;</span><br><span class="line">	<span class="built_in">NSLog</span>(<span class="string">@"G"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"2--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"A"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"B"</span>);</span><br><span class="line">        <span class="built_in">dispatch_queue_t</span> temp = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_sync</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"3--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"C"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_async</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"4--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"D"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"5--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"E"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span> afterDelay:<span class="number">0.0</span>];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"F"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)method &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"G"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>/<em>==================================================================================</em>/</p>
-<h3 id="答案有4个，编译结果现有2个-！"><a href="#答案有4个，编译结果现有2个-！" class="headerlink" title="答案有4个，编译结果现有2个 ！"></a>答案有4个，编译结果现有2个 ！</h3><blockquote>
+<h3 id="答案有4个，以下为编译结果-！"><a href="#答案有4个，以下为编译结果-！" class="headerlink" title="答案有4个，以下为编译结果 ！"></a>答案有4个，以下为编译结果 ！</h3><blockquote>
 <p>答案①</p>
 </blockquote>
-<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">B</span><br><span class="line"><span class="number">3</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">2</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">A</span><br><span class="line"><span class="number">5</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">6</span>--&lt;NSThread: <span class="number">0</span>x604000061f00&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">G</span><br><span class="line"><span class="number">4</span>--&lt;NSThread: <span class="number">0</span>x600000267100&gt;&#123;<span class="attr">number</span> = <span class="number">3</span>, <span class="attr">name</span> = (<span class="literal">null</span>)&#125;</span><br><span class="line">D</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 同步+串行， 同步+并发 均打印以下结果：</span></span><br><span class="line">B</span><br><span class="line"><span class="number">3</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x604000061f00</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">2</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x604000061f00</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">A</span><br><span class="line"><span class="number">5</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x604000061f00</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">6</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x604000061f00</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">G</span><br><span class="line"><span class="number">4</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x600000267100</span>&gt;&#123;number = <span class="number">3</span>, name = (null)&#125;</span><br><span class="line">D</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>答案②</p>
 </blockquote>
-<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line">B</span><br><span class="line"><span class="number">3</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">4</span>--&lt;NSThread: <span class="number">0</span>x60000026c500&gt;&#123;<span class="attr">number</span> = <span class="number">3</span>, <span class="attr">name</span> = (<span class="literal">null</span>)&#125;</span><br><span class="line">D</span><br><span class="line"><span class="number">2</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">A</span><br><span class="line"><span class="number">5</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">6</span>--&lt;NSThread: <span class="number">0</span>x60400007d3c0&gt;&#123;<span class="attr">number</span> = <span class="number">1</span>, <span class="attr">name</span> = main&#125;</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如若在同步主线程上执行，会线程阻塞</span></span><br><span class="line"><span class="comment">// sync_main_method 会直接崩溃！！！(答案结束)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下为待验证结果</span></span><br><span class="line"><span class="comment">// 此结果验证一直未出现，罗列在此：</span></span><br><span class="line">B</span><br><span class="line"><span class="number">3</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60400007d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">4</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000026c500</span>&gt;&#123;number = <span class="number">3</span>, name = (null)&#125;</span><br><span class="line">D</span><br><span class="line"><span class="number">2</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60400007d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">A</span><br><span class="line"><span class="number">5</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60400007d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">6</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60400007d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">G</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案③</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 异步 + 主队列 执行结果:  async_main_method</span></span><br><span class="line">B</span><br><span class="line"><span class="number">3</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">6</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">G</span><br><span class="line"><span class="number">2</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">A</span><br><span class="line"><span class="number">5</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">4</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000173e900</span>&gt;&#123;number = <span class="number">3</span>, name = (null)&#125;</span><br><span class="line">D</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案④</p>
+</blockquote>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 注：由于打印结果不稳定，随机选取两个</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步 +  串行 执行结果： async_serial_method</span></span><br><span class="line">B</span><br><span class="line"><span class="number">2</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line"><span class="number">3</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000173e900</span>&gt;&#123;number = <span class="number">3</span>, name = (null)&#125;</span><br><span class="line">A</span><br><span class="line">C</span><br><span class="line">F</span><br><span class="line"><span class="number">5</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">E</span><br><span class="line"><span class="number">4</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000173e980</span>&gt;&#123;number = <span class="number">4</span>, name = (null)&#125;</span><br><span class="line">D</span><br><span class="line"></span><br><span class="line">另有BCAEFD,BCFAED,BACEFD ...</span><br><span class="line"></span><br><span class="line"><span class="comment">// 异步 + 并发 执行结果： async_concurrent_method</span></span><br><span class="line">B</span><br><span class="line"><span class="number">2</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line"><span class="number">3</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000173e980</span>&gt;&#123;number = <span class="number">4</span>, name = (null)&#125;</span><br><span class="line">A</span><br><span class="line">C</span><br><span class="line"><span class="number">5</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000176d3c0</span>&gt;&#123;number = <span class="number">1</span>, name = main&#125;</span><br><span class="line">F</span><br><span class="line">E</span><br><span class="line"><span class="number">4</span>--&lt;<span class="built_in">NSThread</span>: <span class="number">0x60000173e900</span>&gt;&#123;number = <span class="number">3</span>, name = (null)&#125;</span><br><span class="line">D</span><br><span class="line"></span><br><span class="line">另有BCAFED</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -683,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#答案有4个，编译结果现有2个-！"><span class="nav-number">1.</span> <span class="nav-text">答案有4个，编译结果现有2个 ！</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#答案有4个，以下为编译结果-！"><span class="nav-number">1.</span> <span class="nav-text">答案有4个，以下为编译结果 ！</span></a></li></ol></div>
             
 
           </div>
@@ -703,7 +724,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
