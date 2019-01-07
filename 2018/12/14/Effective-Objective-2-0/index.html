@@ -134,18 +134,18 @@
 
 
 
-  <meta name="description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
+  <meta name="description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低耦合 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独">
 <meta name="keywords" content="ios,Effective Objective 2.0,高质量,52个有效方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Effective Objective 2.0">
 <meta property="og:url" content="https://onlytimer.com/2018/12/14/Effective-Objective-2-0/index.html">
 <meta property="og:site_name" content="伊水贝">
-<meta property="og:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
+<meta property="og:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低耦合 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-31T08:10:36.394Z">
+<meta property="og:updated_time" content="2019-01-03T02:06:22.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective Objective 2.0">
-<meta name="twitter:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独写一">
+<meta name="twitter:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低耦合 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独">
 
 
 
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 16:10:36" itemprop="dateModified" datetime="2018-12-31T16:10:36+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-03 10:06:22" itemprop="dateModified" datetime="2019-01-03T10:06:22+08:00">2019-01-03</time>
               
             
           </span>
@@ -477,7 +477,7 @@
 <li>消息转发</li>
 </ul>
 <h2 id="2-在类的头文件中尽量少引入其他头文件"><a href="#2-在类的头文件中尽量少引入其他头文件" class="headerlink" title="2. 在类的头文件中尽量少引入其他头文件"></a>2. 在类的头文件中尽量少引入其他头文件</h2><ul>
-<li>减少编译时间，降低</li>
+<li>减少编译时间，降低耦合</li>
 <li>使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明</li>
 <li>有些协议，例如委托协议（delegate protocol）不用单独写一个头文件</li>
 <li>协议单独写.h.m文件，或者在委托协议里声明协议，</li>
@@ -491,9 +491,12 @@
 <p>用 <code>static const NSTimeinterval kAnimationDuration = 0.3;</code> 代替</p>
 <p>  <code>_#define ANIMATION_DURATION 0.3</code></p>
 </li>
-<li>OC 没有“名称空间”（namespace）这一概念</li>
-<li>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</li>
-<li>定义常量的位置很重要。</li>
+<li><p>OC 没有“名称空间”（namespace）这一概念</p>
+</li>
+<li><p>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</p>
+</li>
+<li><p>定义常量的位置很重要。</p>
+</li>
 <li><p>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀</p>
 <p>也可以单独定义.h.m文件用来声明所有的全局常量。</p>
 </li>
@@ -533,10 +536,10 @@
 </ul>
 </li>
 <li><p>MRC</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">** strong 修饰: **</span><br><span class="line">  </span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        [obj retain];                  // 保留新值</span><br><span class="line">        [_obj release];                // 释放旧值</span><br><span class="line">        _obj = obj;                    // 设置新值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  weak 修饰: **</span><br><span class="line">  </span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        _obj = obj;                   // 不保留新值，不释放旧值，直接设置</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  copy 修饰： **</span><br><span class="line">  </span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        [_obj release];               // 释放旧值</span><br><span class="line">        _obj = [obj copy];            // 设置新值copy</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">** strong 修饰: **</span><br><span class="line">  </span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        [obj retain];                  // 保留新值</span><br><span class="line">        [_obj release];                // 释放旧值</span><br><span class="line">        _obj = obj;                    // 设置新值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  weak 修饰: **</span><br><span class="line">  </span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        _obj = obj;                   // 不保留新值，不释放旧值，直接设置</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  copy 修饰： **</span><br><span class="line">  </span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        [_obj release];               // 释放旧值</span><br><span class="line">        _obj = [obj copy];            // 设置新值copy</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ARC</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">** strong 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">      _obj = obj;                       // 设置新值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** weak 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">     if(_obj != obj) &#123;</span><br><span class="line">     _obj = obj;                        // 不保留新值，不释放旧值，直接设置新值</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** copy 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">     if(_obj != obj) &#123;</span><br><span class="line">     _obj = [obj copy];                 // 设置新值copy</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">** strong 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">      _obj = obj;                       // 设置新值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** weak 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">     if(_obj != obj) &#123;</span><br><span class="line">     _obj = obj;                        // 不保留新值，不释放旧值，直接设置新值</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** copy 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">     if(_obj != obj) &#123;</span><br><span class="line">     _obj = [obj copy];                 // 设置新值copy</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="7-在对象内部尽量直接访问实例变量"><a href="#7-在对象内部尽量直接访问实例变量" class="headerlink" title="7. 在对象内部尽量直接访问实例变量"></a>7. 在对象内部尽量直接访问实例变量</h2><ul>
@@ -649,14 +652,8 @@
 <li><p>delegate 和 block 如何选择：</p>
 <blockquote>
 <p>多条消息需要传递，选用delegate，</p>
-</blockquote>
-<blockquote>
 <p>一个委托对象的代理属性只能有一个代理对象时</p>
-</blockquote>
-<blockquote>
 <p>delegare 更加面向过程， block更加面向结果</p>
-</blockquote>
-<blockquote>
 <p>性能上来说，block的性能消耗要略大于delegate，block会涉及栈区向堆区拷贝等操作，时间和空间上的消耗都大于代理</p>
 </blockquote>
 </li>
@@ -692,14 +689,8 @@
 <li><p>属性存取方法中的内存管理</p>
 <blockquote>
 <p>三个方法用于操作计数器：<strong>Retain</strong> 递增  <strong>release</strong> 递减 <strong>autorelease</strong> 带稍后清理“自动释放池”时，再递减保留计数</p>
-</blockquote>
-<blockquote>
 <p>野指针，悬垂指针（oc中）： 指针指向的对象已经被释放了</p>
-</blockquote>
-<blockquote>
 <p>僵尸对象：一个已经被释放的对象，但是这个对象所占用的空间还没有分配给别人，这样的对象叫做僵尸对象</p>
-</blockquote>
-<blockquote>
 <p>autorelease释放时机：当前线程的下一次事件循环。因为自动释放池中的释放操作要等到下一次事件循环时才会执行</p>
 </blockquote>
 </li>
@@ -757,19 +748,15 @@
 <li>常见用法：分类里声明块属性，公共接口里作为参数，传值给属性，注意块的释放时机，一次性操作可在执行完成后释放，或可在对象释放时释放，避免循环引用</li>
 </ul>
 <h2 id="40-用块引用其所属对象时不要出现保留环"><a href="#40-用块引用其所属对象时不要出现保留环" class="headerlink" title="40. 用块引用其所属对象时不要出现保留环"></a>40. 用块引用其所属对象时不要出现保留环</h2><ul>
-<li>如果块所捕获的对象直接或间接的保留了块本身，那么就得当心保留环的问题</li>
-<li>一定要找个适当的时机解除保留环，而不能把责任推给API的调用者</li>
+<li><p>如果块所捕获的对象直接或间接的保留了块本身，那么就得当心保留环的问题</p>
+</li>
+<li><p>一定要找个适当的时机解除保留环，而不能把责任推给API的调用者</p>
+</li>
 <li><p>常见错误用法：</p>
 <blockquote>
 <p>A类把块作为属性，但在B类使用时，在某个方法中直接临时生成A对象并调用块，</p>
-</blockquote>
-<blockquote>
 <p>虽然编译器会复制块到堆中，但在块内代码执行完成后会释放，</p>
-</blockquote>
-<blockquote>
 <p>建议B类保留A对象，用weakself避免保留环，或者B类中创建个数组，把A对象保留中，在dealloc方法中，清理数组内容</p>
-</blockquote>
-<blockquote>
 <p>B对象 –&gt; block –&gt; A对象 –&gt;B对象</p>
 </blockquote>
 </li>
@@ -784,7 +771,7 @@
 <li><p><strong>atomic修饰属性，无法保证访问该对象时绝对是线程安全的，使用属性时，必定能从中获取到有效值，然而在同一个线程上多次调用获取方法(getter)</strong></p>
 </li>
 <li><p><strong>每次获取到的结果未必相同，在两次访问操作之间，其他线程可能会写入新的属性值</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">// 在同一个队列上执行setter和getter方法</span><br><span class="line">-(NSString *)someString &#123;</span><br><span class="line">  __block NSStirng *localSomeString;</span><br><span class="line">  dispatch_async(queue, ^&#123;</span><br><span class="line">      localSomeString = _someString;</span><br><span class="line">  &#125;);</span><br><span class="line">  return localSomeString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void)setSomeString:(NSString *)someString &#123;</span><br><span class="line">  dispatch_barrier_async(queue, ^&#123;</span><br><span class="line">      _someString = someString;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 在同一个队列上执行setter和getter方法</span></span><br><span class="line">-(<span class="built_in">NSString</span> *)someString &#123;</span><br><span class="line">  __block <span class="built_in">NSStirng</span> *localSomeString;</span><br><span class="line">  <span class="built_in">dispatch_sync</span>(queue, ^&#123;</span><br><span class="line">      localSomeString = _someString;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> localSomeString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)setSomeString:(<span class="built_in">NSString</span> *)someString &#123;</span><br><span class="line">  dispatch_barrier_async(queue, ^&#123;</span><br><span class="line">      _someString = someString;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="42-多用GCD-少用performSelector系列方法"><a href="#42-多用GCD-少用performSelector系列方法" class="headerlink" title="42. 多用GCD,少用performSelector系列方法"></a>42. 多用GCD,少用performSelector系列方法</h2><ul>
@@ -797,20 +784,10 @@
 <li><p>使用NSOperation 及 NSOperationQueue的好处如下：</p>
 <blockquote>
 <p>取消某个操作</p>
-</blockquote>
-<blockquote>
 <p>指定操作间的依赖关系</p>
-</blockquote>
-<blockquote>
 <p>通过键值观察机制监控NSOperation对象的属性</p>
-</blockquote>
-<blockquote>
 <p>指定操作的优先级</p>
-</blockquote>
-<blockquote>
 <p>重用NSOperation对象</p>
-</blockquote>
-<blockquote>
 <p>有一个API选用了操作队列而非派发队列，这就是NSNotifacationCenter，开发者可通过其中的方法来注册监听器，以便在发生相关事件时得到通知</p>
 </blockquote>
 </li>
@@ -842,54 +819,31 @@
 <li><p>NSCache胜过NSDictionary之处</p>
 <blockquote>
 <p>自动删减缓存</p>
-</blockquote>
-<blockquote>
 <p>NSCache并不会拷贝键，而是会保留它</p>
-</blockquote>
-<blockquote>
 <p>NSCache是线程安全的</p>
 </blockquote>
 </li>
-<li>NSPurgeableData对象搭配NSCache使用效果很好</li>
+<li><p>NSPurgeableData对象搭配NSCache使用效果很好</p>
+</li>
 </ul>
 <h2 id="51-精简initialize-与-load-的实现代码"><a href="#51-精简initialize-与-load-的实现代码" class="headerlink" title="51. 精简initialize 与 load 的实现代码"></a>51. 精简initialize 与 load 的实现代码</h2><ul>
 <li><p>load方法：</p>
 <blockquote>
 <p>先调用类里的，在调用分类里的</p>
-</blockquote>
-<blockquote>
 <p>在执行子类的load方法之前，必定会先执行所有超类的load方法</p>
-</blockquote>
-<blockquote>
 <p>load方法中使用其他类是不安全的</p>
-</blockquote>
-<blockquote>
 <p>load方法并不会像普通的方法那样，它并不会遵从那套继承规则</p>
-</blockquote>
-<blockquote>
 <p>整个应用程序在执行load方法时都会阻塞</p>
-</blockquote>
-<blockquote>
 <p>真正用途仅在于调试程序，比如分类里编写此方法，用来判断该分类是否已正确载入系统中</p>
-</blockquote>
-<blockquote>
 <p>load方法不参与覆写机制</p>
 </blockquote>
 </li>
 <li><p>initialize：</p>
 <blockquote>
 <p>惰性调用的</p>
-</blockquote>
-<blockquote>
 <p>可以安全使用</p>
-</blockquote>
-<blockquote>
 <p>initialize方法同其他消息一样，如果某个类未实现它，而其超类实现了，就会运行超类的实现代码</p>
-</blockquote>
-<blockquote>
 <p>无法再编译期设定的全局变量，可以在initialize方法里初始化</p>
-</blockquote>
-<blockquote>
 <p>由于此方法遵从普通的覆写规律，所以通常应该在里边判断当前需要初始化的是哪个类</p>
 </blockquote>
 </li>

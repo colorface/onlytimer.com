@@ -632,7 +632,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 16:10:36" itemprop="dateModified" datetime="2018-12-31T16:10:36+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-03 10:06:22" itemprop="dateModified" datetime="2019-01-03T10:06:22+08:00">2019-01-03</time>
               
             
           </span>
@@ -672,7 +672,7 @@
 <li>消息转发</li>
 </ul>
 <h2 id="2-在类的头文件中尽量少引入其他头文件"><a href="#2-在类的头文件中尽量少引入其他头文件" class="headerlink" title="2. 在类的头文件中尽量少引入其他头文件"></a>2. 在类的头文件中尽量少引入其他头文件</h2><ul>
-<li>减少编译时间，降低</li>
+<li>减少编译时间，降低耦合</li>
 <li>使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明</li>
 <li>有些协议，例如委托协议（delegate protocol）不用单独写一个头文件</li>
 <li>协议单独写.h.m文件，或者在委托协议里声明协议，</li>
@@ -686,9 +686,12 @@
 <p>用 <code>static const NSTimeinterval kAnimationDuration = 0.3;</code> 代替</p>
 <p>  <code>_#define ANIMATION_DURATION 0.3</code></p>
 </li>
-<li>OC 没有“名称空间”（namespace）这一概念</li>
-<li>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</li>
-<li>定义常量的位置很重要。</li>
+<li><p>OC 没有“名称空间”（namespace）这一概念</p>
+</li>
+<li><p>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</p>
+</li>
+<li><p>定义常量的位置很重要。</p>
+</li>
 <li><p>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀</p>
 <p>也可以单独定义.h.m文件用来声明所有的全局常量。</p>
 </li>
