@@ -378,6 +378,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2019/01/22/Symmetic-Cryptography-Asymmetic-Cryptography/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伊水贝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/22/Symmetic-Cryptography-Asymmetic-Cryptography/" class="post-title-link" itemprop="url">Symmetic Cryptography & Asymmetic Cryptography</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-22 19:03:54 / Modified: 19:25:30" itemprop="dateCreated datePublished" datetime="2019-01-22T19:03:54+08:00">2019-01-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2019-01-22-121924251089094.png" alt=""></p>
+<p>对称加密 和 非对称加密：</p>
+<ul>
+<li><p>对称加密加密与解密使用的是同样的密钥，所以速度快，但由于需要将密钥在网络传输，所以安全性不高。</p>
+<blockquote>
+<p>对称加密算法 AES 128位 192位 256位</p>
+<p>密钥管理比较难，不适合互联网，一般用于内部系统</p>
+<p>快好几个数量级(软件加解密速度至少快100倍,每秒可以加解密数M比特数据),适合大数据量的加解密处理</p>
+</blockquote>
+</li>
+<li><p>非对称加密使用了一对密钥，公钥与私钥，所以安全性高，但加密与解密速度慢。</p>
+<blockquote>
+<p>非对称加密算法 RSA, ECC</p>
+<p>密钥容易管理</p>
+<p>慢,适合小数据量加解密或数据签名</p>
+</blockquote>
+</li>
+<li><p>解决的办法是将对称加密的密钥使用非对称加密的公钥进行加密，然后发送出去，接收方使用私钥进行解密得到对称加密的密钥，然后双方可以使用对称加密来进行沟通。</p>
+</li>
+</ul>
+<p><strong><em>为系统而生，为框架而死，为debug奋斗一辈子； 吃符号的亏，上大小写的当，最后死在需求上。</em></strong></p>
+<hr>
+<p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤:</p>
+<ul>
+<li><p>(1) 客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。</p>
+</li>
+<li><p>(2) Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。</p>
+</li>
+<li><p>(3) 客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</p>
+</li>
+<li><p>(4) 客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</p>
+</li>
+<li><p>(5) Web服务器利用自己的私钥解密出会话密钥。</p>
+</li>
+<li><p>(6) Web服务器利用会话密钥加密与客户端之间的通信。</p>
+<hr>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/22/Symmetic-Cryptography-Asymmetic-Cryptography/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </li></ul></div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2018/12/29/Private-Pods/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -440,7 +623,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 15:50:28" itemprop="dateModified" datetime="2018-12-31T15:50:28+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-22 19:14:15" itemprop="dateModified" datetime="2019-01-22T19:14:15+08:00">2019-01-22</time>
               
             
           </span>
@@ -479,10 +662,10 @@
 <h2 id="2-Add-your-Private-Repo-to-your-CocoaPods-installation"><a href="#2-Add-your-Private-Repo-to-your-CocoaPods-installation" class="headerlink" title="2.Add your Private Repo to your CocoaPods installation"></a>2.Add your Private Repo to your CocoaPods installation</h2><ul>
 <li>拉取 Pod 仓库到本地:</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo add REPO_NAME SOURCE_URL</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod repo add REPO_NAME SOURCE_URL</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>To check if your installation is successful and ready to go:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd ~/.cocoapods/repos/REPO_NAME</span><br><span class="line">$ pod repo lint .</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ cd ~<span class="regexp">/.cocoapods/repos</span><span class="regexp">/REPO_NAME</span></span><br><span class="line"><span class="regexp">$ pod repo lint .</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="3-创建私有-Pod-工程文件"><a href="#3-创建私有-Pod-工程文件" class="headerlink" title="3.创建私有 Pod 工程文件"></a>3.创建私有 Pod 工程文件</h2><ul>
@@ -500,20 +683,20 @@
 <h2 id="4-创建私有-Pod-的-podspec"><a href="#4-创建私有-Pod-的-podspec" class="headerlink" title="4. 创建私有 Pod 的 podspec"></a>4. 创建私有 Pod 的 podspec</h2><ul>
 <li>在工程的根目录下执行：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod spec create xxx</span><br><span class="line">注:xxx为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod spec create xxx</span><br><span class="line">注<span class="symbol">:xxx</span>为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span><br></pre></td></tr></table></figure>
 <ul>
 <li>根据实际情况配置<code>podspec</code>文件</li>
 </ul>
 <p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-27-721001-d95ed7ac380f3ffe.png" alt="根据实际情况配置"></p>
 <ul>
 <li><p>验证 podspec 文件有效性:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod lib lint</span><br><span class="line"></span><br><span class="line">$ pod spec lint</span><br><span class="line"></span><br><span class="line"># 都验证通过后，podspec 文件配置成功。</span><br><span class="line"># 可选参数 --verbose   --allow-warnings</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod lib lint</span><br><span class="line"></span><br><span class="line">$ pod spec lint</span><br><span class="line"></span><br><span class="line"><span class="comment"># 都验证通过后，podspec 文件配置成功。</span></span><br><span class="line"><span class="comment"># 可选参数 --verbose   --allow-warnings</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>提交 podspec 至私有 Spec 仓库</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ pod repo push REPO_NAME SPEC_NAME.podspec</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod repo push REPO_NAME SPEC_NAME.podspec</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example"><a href="#Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example" class="headerlink" title="Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:"></a>Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">source &apos;URL_TO_REPOSITORY&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example"><a href="#Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example" class="headerlink" title="Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:"></a>Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">source <span class="string">'URL_TO_REPOSITORY'</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -632,7 +815,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-03 10:06:22" itemprop="dateModified" datetime="2019-01-03T10:06:22+08:00">2019-01-03</time>
+                <time title="Modified: 2019-01-22 19:22:13" itemprop="dateModified" datetime="2019-01-22T19:22:13+08:00">2019-01-22</time>
               
             
           </span>
@@ -830,7 +1013,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 15:57:13" itemprop="dateModified" datetime="2018-12-31T15:57:13+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-22 19:21:05" itemprop="dateModified" datetime="2019-01-22T19:21:05+08:00">2019-01-22</time>
               
             
           </span>
@@ -1013,7 +1196,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 15:52:18" itemprop="dateModified" datetime="2018-12-31T15:52:18+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-22 19:16:02" itemprop="dateModified" datetime="2019-01-22T19:16:02+08:00">2019-01-22</time>
               
             
           </span>
@@ -1048,7 +1231,7 @@
       
         
           
-            <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[self method];//直接调用</span><br><span class="line">[self performSelector:@selector(method) withObject:nil];</span><br></pre></td></tr></table></figure>
+            <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> method];<span class="comment">//直接调用</span></span><br><span class="line">[<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>
 <ul>
 <li>performSelector是运行时系统负责去找方法的，在编译时不做任何校验(编译器没任何提示)，如果方法不存在运行时程序崩溃；直接调用编译是会自动校验的，方法不存在时编译时候就能够发现（Xcode有提示）。</li>
 </ul>
@@ -1061,46 +1244,45 @@
 <h3 id="方法分析："><a href="#方法分析：" class="headerlink" title="方法分析："></a>方法分析：</h3><ul>
 <li>同步执行方法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (id)performSelector:(SEL)aSelector;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object;  </span><br><span class="line">- (id)performSelector:(SEL)aSelector withObject:(id)object1 withObject:(id)object2;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)performSelector:(SEL)aSelector;  </span><br><span class="line">- (<span class="keyword">id</span>)performSelector:(SEL)aSelector withObject:(<span class="keyword">id</span>)object;  </span><br><span class="line">- (<span class="keyword">id</span>)performSelector:(SEL)aSelector withObject:(<span class="keyword">id</span>)object1 withObject:(<span class="keyword">id</span>)object2;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这三个方法，均为同步执行，与线程无关，主线程和子线程中均可调用成功。等同于直接调用该方法。在需要动态的去调用方法的时候去使用。</p>
 </blockquote>
 <ul>
 <li>异步执行方法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay inModes:(NSArray *)modes;  </span><br><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)performSelector:(SEL)aSelector withObject:(<span class="keyword">id</span>)anArgument afterDelay:(<span class="built_in">NSTimeInterval</span>)delay inModes:(<span class="built_in">NSArray</span> *)modes;  </span><br><span class="line">- (<span class="keyword">void</span>)performSelector:(SEL)aSelector withObject:(<span class="keyword">id</span>)anArgument afterDelay:(<span class="built_in">NSTimeInterval</span>)delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法为异步执行，即使delay传参为0，仍为异步执行。只能在主线程中执行，在子线程中不会调到aSelector方法。<br>在方法未到执行时间之前，取消方法为：</p>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">&gt; + (<span class="keyword">void</span>)cancelPreviousPerformRequestsWithTarget:(<span class="keyword">id</span>)aTarget selector:(SEL)aSelector object:(<span class="keyword">id</span>)anArgument;  </span><br><span class="line">&gt; + (<span class="keyword">void</span>)cancelPreviousPerformRequestsWithTarget:(<span class="keyword">id</span>)aTarget;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(id)anArgument;  </span><br><span class="line">+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>NOTE:<br><strong>在调用方法之前或在该方法所在的viewController生命周期结束的时候去调用取消函数，以确保不会引起内存泄露。</strong></p>
 </blockquote>
 <p><strong>拓展：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelector:(SEL)aSelector withObject:(id)anArgument afterDelay:(NSTimeInterval)delay;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)performSelector:(SEL)aSelector withObject:(<span class="keyword">id</span>)anArgument afterDelay:(<span class="built_in">NSTimeInterval</span>)delay;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这个方法是单线程的，也就是说只有当前调用次方法的函数执行完毕后，selector方法才会被调用。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)changeText:(NSString *)string  </span><br><span class="line">&#123;  </span><br><span class="line">    NSLog(@&quot;changeText:(NSString *)string&quot;);  </span><br><span class="line">&#125;   </span><br><span class="line">- (void)changePopoverSize  </span><br><span class="line">&#123;     </span><br><span class="line">    [self performSelector:@selector(changeText:) withObject:@&quot;Happy aha&quot; afterDelay:1];  </span><br><span class="line">    NSLog(@&quot;changePopoverSize#####end&quot;);  </span><br><span class="line">    sleep(5);  </span><br><span class="line">    NSLog(@&quot;changePopoverSize-----end&quot;);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)changeText:(<span class="built_in">NSString</span> *)string  </span><br><span class="line">&#123;  </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"changeText:(NSString *)string"</span>);  </span><br><span class="line">&#125;   </span><br><span class="line">- (<span class="keyword">void</span>)changePopoverSize  </span><br><span class="line">&#123;     </span><br><span class="line">    [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(changeText:) withObject:<span class="string">@"Happy aha"</span> afterDelay:<span class="number">1</span>];  </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"changePopoverSize#####end"</span>);  </span><br><span class="line">    sleep(<span class="number">5</span>);  </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"changePopoverSize-----end"</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>打印结果：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="quote">&gt; changePopoverSize#####end</span></span><br><span class="line"><span class="quote">&gt; changePopoverSize-----end</span></span><br><span class="line"><span class="quote">&gt; changeText:(NSString *)string</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">changePopoverSize#####end</span><br><span class="line">changePopoverSize-----end</span><br><span class="line">changeText:(NSString *)string</span><br></pre></td></tr></table></figure>
 <ul>
 <li>wait 函数</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)performSelectorInBackground:(SEL)aSelector withObject:(<span class="keyword">id</span>)arg  </span><br><span class="line">或者  </span><br><span class="line">- (<span class="keyword">void</span>)performSelectorOnMainThread:(SEL)aSelector withObject:(<span class="keyword">id</span>)arg waitUntilDone:(<span class="built_in">BOOL</span>)wait;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这两个方法，在主线程和子线程中均可执行，均会调用主线程的aSelector方法；<br>如果设置wait为YES:等待当前线程执行完以后，主线程才会执行aSelector方法；</p>
-</blockquote>
 <p>设置为NO：不等待当前线程执行完，就在主线程上执行aSelector方法。<br>如果，当前线程就是主线程，那么aSelector方法会马上执行。</p>
-<blockquote>
-</blockquote>
 <p>注意：apple不允许程序员在主线程以外的线程中对UI进行操作，此时我们必须调用performSelectorOnMainThread函数在主线程中完成UI的更新。</p>
+</blockquote>
 <ul>
 <li>多线程执行</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- (void)performSelectorInBackground:(SEL)aSelector withObject:(id)arg  </span><br><span class="line">或者  </span><br><span class="line">- (void)performSelectorOnMainThread:(SEL)aSelector withObject:(id)arg waitUntilDone:(BOOL)wait;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)performSelectorInBackground:(SEL)aSelector withObject:(<span class="keyword">id</span>)arg  </span><br><span class="line">或者  </span><br><span class="line">- (<span class="keyword">void</span>)performSelectorOnMainThread:(SEL)aSelector withObject:(<span class="keyword">id</span>)arg waitUntilDone:(<span class="built_in">BOOL</span>)wait;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -1218,7 +1400,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-02 13:54:35" itemprop="dateModified" datetime="2019-01-02T13:54:35+08:00">2019-01-02</time>
+                <time title="Modified: 2019-01-22 19:21:24" itemprop="dateModified" datetime="2019-01-22T19:21:24+08:00">2019-01-22</time>
               
             
           </span>
@@ -1390,7 +1572,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 16:26:36" itemprop="dateModified" datetime="2018-12-31T16:26:36+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-22 19:22:36" itemprop="dateModified" datetime="2019-01-22T19:22:36+08:00">2019-01-22</time>
               
             
           </span>
@@ -1992,7 +2174,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 15:54:59" itemprop="dateModified" datetime="2018-12-31T15:54:59+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-22 19:19:38" itemprop="dateModified" datetime="2019-01-22T19:19:38+08:00">2019-01-22</time>
               
             
           </span>
@@ -2060,7 +2242,7 @@
 <li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
 </li>
 <li><p>在终端依次执行：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg.sh clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg.sh all`</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg.sh clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg.sh all`</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
 </blockquote>
@@ -2075,170 +2257,6 @@
             </div>
           
           <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2017/09/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy Cheng">
-      <meta itemprop="description" content="点点滴滴，记录累积">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伊水贝">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/09/22/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-09-22 15:11:19" itemprop="dateCreated datePublished" datetime="2017-09-22T15:11:19+08:00">2017-09-22</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hello-world/" itemprop="url" rel="index"><span itemprop="name">hello world</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
         
       
     </div>
@@ -2327,7 +2345,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

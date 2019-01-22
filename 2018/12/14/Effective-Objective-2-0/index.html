@@ -142,7 +142,7 @@
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低耦合 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-03T02:06:22.402Z">
+<meta property="og:updated_time" content="2019-01-22T11:22:13.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective Objective 2.0">
 <meta name="twitter:description" content="Effective Objective 2.0(编写高质量iOS与OS X代码的52个有效方法) 1. runtime ： 消息机制 消息转发  2. 在类的头文件中尽量少引入其他头文件 减少编译时间，降低耦合 使用import而非include指令不会导致循环引用，但两个类里有一个无法被正确编译，建议使用@class 向前声明 有些协议，例如委托协议（delegate protocol）不用单独">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-03 10:06:22" itemprop="dateModified" datetime="2019-01-03T10:06:22+08:00">2019-01-03</time>
+                <time title="Modified: 2019-01-22 19:22:13" itemprop="dateModified" datetime="2019-01-22T19:22:13+08:00">2019-01-22</time>
               
             
           </span>
@@ -536,10 +536,10 @@
 </ul>
 </li>
 <li><p>MRC</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">** strong 修饰: **</span><br><span class="line">  </span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        [obj retain];                  // 保留新值</span><br><span class="line">        [_obj release];                // 释放旧值</span><br><span class="line">        _obj = obj;                    // 设置新值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  weak 修饰: **</span><br><span class="line">  </span><br><span class="line">-(void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        _obj = obj;                   // 不保留新值，不释放旧值，直接设置</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  copy 修饰： **</span><br><span class="line">  </span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">        [_obj release];               // 释放旧值</span><br><span class="line">        _obj = [obj copy];            // 设置新值copy</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">** <span class="keyword">strong</span> 修饰: **</span><br><span class="line">  </span><br><span class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">        [obj <span class="keyword">retain</span>];                  <span class="comment">// 保留新值</span></span><br><span class="line">        [_obj release];                <span class="comment">// 释放旧值</span></span><br><span class="line">        _obj = obj;                    <span class="comment">// 设置新值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  <span class="keyword">weak</span> 修饰: **</span><br><span class="line">  </span><br><span class="line">-(<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">        _obj = obj;                   <span class="comment">// 不保留新值，不释放旧值，直接设置</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">**  <span class="keyword">copy</span> 修饰： **</span><br><span class="line">  </span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">        [_obj release];               <span class="comment">// 释放旧值</span></span><br><span class="line">        _obj = [obj <span class="keyword">copy</span>];            <span class="comment">// 设置新值copy</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ARC</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">** strong 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">    if(_obj != obj) &#123;</span><br><span class="line">      _obj = obj;                       // 设置新值</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** weak 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">     if(_obj != obj) &#123;</span><br><span class="line">     _obj = obj;                        // 不保留新值，不释放旧值，直接设置新值</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** copy 修饰: **</span><br><span class="line"></span><br><span class="line">- (void)setObject:(NSObject *)obj &#123;</span><br><span class="line">     if(_obj != obj) &#123;</span><br><span class="line">     _obj = [obj copy];                 // 设置新值copy</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">** <span class="keyword">strong</span> 修饰: **</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">    <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">      _obj = obj;                       <span class="comment">// 设置新值</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** <span class="keyword">weak</span> 修饰: **</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">     <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">     _obj = obj;                        <span class="comment">// 不保留新值，不释放旧值，直接设置新值</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">** <span class="keyword">copy</span> 修饰: **</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)setObject:(<span class="built_in">NSObject</span> *)obj &#123;</span><br><span class="line">     <span class="keyword">if</span>(_obj != obj) &#123;</span><br><span class="line">     _obj = [obj <span class="keyword">copy</span>];                 <span class="comment">// 设置新值copy</span></span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="7-在对象内部尽量直接访问实例变量"><a href="#7-在对象内部尽量直接访问实例变量" class="headerlink" title="7. 在对象内部尽量直接访问实例变量"></a>7. 在对象内部尽量直接访问实例变量</h2><ul>
@@ -856,7 +856,7 @@
 <li><p>反复执行任务的计时器（repeating timer），很容易引入保留环，这种环状保留关系，可能是直接发生的，也可能是通过对象图里的其他对象间接发生的</p>
 </li>
 <li><p>可以扩充NSTimer的功能，用块来打破保留环。(必须创建分类)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@interface NSTimer (EOCBlocksSupport)</span><br><span class="line"> +(NSTimer *)eoc_scheduledTimerWithTimeInterval:(NSTimeInterval)interval </span><br><span class="line">                     blcok : (void (^)()) block </span><br><span class="line">                     repeats:(BOOL) repeats;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NSTimer</span> (<span class="title">EOCBlocksSupport</span>)</span></span><br><span class="line"> +(<span class="built_in">NSTimer</span> *)eoc_scheduledTimerWithTimeInterval:(<span class="built_in">NSTimeInterval</span>)interval </span><br><span class="line">                     blcok : (<span class="keyword">void</span> (^)()) block </span><br><span class="line">                     repeats:(<span class="built_in">BOOL</span>) repeats;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>timer -&gt; block -&gt; self -&gt; timer</p>
 </blockquote>
@@ -990,7 +990,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
