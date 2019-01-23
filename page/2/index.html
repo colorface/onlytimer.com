@@ -378,6 +378,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2017/09/25/iOS中集成ijkplayer视频直播框架/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伊水贝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/09/25/iOS中集成ijkplayer视频直播框架/" class="post-title-link" itemprop="url">iOS中集成ijkplayer视频直播框架</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-09-25 22:58:14" itemprop="dateCreated datePublished" datetime="2017-09-25T22:58:14+08:00">2017-09-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-22 19:19:38" itemprop="dateModified" datetime="2019-01-22T19:19:38+08:00">2019-01-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><code>ijkplayer</code>是一款使用率极高的<strong>视频直播</strong>框架，基于<code>ffmpeg</code>，支持<code>Android</code>和<code>ios</code>，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把<code>ijkplayer</code>打包成<strong>静态库</strong>。</p>
+<h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
+<p>下载完成后解压。</p>
+<h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
+<h4 id="编译步骤："><a href="#编译步骤：" class="headerlink" title="编译步骤："></a>编译步骤：</h4><ul>
+<li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下</p>
+</li>
+<li><p>执行命令行 <code>./init-ios.sh</code></p>
+<blockquote>
+<p>这一步是去下载 <code>ffmpeg</code> 的 </p>
+<p><strong>时间会久一点, 耐心等一下.</strong></p>
+</blockquote>
+</li>
+<li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
+</li>
+<li><p>在终端依次执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg.sh clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg.sh all`</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
+</blockquote>
+</li>
+</ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/09/25/iOS中集成ijkplayer视频直播框架/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2017/09/22/hello-world/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -897,7 +1096,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -961,7 +1160,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

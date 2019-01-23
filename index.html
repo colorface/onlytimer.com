@@ -378,6 +378,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2019/01/23/JavaScript-Syntax-introduction/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伊水贝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/23/JavaScript-Syntax-introduction/" class="post-title-link" itemprop="url">JavaScript Syntax introduction</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-23 22:51:04 / Modified: 23:29:33" itemprop="dateCreated datePublished" datetime="2019-01-23T22:51:04+08:00">2019-01-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="JavaScript-syntax-introduction："><a href="#JavaScript-syntax-introduction：" class="headerlink" title="JavaScript syntax introduction："></a>JavaScript syntax introduction：</h2><blockquote>
+<p>mode : <code>&#39;use strict&#39;</code> (严格模式)</p>
+</blockquote>
+<blockquote>
+<p>打印 ： <code>console.log()</code></p>
+</blockquote>
+<blockquote>
+<p>比较运算符** : <code>===</code></p>
+</blockquote>
+<blockquote>
+<p>NaN** : not a number, 判断NaN的方法通过 <code>isNaN()</code>函数</p>
+</blockquote>
+<blockquote>
+<p>null 和 undefined** : null 表示“空”的值， undefined 表示值未定义，仅仅在判断函数参数是否传递的情况下有用</p>
+</blockquote>
+<blockquote>
+<p><code>for ... in</code> 循环：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    name: <span class="string">'Jack'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    city: <span class="string">'Beijing'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key); <span class="comment">// 'name', 'age', 'city'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对象 :由一组键-值组成的无序集合，用<code>{}</code>表示, 其中 <strong>键</strong> 必须是字符串</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'Bob'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    tags:[<span class="string">'js'</span>, <span class="string">'web'</span>, <span class="string">'mobile'</span>],</span><br><span class="line">    city: <span class="string">'beijing'</span>,</span><br><span class="line">    hasCar: <span class="literal">true</span>,</span><br><span class="line">    zipcode: <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">delete</span> person.school; <span class="comment">//删除一个不存在的school属性也不会报错</span></span><br><span class="line"><span class="keyword">delete</span> person.zipcode;<span class="comment">//删除zipcode属性</span></span><br><span class="line">person.school = <span class="string">'qinghua'</span>; <span class="comment">//新增一个school属性</span></span><br><span class="line"></span><br><span class="line"><span class="string">'toString'</span> <span class="keyword">in</span> person; <span class="comment">// true;</span></span><br><span class="line"><span class="comment">//因为toString定义在object对象中，而所有对象最终都会在原型链上指向object，所以person也拥有toString属性</span></span><br><span class="line"></span><br><span class="line">hasOwnProperty(); <span class="comment">//判断一个属性是否是xiaoming自身拥有的，而不是继承得到的</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/01/23/JavaScript-Syntax-introduction/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2019/01/22/Symmetic-Cryptography-Asymmetic-Cryptography/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2097,205 +2267,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2017/09/25/iOS中集成ijkplayer视频直播框架/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy Cheng">
-      <meta itemprop="description" content="点点滴滴，记录累积">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伊水贝">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/09/25/iOS中集成ijkplayer视频直播框架/" class="post-title-link" itemprop="url">iOS中集成ijkplayer视频直播框架</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-09-25 22:58:14" itemprop="dateCreated datePublished" datetime="2017-09-25T22:58:14+08:00">2017-09-25</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-01-22 19:19:38" itemprop="dateModified" datetime="2019-01-22T19:19:38+08:00">2019-01-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><code>ijkplayer</code>是一款使用率极高的<strong>视频直播</strong>框架，基于<code>ffmpeg</code>，支持<code>Android</code>和<code>ios</code>，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把<code>ijkplayer</code>打包成<strong>静态库</strong>。</p>
-<h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
-<p>下载完成后解压。</p>
-<h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
-<h4 id="编译步骤："><a href="#编译步骤：" class="headerlink" title="编译步骤："></a>编译步骤：</h4><ul>
-<li><p>打开<strong>终端</strong>，<code>cd</code>到<code>ijkplayer-master</code>文件夹下</p>
-</li>
-<li><p>执行命令行 <code>./init-ios.sh</code></p>
-<blockquote>
-<p>这一步是去下载 <code>ffmpeg</code> 的 </p>
-<p><strong>时间会久一点, 耐心等一下.</strong></p>
-</blockquote>
-</li>
-<li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
-</li>
-<li><p>在终端依次执行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg.sh clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg.sh all`</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
-</blockquote>
-</li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/09/25/iOS中集成ijkplayer视频直播框架/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2345,7 +2316,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2409,7 +2380,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">16</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
