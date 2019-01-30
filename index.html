@@ -423,12 +423,24 @@
                 
               
 
-              <time title="Created: 2019-01-23 22:51:04 / Modified: 23:29:33" itemprop="dateCreated datePublished" datetime="2019-01-23T22:51:04+08:00">2019-01-23</time>
+              <time title="Created: 2019-01-23 22:51:04" itemprop="dateCreated datePublished" datetime="2019-01-23T22:51:04+08:00">2019-01-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-30 17:39:04" itemprop="dateModified" datetime="2019-01-30T17:39:04+08:00">2019-01-30</time>
               
             
           </span>
@@ -462,29 +474,19 @@
 
       
         
-          <h2 id="JavaScript-syntax-introduction："><a href="#JavaScript-syntax-introduction：" class="headerlink" title="JavaScript syntax introduction："></a>JavaScript syntax introduction：</h2><blockquote>
-<p>mode : <code>&#39;use strict&#39;</code> (严格模式)</p>
-</blockquote>
-<blockquote>
-<p>打印 ： <code>console.log()</code></p>
-</blockquote>
-<blockquote>
-<p>比较运算符** : <code>===</code></p>
-</blockquote>
-<blockquote>
-<p>NaN** : not a number, 判断NaN的方法通过 <code>isNaN()</code>函数</p>
-</blockquote>
-<blockquote>
-<p>null 和 undefined** : null 表示“空”的值， undefined 表示值未定义，仅仅在判断函数参数是否传递的情况下有用</p>
-</blockquote>
-<blockquote>
-<p><code>for ... in</code> 循环：</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    name: <span class="string">'Jack'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    city: <span class="string">'Beijing'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key); <span class="comment">// 'name', 'age', 'city'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>对象 :由一组键-值组成的无序集合，用<code>{}</code>表示, 其中 <strong>键</strong> 必须是字符串</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'Bob'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    tags:[<span class="string">'js'</span>, <span class="string">'web'</span>, <span class="string">'mobile'</span>],</span><br><span class="line">    city: <span class="string">'beijing'</span>,</span><br><span class="line">    hasCar: <span class="literal">true</span>,</span><br><span class="line">    zipcode: <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">delete</span> person.school; <span class="comment">//删除一个不存在的school属性也不会报错</span></span><br><span class="line"><span class="keyword">delete</span> person.zipcode;<span class="comment">//删除zipcode属性</span></span><br><span class="line">person.school = <span class="string">'qinghua'</span>; <span class="comment">//新增一个school属性</span></span><br><span class="line"></span><br><span class="line"><span class="string">'toString'</span> <span class="keyword">in</span> person; <span class="comment">// true;</span></span><br><span class="line"><span class="comment">//因为toString定义在object对象中，而所有对象最终都会在原型链上指向object，所以person也拥有toString属性</span></span><br><span class="line"></span><br><span class="line">hasOwnProperty(); <span class="comment">//判断一个属性是否是xiaoming自身拥有的，而不是继承得到的</span></span><br></pre></td></tr></table></figure>
+          <h2 id="JavaScript-syntax-introduction："><a href="#JavaScript-syntax-introduction：" class="headerlink" title="JavaScript syntax introduction："></a>JavaScript syntax introduction：</h2><ol>
+<li>mode : <code>&#39;use strict&#39;</code> (严格模式)</li>
+<li>打印 ： <code>console.log()</code></li>
+<li>比较运算符 : <code>===</code></li>
+<li>NaN : not a number, 判断NaN的方法通过 <code>isNaN()</code>函数</li>
+<li>null 和 undefined : null 表示“空”的值， undefined 表示值未定义，仅仅在判断函数参数是否传递的情况下有用</li>
+<li><p><code>for ... in</code> 循环：</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    name: <span class="string">'Jack'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    city: <span class="string">'Beijing'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key); <span class="comment">// 'name', 'age', 'city'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象 :由一组键-值组成的无序集合，用<code>{}</code>表示, 其中 <strong>键</strong> 必须是字符串</p>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">    name: <span class="string">'Bob'</span>,</span><br><span class="line">    age: <span class="number">20</span>,</span><br><span class="line">    tags:[<span class="string">'js'</span>, <span class="string">'web'</span>, <span class="string">'mobile'</span>],</span><br><span class="line">    city: <span class="string">'beijing'</span>,</span><br><span class="line">    hasCar: <span class="literal">true</span>,</span><br><span class="line">    zipcode: <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">delete</span> person.school; <span class="comment">//删除一个不存在的school属性也不会报错</span></span><br><span class="line"><span class="keyword">delete</span> person.zipcode;<span class="comment">//删除zipcode属性</span></span><br><span class="line">person.school = <span class="string">'qinghua'</span>; <span class="comment">//新增一个school属性</span></span><br><span class="line"></span><br><span class="line"><span class="string">'toString'</span> <span class="keyword">in</span> person; <span class="comment">// true;</span></span><br><span class="line"><span class="comment">//因为toString定义在object对象中，而所有对象最终都会在原型链上指向object，所以person也拥有toString属性</span></span><br><span class="line"></span><br><span class="line">hasOwnProperty(); <span class="comment">//判断一个属性是否是xiaoming自身拥有的，而不是继承得到的</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -593,12 +595,24 @@
                 
               
 
-              <time title="Created: 2019-01-22 19:03:54 / Modified: 19:25:30" itemprop="dateCreated datePublished" datetime="2019-01-22T19:03:54+08:00">2019-01-22</time>
+              <time title="Created: 2019-01-22 19:03:54" itemprop="dateCreated datePublished" datetime="2019-01-22T19:03:54+08:00">2019-01-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-30 17:41:53" itemprop="dateModified" datetime="2019-01-30T17:41:53+08:00">2019-01-30</time>
               
             
           </span>
@@ -656,16 +670,11 @@
 <hr>
 <p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤:</p>
 <ul>
-<li><p>(1) 客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。</p>
-</li>
-<li><p>(2) Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。</p>
-</li>
-<li><p>(3) 客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</p>
-</li>
-<li><p>(4) 客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</p>
-</li>
-<li><p>(5) Web服务器利用自己的私钥解密出会话密钥。</p>
-</li>
+<li>(1) 客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。</li>
+<li>(2) Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。</li>
+<li>(3) 客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</li>
+<li>(4) 客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</li>
+<li>(5) Web服务器利用自己的私钥解密出会话密钥。</li>
 <li><p>(6) Web服务器利用会话密钥加密与客户端之间的通信。</p>
 <hr>
           <!--noindex-->
@@ -793,7 +802,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:14:15" itemprop="dateModified" datetime="2019-01-22T19:14:15+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:15:44" itemprop="dateModified" datetime="2019-01-30T17:15:44+08:00">2019-01-30</time>
               
             
           </span>
@@ -985,7 +994,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:22:13" itemprop="dateModified" datetime="2019-01-22T19:22:13+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:22:47" itemprop="dateModified" datetime="2019-01-30T17:22:47+08:00">2019-01-30</time>
               
             
           </span>
@@ -1041,17 +1050,13 @@
 </li>
 <li><p>OC 没有“名称空间”（namespace）这一概念</p>
 </li>
-<li><p>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</p>
-</li>
-<li><p>定义常量的位置很重要。</p>
-</li>
-<li><p>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀</p>
-<p>也可以单独定义.h.m文件用来声明所有的全局常量。</p>
-</li>
+<li>若常量局限于实现文件之内，则在前面加字母k，若常量在类之外可见，则通常以类名为前缀</li>
+<li>定义常量的位置很重要。</li>
+<li>在头文件中使用extern来声明全局常量，并在相关实现文件中定义其值，这种常量为全局常量，会出现在全局符号表中，其名称应添加类名前缀<br>也可以单独定义.h.m文件用来声明所有的全局常量。</li>
 </ul>
 <h2 id="5-用枚举表示状态、选项、状态码"><a href="#5-用枚举表示状态、选项、状态码" class="headerlink" title="5. 用枚举表示状态、选项、状态码"></a>5. 用枚举表示状态、选项、状态码</h2><ul>
 <li>&lt;&lt; 左移运算符</li>
-<li><p>宏为完全替代操作 </p>
+<li><p>宏为完全替代操作</p>
 <p>   _#define NS_ENUM(_type, _name) enum _name : _type _name;     enum _name : _type</p>
 <p>  typedef enum EOCConnectionState : NSUInteger EOCConnectionState;</p>
 <p>  enum EOCConnectionState :  NSUInterger {</p>
@@ -1183,7 +1188,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:21:05" itemprop="dateModified" datetime="2019-01-22T19:21:05+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:39:32" itemprop="dateModified" datetime="2019-01-30T17:39:32+08:00">2019-01-30</time>
               
             
           </span>
@@ -1218,29 +1223,36 @@
       
         
           <h3 id="任务和队列"><a href="#任务和队列" class="headerlink" title="任务和队列"></a>任务和队列</h3><p><strong>任务：</strong></p>
-<p>① block中代码;</p>
-<p>② 执行任务两种方式：<strong>同步执行</strong>（sync）和 <strong>异步执行</strong>（async）;</p>
-<p>③ 同步异步区别：</p>
 <ul>
+<li>block中代码;</li>
+<li>执行任务两种方式：<strong>同步执行</strong>（sync）和 <strong>异步执行</strong>（async）;</li>
+<li>同步异步区别：<ul>
 <li>是否等待队列的任务执行结束</li>
 <li>是否具备开启新线程的能力</li>
 </ul>
+</li>
+</ul>
 <p><strong>队列：</strong></p>
-<p>① 一种特殊的线性表，遵循先进先出(FIFO)原则</p>
-<p>② 两种队列：<strong>串行队列</strong> 和 <strong>并发队列</strong></p>
-<p>③ 串行并发区别：</p>
+<ul>
+<li>一种特殊的线性表，遵循先进先出(FIFO)原则</li>
+<li>两种队列：<strong>串行队列</strong> 和 <strong>并发队列</strong></li>
+<li><p>串行并发区别：</p>
 <ul>
 <li>执行顺序不同</li>
 <li>开启线程数不同</li>
 </ul>
-<p>④ 系统提供的串行队列：<strong>主队列</strong> （Main Dispatch Queue）</p>
+</li>
+<li><p>系统提供的串行队列：<strong>主队列</strong> （Main Dispatch Queue）</p>
 <blockquote>
 <p>所有放到主队列中的任务，都会放在主线程执行<br>dispatch_get_main_queue();</p>
 </blockquote>
-<p>⑤ 系统提供的并发队列：<strong>全局并发队列</strong> （Global DisPatch Queue）</p>
+</li>
+<li><p>系统提供的并发队列：<strong>全局并发队列</strong> （Global DisPatch Queue）</p>
 <blockquote>
 <p>dispatch_get_global_queue(优先级,0);<br>优先级：high、default、low、background;</p>
 </blockquote>
+</li>
+</ul>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1366,7 +1378,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:16:02" itemprop="dateModified" datetime="2019-01-22T19:16:02+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:15:46" itemprop="dateModified" datetime="2019-01-30T17:15:46+08:00">2019-01-30</time>
               
             
           </span>
@@ -1570,7 +1582,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:21:24" itemprop="dateModified" datetime="2019-01-22T19:21:24+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:44:40" itemprop="dateModified" datetime="2019-01-30T17:44:40+08:00">2019-01-30</time>
               
             
           </span>
@@ -1607,7 +1619,7 @@
           
             <p><strong>GCD经典面试题</strong></p>
 <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"2--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"A"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"B"</span>);</span><br><span class="line">        <span class="built_in">dispatch_queue_t</span> temp = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_sync</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"3--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"C"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_async</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"4--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"D"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"5--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"E"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span> afterDelay:<span class="number">0.0</span>];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"F"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)method &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"G"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>/<em>==================================================================================</em>/</p>
+<p>/<em>============================================================================</em>/</p>
 <h3 id="答案有4个，以下为编译结果-！"><a href="#答案有4个，以下为编译结果-！" class="headerlink" title="答案有4个，以下为编译结果 ！"></a>答案有4个，以下为编译结果 ！</h3><blockquote>
 <p>答案①</p>
 </blockquote>
@@ -1742,7 +1754,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:22:36" itemprop="dateModified" datetime="2019-01-22T19:22:36+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:28:01" itemprop="dateModified" datetime="2019-01-30T17:28:01+08:00">2019-01-30</time>
               
             
           </span>
@@ -1802,12 +1814,12 @@
 <blockquote>
 <p>本文件可使用外部声明的函数（默认值);</p>
 </blockquote>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p><strong>用数组元素作 实参时，向形参变量传递的是数组元素的值，而用数组名做函数实参时，向形参（数组名或者指针变量）传递的是数组元素的首地址</strong> </p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p><strong>用数组元素作 实参时，向形参变量传递的是数组元素的值，而用数组名做函数实参时，向形参（数组名或者指针变量）传递的是数组元素的首地址</strong></p>
 <blockquote>
 <p><strong>数组名</strong> 代表数组首元素的地址，它是一个指针型常量，它的值在程序运行期间固定不变，例如：</p>
 <p>数组 <code>a[10] = {1,2,3,4,5,6,7,8,9,10};</code>则<code>a++</code>无法实现</p>
 <p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> (p = a; p&lt; a + <span class="number">10</span>; p++) </span><br><span class="line">&gt; <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> (p = a; p&lt; a + <span class="number">10</span>; p++)</span><br><span class="line">&gt; <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p><strong>实参数组名代表一个固定的地址，或者说是指针常量，但形参数组名并不是一个固定的地址，而是按指针变量处理</strong></p>
 <blockquote>
@@ -1946,7 +1958,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-31 16:14:33" itemprop="dateModified" datetime="2018-12-31T16:14:33+08:00">2018-12-31</time>
+                <time title="Modified: 2019-01-30 17:15:47" itemprop="dateModified" datetime="2019-01-30T17:15:47+08:00">2019-01-30</time>
               
             
           </span>
@@ -2114,7 +2126,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-29 17:12:54" itemprop="dateModified" datetime="2018-12-29T17:12:54+08:00">2018-12-29</time>
+                <time title="Modified: 2019-01-30 17:15:47" itemprop="dateModified" datetime="2019-01-30T17:15:47+08:00">2019-01-30</time>
               
             
           </span>
@@ -2347,8 +2359,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     

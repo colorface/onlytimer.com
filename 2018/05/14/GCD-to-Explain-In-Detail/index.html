@@ -134,19 +134,19 @@
 
 
 
-  <meta name="description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
+  <meta name="description" content="任务和队列任务：  block中代码; 执行任务两种方式：同步执行（sync）和 异步执行（async）; 同步异步区别： 是否等待队列的任务执行结束 是否具备开启新线程的能力    队列：  一种特殊的线性表，遵循先进先出(FIFO)原则 两种队列：串行队列 和 并发队列 串行并发区别：  执行顺序不同 开启线程数不同   系统提供的串行队列：主队列 （Main Dispatch Queue）">
 <meta name="keywords" content="Coder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCD to Explain In Detail ">
 <meta property="og:url" content="https://onlytimer.com/2018/05/14/GCD-to-Explain-In-Detail/index.html">
 <meta property="og:site_name" content="伊水贝">
-<meta property="og:description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
+<meta property="og:description" content="任务和队列任务：  block中代码; 执行任务两种方式：同步执行（sync）和 异步执行（async）; 同步异步区别： 是否等待队列的任务执行结束 是否具备开启新线程的能力    队列：  一种特殊的线性表，遵循先进先出(FIFO)原则 两种队列：串行队列 和 并发队列 串行并发区别：  执行顺序不同 开启线程数不同   系统提供的串行队列：主队列 （Main Dispatch Queue）">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1877784-4d6d77fafd3ad007.png">
-<meta property="og:updated_time" content="2019-01-22T11:21:05.080Z">
+<meta property="og:updated_time" content="2019-01-30T09:39:32.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD to Explain In Detail ">
-<meta name="twitter:description" content="任务和队列任务： ① block中代码; ② 执行任务两种方式：同步执行（sync）和 异步执行（async）; ③ 同步异步区别：  是否等待队列的任务执行结束 是否具备开启新线程的能力  队列： ① 一种特殊的线性表，遵循先进先出(FIFO)原则 ② 两种队列：串行队列 和 并发队列 ③ 串行并发区别：  执行顺序不同 开启线程数不同  ④ 系统提供的串行队列：主队列 （Main Dispat">
+<meta name="twitter:description" content="任务和队列任务：  block中代码; 执行任务两种方式：同步执行（sync）和 异步执行（async）; 同步异步区别： 是否等待队列的任务执行结束 是否具备开启新线程的能力    队列：  一种特殊的线性表，遵循先进先出(FIFO)原则 两种队列：串行队列 和 并发队列 串行并发区别：  执行顺序不同 开启线程数不同   系统提供的串行队列：主队列 （Main Dispatch Queue）">
 <meta name="twitter:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1877784-4d6d77fafd3ad007.png">
 
 
@@ -440,7 +440,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:21:05" itemprop="dateModified" datetime="2019-01-22T19:21:05+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:39:32" itemprop="dateModified" datetime="2019-01-30T17:39:32+08:00">2019-01-30</time>
               
             
           </span>
@@ -474,29 +474,36 @@
 
       
         <h3 id="任务和队列"><a href="#任务和队列" class="headerlink" title="任务和队列"></a>任务和队列</h3><p><strong>任务：</strong></p>
-<p>① block中代码;</p>
-<p>② 执行任务两种方式：<strong>同步执行</strong>（sync）和 <strong>异步执行</strong>（async）;</p>
-<p>③ 同步异步区别：</p>
 <ul>
+<li>block中代码;</li>
+<li>执行任务两种方式：<strong>同步执行</strong>（sync）和 <strong>异步执行</strong>（async）;</li>
+<li>同步异步区别：<ul>
 <li>是否等待队列的任务执行结束</li>
 <li>是否具备开启新线程的能力</li>
 </ul>
+</li>
+</ul>
 <p><strong>队列：</strong></p>
-<p>① 一种特殊的线性表，遵循先进先出(FIFO)原则</p>
-<p>② 两种队列：<strong>串行队列</strong> 和 <strong>并发队列</strong></p>
-<p>③ 串行并发区别：</p>
+<ul>
+<li>一种特殊的线性表，遵循先进先出(FIFO)原则</li>
+<li>两种队列：<strong>串行队列</strong> 和 <strong>并发队列</strong></li>
+<li><p>串行并发区别：</p>
 <ul>
 <li>执行顺序不同</li>
 <li>开启线程数不同</li>
 </ul>
-<p>④ 系统提供的串行队列：<strong>主队列</strong> （Main Dispatch Queue）</p>
+</li>
+<li><p>系统提供的串行队列：<strong>主队列</strong> （Main Dispatch Queue）</p>
 <blockquote>
 <p>所有放到主队列中的任务，都会放在主线程执行<br>dispatch_get_main_queue();</p>
 </blockquote>
-<p>⑤ 系统提供的并发队列：<strong>全局并发队列</strong> （Global DisPatch Queue）</p>
+</li>
+<li><p>系统提供的并发队列：<strong>全局并发队列</strong> （Global DisPatch Queue）</p>
 <blockquote>
 <p>dispatch_get_global_queue(优先级,0);<br>优先级：high、default、low、background;</p>
 </blockquote>
+</li>
+</ul>
 <a id="more"></a>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><table>
 <thead>
@@ -522,7 +529,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="GCD线程间通信"><a href="#GCD线程间通信" class="headerlink" title="GCD线程间通信"></a>GCD线程间通信</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取全局并发队列</span></span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>); </span><br><span class="line"></span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">        <span class="comment">// 异步追加任务</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 回到主线程</span></span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="comment">// 追加在主线程中执行的任务</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="GCD线程间通信"><a href="#GCD线程间通信" class="headerlink" title="GCD线程间通信"></a>GCD线程间通信</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取全局并发队列</span></span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">        <span class="comment">// 异步追加任务</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 回到主线程</span></span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="comment">// 追加在主线程中执行的任务</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="GCD其他方法"><a href="#GCD其他方法" class="headerlink" title="GCD其他方法"></a>GCD其他方法</h3><h5 id="1-GCD栅栏方法：dispatch-barrier-async"><a href="#1-GCD栅栏方法：dispatch-barrier-async" class="headerlink" title="1.GCD栅栏方法：dispatch_barrier_async"></a>1.GCD栅栏方法：dispatch_barrier_async</h5><p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1877784-4d6d77fafd3ad007.png" alt=""></p>
 <blockquote>
 <p>在执行完栅栏前面的操作之后，才执行栅栏操作，最后再执行栅栏后边的操作。</p>
@@ -560,7 +567,7 @@
 <h6 id="5-2-dispatch-group-wait"><a href="#5-2-dispatch-group-wait" class="headerlink" title="5.2 dispatch_group_wait"></a>5.2 dispatch_group_wait</h6><ul>
 <li>暂停当前线程（阻塞当前线程），等待指定的 group 中的任务执行完成后，才会往下继续执行。</li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)groupWait &#123;</span><br><span class="line"></span><br><span class="line">    dispatch_group_t group =  dispatch_group_create();</span><br><span class="line"></span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line">        <span class="comment">// 追加任务1</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line">        <span class="comment">// 追加任务2</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 等待上面的任务全部完成后，会往下继续执行（会阻塞当前线程）</span></span><br><span class="line">    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);</span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)groupWait &#123;</span><br><span class="line"></span><br><span class="line">    dispatch_group_t group =  dispatch_group_create();</span><br><span class="line"></span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line">        <span class="comment">// 追加任务1</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>), ^&#123;</span><br><span class="line">        <span class="comment">// 追加任务2</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 等待上面的任务全部完成后，会往下继续执行（会阻塞当前线程）</span></span><br><span class="line">    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);</span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="5-3-dispatch-group-enter、dispatch-group-leave"><a href="#5-3-dispatch-group-enter、dispatch-group-leave" class="headerlink" title="5.3 dispatch_group_enter、dispatch_group_leave"></a>5.3 dispatch_group_enter、dispatch_group_leave</h6><ul>
 <li><code>dispatch_group_enter</code> 标志着一个任务追加到 group，执行一次，相当于 group 中未执行完毕任务数+1</li>
 <li><code>dispatch_group_leave</code> 标志着一个任务离开了 group，执行一次，相当于 group 中未执行完毕任务数-1。</li>
@@ -726,8 +733,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     

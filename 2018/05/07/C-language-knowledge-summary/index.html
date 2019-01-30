@@ -142,7 +142,7 @@
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="String functionstrcpy(字符数组,字符串);     //拷贝strcat(字符数组,字符串);     //拼接strcmp(字符串1,字符串2);     //比较strlwr(字符串);             //转小写strupr(字符串);             //转大写strlen(字符串);             //算长度strncpy(字符数组,字符串">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-22T11:22:36.875Z">
+<meta property="og:updated_time" content="2019-01-30T09:28:01.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C language knowledge summary">
 <meta name="twitter:description" content="String functionstrcpy(字符数组,字符串);     //拷贝strcat(字符数组,字符串);     //拼接strcmp(字符串1,字符串2);     //比较strlwr(字符串);             //转小写strupr(字符串);             //转大写strlen(字符串);             //算长度strncpy(字符数组,字符串">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:22:36" itemprop="dateModified" datetime="2019-01-22T19:22:36+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:28:01" itemprop="dateModified" datetime="2019-01-30T17:28:01+08:00">2019-01-30</time>
               
             
           </span>
@@ -497,12 +497,12 @@
 <blockquote>
 <p>本文件可使用外部声明的函数（默认值);</p>
 </blockquote>
-<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p><strong>用数组元素作 实参时，向形参变量传递的是数组元素的值，而用数组名做函数实参时，向形参（数组名或者指针变量）传递的是数组元素的首地址</strong> </p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><p><strong>用数组元素作 实参时，向形参变量传递的是数组元素的值，而用数组名做函数实参时，向形参（数组名或者指针变量）传递的是数组元素的首地址</strong></p>
 <blockquote>
 <p><strong>数组名</strong> 代表数组首元素的地址，它是一个指针型常量，它的值在程序运行期间固定不变，例如：</p>
 <p>数组 <code>a[10] = {1,2,3,4,5,6,7,8,9,10};</code>则<code>a++</code>无法实现</p>
 <p>指针变量p指向数组a的首地址: <code>int *p = a;</code> 则：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> (p = a; p&lt; a + <span class="number">10</span>; p++) </span><br><span class="line">&gt; <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&gt; <span class="keyword">for</span> (p = a; p&lt; a + <span class="number">10</span>; p++)</span><br><span class="line">&gt; <span class="built_in">printf</span>(<span class="string">"%d"</span>,*p)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p><strong>实参数组名代表一个固定的地址，或者说是指针常量，但形参数组名并不是一个固定的地址，而是按指针变量处理</strong></p>
 <blockquote>
@@ -533,10 +533,17 @@
 <h3 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h3><p>定义：编译系统为函数代码分配一段存储空间，这段存储空间的起始地址（入口地址）称为函数指针。</p>
 <p><code>int (*p) (int, int)</code></p>
 <p>函数指针作为函数参数，返回值等常见使用</p>
-<p>typedef int (*PFUN)(int, int)  则 PFUN p = NULL;</p>
-<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>typedef struct {<br>    char *name;<br>    char name[20];<br>} 使用数组及指针的区别：</p>
-<p>char *name 未分配存储空间；而数组名name是一个常量指针，已分配存储空间，赋值操作strcpy;</p>
-<h3 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h3><p>free () 标记删除，不清楚内容<br>memset ,memcpy, memcmp，均是按 <strong>字节</strong> 操作内存，既可以用于堆内存也可以用于栈内存。</p>
+<p><code>typedef int (*PFUN)(int, int)</code>  则 <code>PFUN p = NULL;</code></p>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">char</span> *name;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用数组及指针的区别：</p>
+<ul>
+<li>char *name 未分配存储空间；</li>
+<li>而数组名name是一个常量指针，已分配存储空间，赋值操作strcpy;</li>
+</ul>
+<h3 id="内存操作函数"><a href="#内存操作函数" class="headerlink" title="内存操作函数"></a>内存操作函数</h3><ul>
+<li>free () 标记删除，不清除内容</li>
+<li>memset ,memcpy, memcmp，均是按 <strong>字节</strong> 操作内存，既可以用于堆内存也可以用于栈内存。</li>
+</ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> *name = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*<span class="number">20</span>);</span><br><span class="line"><span class="built_in">strcpy</span>(name, <span class="string">"iPhone"</span>); <span class="comment">//已有存储空间</span></span><br><span class="line">结构体中，如果包含指针，结构体分配内存中指针变量需要单独分配内存</span><br></pre></td></tr></table></figure>
 
       
@@ -683,8 +690,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     

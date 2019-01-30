@@ -142,7 +142,7 @@
 <meta property="og:site_name" content="伊水贝">
 <meta property="og:description" content="GCD经典面试题 &amp;#123;        dispatch_async(dispatch_get_main_queue(), ^&amp;#123;            NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);            NSLog(@&quot;A&quot;);        &amp;#125;);        NSLog(@&quot;B&quot;);        dispatc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-22T11:21:24.746Z">
+<meta property="og:updated_time" content="2019-01-30T09:44:40.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD - execution sequence">
 <meta name="twitter:description" content="GCD经典面试题 &amp;#123;        dispatch_async(dispatch_get_main_queue(), ^&amp;#123;            NSLog(@&quot;2--%@&quot;,[NSThread currentThread]);            NSLog(@&quot;A&quot;);        &amp;#125;);        NSLog(@&quot;B&quot;);        dispatc">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-22 19:21:24" itemprop="dateModified" datetime="2019-01-22T19:21:24+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-30 17:44:40" itemprop="dateModified" datetime="2019-01-30T17:44:40+08:00">2019-01-30</time>
               
             
           </span>
@@ -473,7 +473,7 @@
       
         <p><strong>GCD经典面试题</strong></p>
 <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"2--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"A"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"B"</span>);</span><br><span class="line">        <span class="built_in">dispatch_queue_t</span> temp = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_sync</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"3--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"C"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_async</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"4--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"D"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"5--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"E"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span> afterDelay:<span class="number">0.0</span>];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"F"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)method &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"G"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>/<em>==================================================================================</em>/</p>
+<p>/<em>============================================================================</em>/</p>
 <h3 id="答案有4个，以下为编译结果-！"><a href="#答案有4个，以下为编译结果-！" class="headerlink" title="答案有4个，以下为编译结果 ！"></a>答案有4个，以下为编译结果 ！</h3><blockquote>
 <p>答案①</p>
 </blockquote>
@@ -635,8 +635,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     

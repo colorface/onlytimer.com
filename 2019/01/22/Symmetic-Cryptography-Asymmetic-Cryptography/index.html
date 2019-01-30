@@ -143,7 +143,7 @@
 <meta property="og:description" content="对称加密 和 非对称加密：  对称加密加密与解密使用的是同样的密钥，所以速度快，但由于需要将密钥在网络传输，所以安全性不高。  对称加密算法 AES 128位 192位 256位 密钥管理比较难，不适合互联网，一般用于内部系统 快好几个数量级(软件加解密速度至少快100倍,每秒可以加解密数M比特数据),适合大数据量的加解密处理   非对称加密使用了一对密钥，公钥与私钥，所以安全性高，但加密与解密">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2019-01-22-121924251089094.png">
-<meta property="og:updated_time" content="2019-01-22T11:25:30.274Z">
+<meta property="og:updated_time" content="2019-01-30T09:41:53.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Symmetic Cryptography &amp; Asymmetic Cryptography">
 <meta name="twitter:description" content="对称加密 和 非对称加密：  对称加密加密与解密使用的是同样的密钥，所以速度快，但由于需要将密钥在网络传输，所以安全性不高。  对称加密算法 AES 128位 192位 256位 密钥管理比较难，不适合互联网，一般用于内部系统 快好几个数量级(软件加解密速度至少快100倍,每秒可以加解密数M比特数据),适合大数据量的加解密处理   非对称加密使用了一对密钥，公钥与私钥，所以安全性高，但加密与解密">
@@ -423,12 +423,24 @@
                 
               
 
-              <time title="Created: 2019-01-22 19:03:54 / Modified: 19:25:30" itemprop="dateCreated datePublished" datetime="2019-01-22T19:03:54+08:00">2019-01-22</time>
+              <time title="Created: 2019-01-22 19:03:54" itemprop="dateCreated datePublished" datetime="2019-01-22T19:03:54+08:00">2019-01-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-30 17:41:53" itemprop="dateModified" datetime="2019-01-30T17:41:53+08:00">2019-01-30</time>
               
             
           </span>
@@ -485,16 +497,11 @@
 <hr>
 <p>客户端在使用HTTPS方式与Web服务器通信时有以下几个步骤:</p>
 <ul>
-<li><p>(1) 客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。</p>
-</li>
-<li><p>(2) Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。</p>
-</li>
-<li><p>(3) 客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</p>
-</li>
-<li><p>(4) 客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</p>
-</li>
-<li><p>(5) Web服务器利用自己的私钥解密出会话密钥。</p>
-</li>
+<li>(1) 客户使用https的URL访问Web服务器，要求与Web服务器建立SSL连接。</li>
+<li>(2) Web服务器收到客户端请求后，会将网站的证书信息（证书中包含公钥）传送一份给客户端。</li>
+<li>(3) 客户端的浏览器与Web服务器开始协商SSL连接的安全等级，也就是信息加密的等级。</li>
+<li>(4) 客户端的浏览器根据双方同意的安全等级，建立会话密钥，然后利用网站的公钥将会话密钥加密，并传送给网站。</li>
+<li>(5) Web服务器利用自己的私钥解密出会话密钥。</li>
 <li><p>(6) Web服务器利用会话密钥加密与客户端之间的通信。</p>
 <hr>
 <a id="more"></a>
@@ -505,23 +512,17 @@
 </blockquote>
 <p>其中 会话层和表达层 已弃用， 因为应用层的http协议有类似的功能</p>
 <ul>
-<li><p>应用层： (Application Layer)提供为应用软件而设的接口，以设置与另一应用软件之间的通信 例如：HTTP,HTTPS,FTP,SSH,SMTP,POP3等</p>
-</li>
-<li><p>表达层： (Presentation Layer)把数据转换为能与接收者的系统格式兼容并适合传输的格式，已弃用</p>
-</li>
-<li><p>会话层： (Session Layer)负责在数据传输中设置和维护计算机网络中两台计算机之间的通信连接。 已弃用</p>
-</li>
-<li><p>传输层： (Transport Layer)把传输表头（TH）加至数据以形成数据包。传输表头包含了所使用的协议等发送信息。例如:传输控制协议（TCP）等</p>
-</li>
-<li><p>网络层： (Network Layer)决定数据的路径选择和转寄，将网络表头（NH）加至数据包，以形成分组。网络表头包含了网络数据。例如:互联网协议（IP）等。</p>
-</li>
-<li><p>数据链路层： (Data Link Layer)负责网络寻址、错误侦测和改错 .当表头和表尾被加至数据包时，会形成帧。数据链表头（DLH）是包含了物理地址和错误侦测及改错的方法。数据链表尾（DLT）是一串指示数据包末端的字符串。例如以太网、无线局域网（Wi-Fi）和通用分组无线服务（GPRS）等</p>
-</li>
+<li>应用层： (Application Layer)提供为应用软件而设的接口，以设置与另一应用软件之间的通信 例如：HTTP,HTTPS,FTP,SSH,SMTP,POP3等</li>
+<li>表达层： (Presentation Layer)把数据转换为能与接收者的系统格式兼容并适合传输的格式，已弃用</li>
+<li>会话层： (Session Layer)负责在数据传输中设置和维护计算机网络中两台计算机之间的通信连接。 已弃用</li>
+<li>传输层： (Transport Layer)把传输表头（TH）加至数据以形成数据包。传输表头包含了所使用的协议等发送信息。例如:传输控制协议（TCP）等</li>
+<li>网络层： (Network Layer)决定数据的路径选择和转寄，将网络表头（NH）加至数据包，以形成分组。网络表头包含了网络数据。例如:互联网协议（IP）等。</li>
+<li>数据链路层： (Data Link Layer)负责网络寻址、错误侦测和改错 .当表头和表尾被加至数据包时，会形成帧。数据链表头（DLH）是包含了物理地址和错误侦测及改错的方法。数据链表尾（DLT）是一串指示数据包末端的字符串。例如以太网、无线局域网（Wi-Fi）和通用分组无线服务（GPRS）等</li>
 <li><p>物理层：（Physical Layer）</p>
 <p>在局部局域网上传送数据帧（data frame)，它负责管理计算机通信设备和网络媒体之间的互通。包括了针脚、电压、线缆规范、集线器、中继器、网卡、主机适配器等</p>
 </li>
 </ul>
-<p>HTTP : 应用层协议<br>TCP :  <em>Transmission Control Protocol</em>  <strong>传输控制协议</strong><br>UDP : User Datagram Protocol   <strong>用户数据包协议</strong></p>
+<p>HTTP : 应用层协议<strong><br>TCP :  <em>Transmission Control Protocol</em>  </strong>传输控制协议<strong><br>UDP : <em>User Datagram Protocol</em>   </strong>用户数据包协议</p>
 
       
     </div>
@@ -667,8 +668,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     
