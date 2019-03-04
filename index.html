@@ -378,6 +378,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2019/03/05/Flutter-install-guide-for-mac/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Roy Cheng">
+      <meta itemprop="description" content="点点滴滴，记录累积">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="伊水贝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/05/Flutter-install-guide-for-mac/" class="post-title-link" itemprop="url">Flutter install guide for mac</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-03-05 00:10:47 / Modified: 00:28:11" itemprop="dateCreated datePublished" datetime="2019-03-05T00:10:47+08:00">2019-03-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Flutter install guide for Mac</p>
+<h2 id="intrudution"><a href="#intrudution" class="headerlink" title="intrudution"></a>intrudution</h2><blockquote>
+<p>Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。<br>Flutter可以与现有的代码一起工作。<br>在全世界，Flutter正在被越来越多的开发者和组织使用，并且Flutter是完全免费、开源的。</p>
+</blockquote>
+<h2 id="Using-Flutter-in-China"><a href="#Using-Flutter-in-China" class="headerlink" title="Using Flutter in China"></a>Using Flutter in China</h2><ul>
+<li><p>Configuring Flutter to use a mirror site</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PUB_HOSTED_URL=https://pub.flutter-io.cn</span><br><span class="line"><span class="built_in">export</span> FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</span><br><span class="line">git <span class="built_in">clone</span> -b dev https://github.com/flutter/flutter.git</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PWD</span>/flutter/bin:<span class="variable">$PATH</span>"</span></span><br><span class="line"><span class="built_in">cd</span> ./flutter</span><br><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Configuring iOS toolchain</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br><span class="line">brew install --HEAD usbmuxd</span><br><span class="line">brew link usbmuxd</span><br><span class="line">brew install --HEAD libimobiledevice</span><br><span class="line">brew install ideviceinstaller</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Configuring Android toolchain</p>
+<blockquote>
+<p>[✗] Android toolchain - develop for Android devices✗ Unable to locate Android SDK.Install Android Studio from:<a href="https://developer.android.com/studio/index.html" target="_blank" rel="noopener">https://developer.android.com/studio/index.html</a> On first launch it will assist you in installing the Android SDK components.(or visit <a href="https://flutter.io/setup/#android-setup" target="_blank" rel="noopener">https://flutter.io/setup/#android-setup</a> for detailed instructions).If Android SDK has been installed to a custom location, set $ANDROID_HOME to that location.</p>
+</blockquote>
+<p>  resolve : </p>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">* download android studio at https://developer.android.com/studio/index.html</span><br><span class="line">* installed</span><br><span class="line">* Configuring android SDK (best 27)</span><br><span class="line">* <span class="built_in">set</span> ANDROID_HOME <span class="keyword">in</span> .bash_profile : </span><br><span class="line">  </span><br><span class="line"><span class="built_in">export</span> ANDROID_HOME=/Users/your_name/Library/Android/sdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;ANDROID_HOME&#125;</span>/tools</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;PATH&#125;</span>:<span class="variable">$&#123;ANDROID_HOME&#125;</span>/platform-tools</span><br><span class="line">   </span><br><span class="line">* download flutter plugin and dart plugin</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/05/Flutter-install-guide-for-mac/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2019/01/23/JavaScript-Syntax-introduction/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2058,237 +2225,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://onlytimer.com/2017/09/26/终端基本命令/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Roy Cheng">
-      <meta itemprop="description" content="点点滴滴，记录累积">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="伊水贝">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/09/26/终端基本命令/" class="post-title-link" itemprop="url">终端基本命令</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-09-26 10:13:52" itemprop="dateCreated datePublished" datetime="2017-09-26T10:13:52+08:00">2017-09-26</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-01-30 17:15:47" itemprop="dateModified" datetime="2019-01-30T17:15:47+08:00">2019-01-30</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
-<li><p>1、列出文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls 参数 目录名</span><br></pre></td></tr></table></figure>
-<p>例: 看看驱动目录下有什么:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls /System/Library/Extensions</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参数 <strong>-w</strong> 显示中文，<strong>-l</strong> 详细信息， <strong>-a</strong> 包括隐藏文件</p>
-</blockquote>
-</li>
-<li><p>2、转换目录     </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 目录名</span><br></pre></td></tr></table></figure>
-<p>例：想到驱动目录下溜达一圈  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd /System/Library/Extensions</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3、建立新目录</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir 目录名</span><br></pre></td></tr></table></figure>
-<p>例：在驱动目录下建一个备份目录 <code>backup</code>  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /System/Library/Extensions/backup</span><br></pre></td></tr></table></figure>
-<p>在桌面上建一个备份目录 <code>backup</code>   </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4、拷贝文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp 参数 源文件 目标文件</span><br></pre></td></tr></table></figure>
-<p>例：想把桌面的<code>Natit.kext</code> 拷贝到驱动目录中  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -R /User/用户名/Desktop/Natit.kext /System/Library/Extensions</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参数<strong>R</strong>表示对目录进行递归操作，<code>kext</code>在图形界面下看起来是个文件，实际上是个文件夹</p>
-</blockquote>
-<p>把驱动目录下的所有文件备份到桌面<code>backup</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp -R /System/Library/Extensions/* /User/用户名/Desktop/backup</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5、删除文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm 参数 文件</span><br></pre></td></tr></table></figure>
-<p>例：想删除驱动的缓存  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm -rf /System/Library/Extensions.kextcache</span><br><span class="line">rm -rf /System/Library/Extensions.mkext</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参数<strong>－rf</strong> 表示递归和强制，千万要小心使用，如果执行了 <code>rm -rf /</code> 你的系统就全没了</p>
-</blockquote>
-</li>
-<li><p>6、移动文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv 文件</span><br></pre></td></tr></table></figure>
-<p>例：想把<code>AppleHDA.Kext</code> 移到桌面    </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv /System/Library/Extensions/AppleHDA.kext /User/用户名/Desktop</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>7、文本编辑</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano 文件名</span><br></pre></td></tr></table></figure>
-<p>例：编辑<code>natit Info.plist</code>     </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">nano /System/Library/Extensions/Natit.kext/Info.plist</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>nano 和 vim 都是文本编译</p>
-</blockquote>
-</li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/09/26/终端基本命令/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2337,7 +2273,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
