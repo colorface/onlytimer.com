@@ -47,12 +47,6 @@
 
 
 
-  
-  
-  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
-
-
-
 
   
   
@@ -86,19 +80,19 @@
 
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
 
 
 
@@ -111,9 +105,11 @@
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -151,7 +147,8 @@
 
 
 
-
+  
+  
   <link rel="canonical" href="https://onlytimer.com/tags/">
 
 
@@ -486,7 +483,9 @@
               17 tags in total
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/52个有效方法/" style="font-size: 12px; color: #ccc">52个有效方法</a> <a href="/tags/Effective-Objective-2-0/" style="font-size: 12px; color: #ccc">Effective Objective 2.0</a> <a href="/tags/IJKMediaFramework/" style="font-size: 12px; color: #ccc">IJKMediaFramework</a> <a href="/tags/blog/" style="font-size: 12px; color: #ccc">blog</a> <a href="/tags/create/" style="font-size: 12px; color: #ccc">create</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 21px; color: #6f6f6f">hexo</a> <a href="/tags/ijkplayer/" style="font-size: 12px; color: #ccc">ijkplayer</a> <a href="/tags/ios/" style="font-size: 30px; color: #111">ios</a> <a href="/tags/javascript/" style="font-size: 12px; color: #ccc">javascript</a> <a href="/tags/mac/" style="font-size: 21px; color: #6f6f6f">mac</a> <a href="/tags/命令/" style="font-size: 12px; color: #ccc">命令</a> <a href="/tags/框架/" style="font-size: 12px; color: #ccc">框架</a> <a href="/tags/终端/" style="font-size: 12px; color: #ccc">终端</a> <a href="/tags/视频直播/" style="font-size: 12px; color: #ccc">视频直播</a> <a href="/tags/静态库/" style="font-size: 12px; color: #ccc">静态库</a> <a href="/tags/高质量/" style="font-size: 12px; color: #ccc">高质量</a>
+              
+                <a href="/tags/52个有效方法/" style="font-size: 12px; color: #ccc">52个有效方法</a> <a href="/tags/Effective-Objective-2-0/" style="font-size: 12px; color: #ccc">Effective Objective 2.0</a> <a href="/tags/IJKMediaFramework/" style="font-size: 12px; color: #ccc">IJKMediaFramework</a> <a href="/tags/blog/" style="font-size: 12px; color: #ccc">blog</a> <a href="/tags/create/" style="font-size: 12px; color: #ccc">create</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 21px; color: #6f6f6f">hexo</a> <a href="/tags/ijkplayer/" style="font-size: 12px; color: #ccc">ijkplayer</a> <a href="/tags/ios/" style="font-size: 30px; color: #111">ios</a> <a href="/tags/javascript/" style="font-size: 12px; color: #ccc">javascript</a> <a href="/tags/mac/" style="font-size: 21px; color: #6f6f6f">mac</a> <a href="/tags/命令/" style="font-size: 12px; color: #ccc">命令</a> <a href="/tags/框架/" style="font-size: 12px; color: #ccc">框架</a> <a href="/tags/终端/" style="font-size: 12px; color: #ccc">终端</a> <a href="/tags/视频直播/" style="font-size: 12px; color: #ccc">视频直播</a> <a href="/tags/静态库/" style="font-size: 12px; color: #ccc">静态库</a> <a href="/tags/高质量/" style="font-size: 12px; color: #ccc">高质量</a>
+              
             </div>
           </div>
         
@@ -538,7 +537,7 @@
               <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Roy Cheng">
             
               <p class="site-author-name" itemprop="name">Roy Cheng</p>
-              <p class="site-description motion-element" itemprop="description">点点滴滴，记录累积</p>
+              <div class="site-description motion-element" itemprop="description">点点滴滴，记录累积</div>
           </div>
 
           
@@ -558,7 +557,11 @@
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
                     
                     
                       
@@ -577,7 +580,11 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
                     
                     
                       
@@ -629,6 +636,8 @@
           
 
           
+
+          
           
 
           
@@ -670,7 +679,7 @@
 
 
 
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.0.1</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
 
 
 
@@ -721,8 +730,6 @@
 
 
 
-  
-
 
 
 
@@ -746,16 +753,13 @@
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
-  
-  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
 
   
 
 
-  <script src="/js/src/utils.js?v=7.0.1"></script>
+  <script src="/js/utils.js?v=7.1.1"></script>
 
-  <script src="/js/src/motion.js?v=7.0.1"></script>
+  <script src="/js/motion.js?v=7.1.1"></script>
 
 
 
@@ -763,34 +767,41 @@
   
 
 
-  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
 
 
 
 
   
-  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
-<script src="/js/src/post-details.js?v=7.0.1"></script>
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
 
 
 
   
 
 
-  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
-
-
-  
-  
+  <script src="/js/next-boot.js?v=7.1.1"></script>
 
 
   
 
+  
+
+  
+
+  
+
+
+  
+
 
   
 
 
 
+
+  
 
   
 
