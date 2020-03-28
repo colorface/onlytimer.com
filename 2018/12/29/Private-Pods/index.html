@@ -218,11 +218,11 @@
 <h2 id="2-Add-your-Private-Repo-to-your-CocoaPods-installation"><a href="#2-Add-your-Private-Repo-to-your-CocoaPods-installation" class="headerlink" title="2.Add your Private Repo to your CocoaPods installation"></a>2.Add your Private Repo to your CocoaPods installation</h2><ul>
 <li>拉取 Pod 仓库到本地:</li>
 </ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod repo add REPO_NAME SOURCE_URL</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod repo add REPO_NAME SOURCE_URL</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>To check if your installation is successful and ready to go:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~<span class="regexp">/.cocoapods/repos</span><span class="regexp">/REPO_NAME</span></span><br><span class="line"><span class="regexp">$ pod repo lint .</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ cd ~<span class="regexp">/.cocoapods/repos</span><span class="regexp">/REPO_NAME</span></span><br><span class="line"><span class="regexp">$ pod repo lint .</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -231,19 +231,19 @@
 <ul>
 <li>在工程根目录下执行命令，建立本地工程和远程仓库的关联</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin SOURCE_URL</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git remote add origin SOURCE_URL</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>本地工程push到远程仓库</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;修改信息&quot;</span><br><span class="line">$ git push -u origin master</span><br><span class="line"></span><br><span class="line"># 组件化开发时，我们希望某些基础模块的内容是稳定的，不会经常变更。</span><br><span class="line"># 基础模块开发稳定后需要打 tag，保证主工程的开发过程中不会因为子工程的变更而变化。</span><br><span class="line"># 这里我们在工程上打 tag 并 push 到远程仓库。</span><br><span class="line"></span><br><span class="line">$ git tag 0.0.1</span><br><span class="line">$ git push --tags</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m &quot;修改信息&quot;</span><br><span class="line">$ git push -u origin master</span><br><span class="line"></span><br><span class="line"># 组件化开发时，我们希望某些基础模块的内容是稳定的，不会经常变更。</span><br><span class="line"># 基础模块开发稳定后需要打 tag，保证主工程的开发过程中不会因为子工程的变更而变化。</span><br><span class="line"># 这里我们在工程上打 tag 并 push 到远程仓库。</span><br><span class="line"></span><br><span class="line">$ git tag 0.0.1</span><br><span class="line">$ git push --tags</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h2 id="4-创建私有-Pod-的-podspec"><a href="#4-创建私有-Pod-的-podspec" class="headerlink" title="4. 创建私有 Pod 的 podspec"></a>4. 创建私有 Pod 的 podspec</h2><ul>
 <li>在工程的根目录下执行：</li>
 </ul>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ pod spec create xxx</span><br><span class="line">注<span class="symbol">:xxx</span>为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod spec create xxx</span><br><span class="line">注<span class="symbol">:xxx</span>为工程名，创建成功后会在根目录下创建 xxx.podspec 文件</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>根据实际情况配置<code>podspec</code>文件</li>
@@ -251,14 +251,14 @@
 <p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-27-721001-d95ed7ac380f3ffe.png" alt="根据实际情况配置"></p>
 <ul>
 <li><p>验证 podspec 文件有效性:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ pod lib lint</span><br><span class="line"></span><br><span class="line">$ pod spec lint</span><br><span class="line"></span><br><span class="line"><span class="comment"># 都验证通过后，podspec 文件配置成功。</span></span><br><span class="line"><span class="comment"># 可选参数 --verbose   --allow-warnings</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod lib lint</span><br><span class="line"></span><br><span class="line">$ pod spec lint</span><br><span class="line"></span><br><span class="line"><span class="comment"># 都验证通过后，podspec 文件配置成功。</span></span><br><span class="line"><span class="comment"># 可选参数 --verbose   --allow-warnings</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>提交 podspec 至私有 Spec 仓库</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod repo push REPO_NAME SPEC_NAME.podspec</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ pod repo push REPO_NAME SPEC_NAME.podspec</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h4 id="Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example"><a href="#Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example" class="headerlink" title="Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:"></a>Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source <span class="string">'URL_TO_REPOSITORY'</span></span><br></pre></td></tr></table></figure>
+<h4 id="Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example"><a href="#Your-private-Pod-is-ready-to-be-used-in-a-Podfile-You-can-use-the-spec-repository-with-the-source-directive-in-your-Podfile-as-shown-in-the-following-example" class="headerlink" title="Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:"></a>Your private Pod is ready to be used in a Podfile. You can use the spec repository with the source directive in your Podfile as shown in the following example:</h4><figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">source <span class="string">'URL_TO_REPOSITORY'</span></span><br></pre></td></tr></table></figure>
 
     </div>
 

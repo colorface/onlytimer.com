@@ -253,7 +253,7 @@
 <li><p>完成后执行 <code>cd ios</code>, 也就是进入到 ios目录中</p>
 </li>
 <li><p>在终端依次执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./compile-ffmpeg.sh clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg.sh all`</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./compile-ffmpeg.sh clean</span><br><span class="line">  </span><br><span class="line">./compile-ffmpeg.sh all`</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>编译 <code>ffmpeg</code>, 也就是<code>README.md</code>中这两步, 如下图:</p>
@@ -290,7 +290,7 @@
 <blockquote>
 <p>打开<strong>终端</strong>, 进行合并命令，具体格式为:</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>合并后如下图:</p>
