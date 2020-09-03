@@ -13,13 +13,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"onlytimer.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"onlytimer.com","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
   <meta name="description" content="点点滴滴，记录累积">
@@ -32,10 +34,11 @@
 <meta property="article:tag" content="Coder">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="https://onlytimer.com/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -55,49 +58,61 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">伊水贝</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -109,32 +124,31 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="menu">
+  <ul class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
   </ul>
@@ -144,6 +158,70 @@
 
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Roy Cheng"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Roy Cheng</p>
+  <div class="site-description" itemprop="description">点点滴滴，记录累积</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
@@ -152,17 +230,16 @@
     <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content index">
-            
+    <div class="main-inner index posts-expand">
+      
 
-  <div class="posts-expand">
-        
+      
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -177,24 +254,29 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2019/05/14/Difference-between-an-argument-and-a-parameter/" class="post-title-link" itemprop="url">Difference between an argument and a parameter</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
 
-              <time title="Created: 2019-05-14 14:26:27 / Modified: 14:37:48" itemprop="dateCreated datePublished" datetime="2019-05-14T14:26:27+08:00">2019-05-14</time>
-            </span>
+      <time title="Created: 2019-05-14 14:26:27 / Modified: 14:37:48" itemprop="dateCreated datePublished" datetime="2019-05-14T14:26:27+08:00">2019-05-14</time>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -203,8 +285,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>The terms parameter and argument are used interchangeably by vast majority of programmers but they both have different meanings. In this post, we will see the difference between an argument and a parameter.</p>
 <p> Although parameters are commonly referred to as arguments, but both are very different. According to <a href="https://en.wikipedia.org/wiki/Parameter_(computer_programming)" target="_blank" rel="noopener">wikipedia</a>, <em>a parameter is a special kind of variable, used in a subroutine to refer to one of the pieces of data provided as input to the subroutine. These pieces of data are the values of the arguments with which the subroutine is going to be called/invoked</em>. </p>
 <p>In simpler terms, the argument the actual value that is supplied to a function whereas the parameter is the variable inside the definition of the function. We can say that a parameter is a type that appear in function definitions, while an argument is an instance that appear in function calls.</p>
@@ -231,15 +311,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -254,24 +336,29 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2019/03/05/Flutter-install-guide-for-mac/" class="post-title-link" itemprop="url">Flutter install guide for mac</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
 
-              <time title="Created: 2019-03-05 00:10:47 / Modified: 00:28:11" itemprop="dateCreated datePublished" datetime="2019-03-05T00:10:47+08:00">2019-03-05</time>
-            </span>
+      <time title="Created: 2019-03-05 00:10:47 / Modified: 00:28:11" itemprop="dateCreated datePublished" datetime="2019-03-05T00:10:47+08:00">2019-03-05</time>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -280,8 +367,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Flutter install guide for Mac</p>
 <h2 id="intrudution"><a href="#intrudution" class="headerlink" title="intrudution"></a>intrudution</h2><blockquote>
 <p>Flutter是谷歌的移动UI框架，可以快速在iOS和Android上构建高质量的原生用户界面。<br>Flutter可以与现有的代码一起工作。<br>在全世界，Flutter正在被越来越多的开发者和组织使用，并且Flutter是完全免费、开源的。</p>
@@ -316,15 +401,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -339,30 +426,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2019/01/23/JavaScript-Syntax-introduction/" class="post-title-link" itemprop="url">JavaScript Syntax introduction</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-01-23 22:51:04" itemprop="dateCreated datePublished" datetime="2019-01-23T22:51:04+08:00">2019-01-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:39:04" itemprop="dateModified" datetime="2019-01-30T17:39:04+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2019-01-23 22:51:04" itemprop="dateCreated datePublished" datetime="2019-01-23T22:51:04+08:00">2019-01-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:39:04" itemprop="dateModified" datetime="2019-01-30T17:39:04+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -371,8 +463,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h2 id="JavaScript-syntax-introduction："><a href="#JavaScript-syntax-introduction：" class="headerlink" title="JavaScript syntax introduction："></a>JavaScript syntax introduction：</h2><ol>
 <li><p>mode : <code>&#39;use strict&#39;</code> (严格模式)</p>
 </li>
@@ -406,15 +496,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -429,30 +521,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2019/01/22/Symmetic-Cryptography-Asymmetic-Cryptography/" class="post-title-link" itemprop="url">Symmetic Cryptography & Asymmetic Cryptography</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-01-22 19:03:54" itemprop="dateCreated datePublished" datetime="2019-01-22T19:03:54+08:00">2019-01-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:41:53" itemprop="dateModified" datetime="2019-01-30T17:41:53+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2019-01-22 19:03:54" itemprop="dateCreated datePublished" datetime="2019-01-22T19:03:54+08:00">2019-01-22</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:41:53" itemprop="dateModified" datetime="2019-01-30T17:41:53+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -461,8 +558,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2019-01-22-121924251089094.png" alt=""></p>
 <p>对称加密 和 非对称加密：</p>
 <ul>
@@ -513,15 +608,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -536,30 +633,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/12/29/Private-Pods/" class="post-title-link" itemprop="url">Private Pods</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-12-29 12:01:42" itemprop="dateCreated datePublished" datetime="2018-12-29T12:01:42+08:00">2018-12-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:15:44" itemprop="dateModified" datetime="2019-01-30T17:15:44+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2018-12-29 12:01:42" itemprop="dateCreated datePublished" datetime="2018-12-29T12:01:42+08:00">2018-12-29</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:15:44" itemprop="dateModified" datetime="2019-01-30T17:15:44+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -568,8 +670,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h1 id="Private-Pods"><a href="#Private-Pods" class="headerlink" title="Private Pods"></a>Private Pods</h1><h2 id="1-Create-a-Private-Spec-Repo-（创建私有-Spec-仓库）"><a href="#1-Create-a-Private-Spec-Repo-（创建私有-Spec-仓库）" class="headerlink" title="1.Create a Private Spec Repo （创建私有 Spec 仓库）"></a>1.Create a Private Spec Repo （创建私有 Spec 仓库）</h2><p>例子： 在 Coding 上新建项目 CCSpecs，<br>私有Spec仓库地址<code>https://git.coding.net/colorface/CCSpecs.git</code></p>
 <h2 id="2-Add-your-Private-Repo-to-your-CocoaPods-installation"><a href="#2-Add-your-Private-Repo-to-your-CocoaPods-installation" class="headerlink" title="2.Add your Private Repo to your CocoaPods installation"></a>2.Add your Private Repo to your CocoaPods installation</h2><ul>
 <li>拉取 Pod 仓库到本地:</li>
@@ -622,15 +722,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -645,30 +747,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/12/14/Effective-Objective-2-0/" class="post-title-link" itemprop="url">Effective Objective 2.0</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-12-14 12:10:51" itemprop="dateCreated datePublished" datetime="2018-12-14T12:10:51+08:00">2018-12-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:22:47" itemprop="dateModified" datetime="2019-01-30T17:22:47+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2018-12-14 12:10:51" itemprop="dateCreated datePublished" datetime="2018-12-14T12:10:51+08:00">2018-12-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:22:47" itemprop="dateModified" datetime="2019-01-30T17:22:47+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -677,8 +784,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h1 id="Effective-Objective-2-0"><a href="#Effective-Objective-2-0" class="headerlink" title="Effective Objective 2.0"></a>Effective Objective 2.0</h1><p>(编写高质量iOS与OS X代码的52个有效方法)</p>
 <h2 id="1-runtime-："><a href="#1-runtime-：" class="headerlink" title="1. runtime ："></a>1. runtime ：</h2><ul>
 <li>消息机制</li>
@@ -732,15 +837,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -755,30 +862,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/05/14/GCD-to-Explain-In-Detail/" class="post-title-link" itemprop="url">GCD to Explain In Detail </a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-05-14 08:55:30" itemprop="dateCreated datePublished" datetime="2018-05-14T08:55:30+08:00">2018-05-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:39:32" itemprop="dateModified" datetime="2019-01-30T17:39:32+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2018-05-14 08:55:30" itemprop="dateCreated datePublished" datetime="2018-05-14T08:55:30+08:00">2018-05-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:39:32" itemprop="dateModified" datetime="2019-01-30T17:39:32+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -787,8 +899,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h3 id="任务和队列"><a href="#任务和队列" class="headerlink" title="任务和队列"></a>任务和队列</h3><p><strong>任务：</strong></p>
 <ul>
 <li>block中代码;</li>
@@ -836,15 +946,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -859,30 +971,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/05/13/Usage-Note-performSelector/" class="post-title-link" itemprop="url">Usage|Note:performSelector</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-05-13 21:55:01" itemprop="dateCreated datePublished" datetime="2018-05-13T21:55:01+08:00">2018-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:15:46" itemprop="dateModified" datetime="2019-01-30T17:15:46+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2018-05-13 21:55:01" itemprop="dateCreated datePublished" datetime="2018-05-13T21:55:01+08:00">2018-05-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:15:46" itemprop="dateModified" datetime="2019-01-30T17:15:46+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -891,8 +1008,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h3 id="performSelector调用和直接调用的区别："><a href="#performSelector调用和直接调用的区别：" class="headerlink" title="performSelector调用和直接调用的区别："></a>performSelector调用和直接调用的区别：</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">[<span class="keyword">self</span> method];<span class="comment">//直接调用</span></span><br><span class="line">[<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span>];</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -956,15 +1071,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -979,30 +1096,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/05/09/GCD-execution-sequence/" class="post-title-link" itemprop="url">GCD - execution sequence</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-05-09 22:41:12" itemprop="dateCreated datePublished" datetime="2018-05-09T22:41:12+08:00">2018-05-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:44:40" itemprop="dateModified" datetime="2019-01-30T17:44:40+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2018-05-09 22:41:12" itemprop="dateCreated datePublished" datetime="2018-05-09T22:41:12+08:00">2018-05-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:44:40" itemprop="dateModified" datetime="2019-01-30T17:44:40+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -1011,8 +1133,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p><strong>GCD经典面试题</strong></p>
 <figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"2--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"A"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"B"</span>);</span><br><span class="line">        <span class="built_in">dispatch_queue_t</span> temp = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_sync</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"3--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"C"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">dispatch_async</span>(temp, ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"4--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"D"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"5--%@"</span>,[<span class="built_in">NSThread</span> currentThread]);</span><br><span class="line">            <span class="built_in">NSLog</span>(<span class="string">@"E"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        [<span class="keyword">self</span> performSelector:<span class="keyword">@selector</span>(method) withObject:<span class="literal">nil</span> afterDelay:<span class="number">0.0</span>];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"F"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)method &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"G"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -1043,15 +1163,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -1066,30 +1188,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/05/07/C-language-knowledge-summary/" class="post-title-link" itemprop="url">C language knowledge summary</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-05-07 13:27:10" itemprop="dateCreated datePublished" datetime="2018-05-07T13:27:10+08:00">2018-05-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:28:01" itemprop="dateModified" datetime="2019-01-30T17:28:01+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2018-05-07 13:27:10" itemprop="dateCreated datePublished" datetime="2018-05-07T13:27:10+08:00">2018-05-07</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:28:01" itemprop="dateModified" datetime="2019-01-30T17:28:01+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -1098,8 +1225,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h2 id="String-function"><a href="#String-function" class="headerlink" title="String function"></a>String function</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strcpy</span>(字符数组,字符串);     <span class="comment">//拷贝</span></span><br><span class="line"><span class="built_in">strcat</span>(字符数组,字符串);     <span class="comment">//拼接</span></span><br><span class="line"><span class="built_in">strcmp</span>(字符串<span class="number">1</span>,字符串<span class="number">2</span>);     <span class="comment">//比较</span></span><br><span class="line">strlwr(字符串);             <span class="comment">//转小写</span></span><br><span class="line">strupr(字符串);             <span class="comment">//转大写</span></span><br><span class="line"><span class="built_in">strlen</span>(字符串);             <span class="comment">//算长度</span></span><br><span class="line"><span class="built_in">strncpy</span>(字符数组,字符串<span class="number">1</span>,n); <span class="comment">//字符串1中前n个字符拷贝到字符数组</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="static："><a href="#static：" class="headerlink" title="static："></a>static：</h3><ul>
@@ -1160,15 +1285,16 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-  </div>
 
   
   <nav class="pagination">
@@ -1177,8 +1303,7 @@
 
 
 
-          </div>
-          
+      
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1187,7 +1312,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -1196,86 +1321,20 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Roy Cheng"
-      src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">Roy Cheng</p>
-  <div class="site-description" itemprop="description">点点滴滴，记录累积</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">15</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">17</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
+      
 
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
+      
 
 <div class="copyright">
   
@@ -1286,39 +1345,13 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Roy Cheng</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
-  </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -1328,6 +1361,15 @@
 
 
 
+
+
+
+
+
+
+
+
+  
 
 
 

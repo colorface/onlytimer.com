@@ -13,13 +13,15 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
-  <script src="/lib/pace/pace.min.js"></script>
 
-<script id="hexo-configurations">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+<script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"onlytimer.com","root":"/","scheme":"Mist","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"onlytimer.com","root":"/","scheme":"Mist","version":"8.0.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 
   <meta name="description" content="点点滴滴，记录累积">
@@ -32,10 +34,11 @@
 <meta property="article:tag" content="Coder">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="https://onlytimer.com/page/2/">
 
 
-<script id="page-configurations">
+<script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -55,49 +58,61 @@
 
   <noscript>
   <style>
-  .use-motion .brand,
+  body { margin-top: 2rem; }
+
   .use-motion .menu-item,
-  .sidebar-inner,
+  .use-motion .sidebar,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle {
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
+      <i class="logo-line"></i>
       <h1 class="site-title">伊水贝</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -109,32 +124,31 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="menu">
+  <ul class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
   </ul>
@@ -144,6 +158,70 @@
 
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Roy Cheng"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Roy Cheng</p>
+  <div class="site-description" itemprop="description">点点滴滴，记录累积</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
@@ -152,17 +230,16 @@
     <span>0%</span>
   </div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content index">
-            
+    <div class="main-inner index posts-expand">
+      
 
-  <div class="posts-expand">
-        
+      
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -177,30 +254,35 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2018/02/04/%E7%AE%B4%E8%A8%80/" class="post-title-link" itemprop="url">箴言</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2018-02-04 17:46:13" itemprop="dateCreated datePublished" datetime="2018-02-04T17:46:13+08:00">2018-02-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:15:47" itemprop="dateModified" datetime="2019-01-30T17:15:47+08:00">2019-01-30</time>
-              </span>
+      <time title="Created: 2018-02-04 17:46:13" itemprop="dateCreated datePublished" datetime="2018-02-04T17:46:13+08:00">2018-02-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:15:47" itemprop="dateModified" datetime="2019-01-30T17:15:47+08:00">2019-01-30</time>
+      </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -209,8 +291,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h2 id="箴言"><a href="#箴言" class="headerlink" title="箴言"></a>箴言</h2><ul>
 <li>读书到底苦不苦？</li>
 </ul>
@@ -234,15 +314,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -257,39 +339,44 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/09/26/%E7%BB%88%E7%AB%AF%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">终端基本命令</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2017-09-26 10:13:52" itemprop="dateCreated datePublished" datetime="2017-09-26T10:13:52+08:00">2017-09-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-30 17:15:47" itemprop="dateModified" datetime="2019-01-30T17:15:47+08:00">2019-01-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
-                </span>
-            </span>
+      <time title="Created: 2017-09-26 10:13:52" itemprop="dateCreated datePublished" datetime="2017-09-26T10:13:52+08:00">2017-09-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-30 17:15:47" itemprop="dateModified" datetime="2019-01-30T17:15:47+08:00">2019-01-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -298,8 +385,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
 <li><p>1、列出文件</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls 参数 目录名</span><br></pre></td></tr></table></figure>
@@ -377,15 +462,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -400,39 +487,44 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/09/25/iOS%E4%B8%AD%E9%9B%86%E6%88%90ijkplayer%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD%E6%A1%86%E6%9E%B6/" class="post-title-link" itemprop="url">iOS中集成ijkplayer视频直播框架</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2017-09-25 22:58:14" itemprop="dateCreated datePublished" datetime="2017-09-25T22:58:14+08:00">2017-09-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-22 19:19:38" itemprop="dateModified" datetime="2019-01-22T19:19:38+08:00">2019-01-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a>
-                </span>
-            </span>
+      <time title="Created: 2017-09-25 22:58:14" itemprop="dateCreated datePublished" datetime="2017-09-25T22:58:14+08:00">2017-09-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-22 19:19:38" itemprop="dateModified" datetime="2019-01-22T19:19:38+08:00">2019-01-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/ios/" itemprop="url" rel="index"><span itemprop="name">ios</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -441,8 +533,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p><code>ijkplayer</code>是一款使用率极高的<strong>视频直播</strong>框架，基于<code>ffmpeg</code>，支持<code>Android</code>和<code>ios</code>，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把<code>ijkplayer</code>打包成<strong>静态库</strong>。</p>
 <h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
 <p>下载完成后解压。</p>
@@ -480,15 +570,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -503,39 +595,44 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/09/22/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2017-09-22 15:11:19" itemprop="dateCreated datePublished" datetime="2017-09-22T15:11:19+08:00">2017-09-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-22 19:19:58" itemprop="dateModified" datetime="2019-01-22T19:19:58+08:00">2019-01-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hello-world/" itemprop="url" rel="index"><span itemprop="name">hello world</span></a>
-                </span>
-            </span>
+      <time title="Created: 2017-09-22 15:11:19" itemprop="dateCreated datePublished" datetime="2017-09-22T15:11:19+08:00">2017-09-22</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-22 19:19:58" itemprop="dateModified" datetime="2019-01-22T19:19:58+08:00">2019-01-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/hello-world/" itemprop="url" rel="index"><span itemprop="name">hello world</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -544,8 +641,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
@@ -566,15 +661,17 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-        
+      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -589,39 +686,44 @@
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="伊水贝">
     </span>
+
+    
+    
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
             <a href="/2017/09/20/Mac%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EGitHub%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">Mac上搭建基于GitHub的Hexo博客</a>
         </h2>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2017-09-20 15:02:18" itemprop="dateCreated datePublished" datetime="2017-09-20T15:02:18+08:00">2017-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-01-22 19:18:34" itemprop="dateModified" datetime="2019-01-22T19:18:34+08:00">2019-01-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
-                </span>
-            </span>
+      <time title="Created: 2017-09-20 15:02:18" itemprop="dateCreated datePublished" datetime="2017-09-20T15:02:18+08:00">2017-09-20</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2019-01-22 19:18:34" itemprop="dateModified" datetime="2019-01-22T19:18:34+08:00">2019-01-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology/" itemprop="url" rel="index"><span itemprop="name">Technology</span></a>
+        </span>
+    </span>
 
-          
+  
+</div>
 
         </div>
       </header>
@@ -630,8 +732,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
           <p>一直纠结于哪里写博客，曾用过新浪博客，百度空间，LOFTER，OSChina，cnblogs，CSDN，自搭WordPress，都不满意。再后来也弄过Jekyll和Octopress，觉累不爱。</p>
 <p>直到多看了一眼hexo，这个逼格极高的程序猿写作方式，我喜欢。就连hexo的发音都像是 <strong>黑客哦</strong> ！如果你跟我一样纠结哪里写博，那就来到GitHub吧，让我们一起hexo！</p>
 <blockquote>
@@ -784,15 +884,16 @@
     
     
     
-      <footer class="post-footer">
+
+    <footer class="post-footer">
         <div class="post-eof"></div>
-      </footer>
+      
+    </footer>
   </article>
   
   
   
 
-  </div>
 
   
   <nav class="pagination">
@@ -801,8 +902,7 @@
 
 
 
-          </div>
-          
+      
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -811,7 +911,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -820,86 +920,20 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
+      const commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Roy Cheng"
-      src="/images/avatar.jpg">
-  <p class="site-author-name" itemprop="name">Roy Cheng</p>
-  <div class="site-description" itemprop="description">点点滴滴，记录累积</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">15</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">3</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">17</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+  </main>
 
+  <footer class="footer">
+    <div class="footer-inner">
+      
 
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
+      
 
 <div class="copyright">
   
@@ -910,39 +944,13 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Roy Cheng</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
-  </div>
 
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -952,6 +960,15 @@
 
 
 
+
+
+
+
+
+
+
+
+  
 
 
 
