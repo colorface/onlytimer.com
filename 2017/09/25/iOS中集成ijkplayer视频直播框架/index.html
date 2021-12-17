@@ -256,7 +256,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <p><code>ijkplayer</code>是一款使用率极高的<strong>视频直播</strong>框架，基于<code>ffmpeg</code>，支持<code>Android</code>和<code>ios</code>，但直接导入项目的操作比较繁琐，而且对原有项目结构的侵入性较强，复用差，下面介绍把<code>ijkplayer</code>打包成<strong>静态库</strong>。</p>
-<h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a href="https://github.com/Bilibili/ijkplayer" target="_blank" rel="noopener">GitHub下载地址</a></p>
+<h3 id="1、下载"><a href="#1、下载" class="headerlink" title="1、下载"></a>1、下载</h3><p><a target="_blank" rel="noopener" href="https://github.com/Bilibili/ijkplayer">GitHub下载地址</a></p>
 <p>下载完成后解压。</p>
 <h3 id="2、编译"><a href="#2、编译" class="headerlink" title="2、编译"></a>2、编译</h3><p>说是编译<code>ijkplayer</code>，其实是编译<code>ffmpeg</code>，在这里我们已经下载好了<code>ijkplayer</code>, 所以 <code>github</code> 上<code>README.md</code>中的 Build iOS 那一步中有一些步骤是不需要的。</p>
 <h4 id="编译步骤："><a href="#编译步骤：" class="headerlink" title="编译步骤："></a>编译步骤：</h4><ul>
@@ -278,7 +278,7 @@
 </blockquote>
 </li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1803339-d8e86e2be4ed3960.png" alt="编译FFmpeg"></p>
 <blockquote>
@@ -308,7 +308,7 @@
 <blockquote>
 <p>打开<strong>终端</strong>, 进行合并命令，具体格式为:</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">"真机版本路径"</span> <span class="string">"模拟器版本路径"</span> -output <span class="string">"合并后   的文件路径"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lipo -create <span class="string">&quot;真机版本路径&quot;</span> <span class="string">&quot;模拟器版本路径&quot;</span> -output <span class="string">&quot;合并后   的文件路径&quot;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>合并后如下图:</p>

@@ -265,7 +265,7 @@
 </blockquote>
 </li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><table>
 <thead>
@@ -291,7 +291,7 @@
 </tbody></table>
 <h3 id="GCD线程间通信"><a href="#GCD线程间通信" class="headerlink" title="GCD线程间通信"></a>GCD线程间通信</h3><figure class="highlight objectivec"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 获取全局并发队列</span></span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">dispatch_async</span>(queue, ^&#123;</span><br><span class="line">        <span class="comment">// 异步追加任务</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 回到主线程</span></span><br><span class="line">        <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            <span class="comment">// 追加在主线程中执行的任务</span></span><br><span class="line"></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
 
-<h3 id="GCD其他方法"><a href="#GCD其他方法" class="headerlink" title="GCD其他方法"></a>GCD其他方法</h3><h5 id="1-GCD栅栏方法：dispatch-barrier-async"><a href="#1-GCD栅栏方法：dispatch-barrier-async" class="headerlink" title="1.GCD栅栏方法：dispatch_barrier_async"></a>1.GCD栅栏方法：dispatch_barrier_async</h5><p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1877784-4d6d77fafd3ad007.png" alt=""></p>
+<h3 id="GCD其他方法"><a href="#GCD其他方法" class="headerlink" title="GCD其他方法"></a>GCD其他方法</h3><h5 id="1-GCD栅栏方法：dispatch-barrier-async"><a href="#1-GCD栅栏方法：dispatch-barrier-async" class="headerlink" title="1.GCD栅栏方法：dispatch_barrier_async"></a>1.GCD栅栏方法：dispatch_barrier_async</h5><p><img src="https://ipic-image.oss-cn-beijing.aliyuncs.com/blog/2018-12-30-1877784-4d6d77fafd3ad007.png"></p>
 <blockquote>
 <p>在执行完栅栏前面的操作之后，才执行栅栏操作，最后再执行栅栏后边的操作。</p>
 </blockquote>
